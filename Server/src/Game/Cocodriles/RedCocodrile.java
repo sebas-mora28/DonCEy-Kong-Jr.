@@ -6,11 +6,16 @@ import Game.GameObject;
 
 public class RedCocodrile extends GameObject implements Cocodrile {
 
+    int liana;
 
 
-    public RedCocodrile(){
+
+    public RedCocodrile(int liana){
         // Establece la posicion inicial del cocodrillo
         this.updatePosition(0,0);
+
+        //Asigna el numero de liana donde se encuentra
+        this.liana = liana;
     }
 
     @Override

@@ -1,53 +1,66 @@
 package Server;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.net.*;
 import java.net.ServerSocket;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.Collections;
+import java.util.List;
 
-public class Server {
+import Game.Game;
+import org.json.simple.*;
 
-    private static  ArrayList<ClientHandler> clients = new ArrayList<ClientHandler>();
-    private static ServerSocket server = null;
+
+public class Server extends Thread{
+
+    public static List<Game> games;
+    private static ServerSocket server;
     private static boolean running = true;
-    private static ExecutorService pool = Executors.newFixedThreadPool(4);
+    public static Server serverInstance;
 
 
-    public static void main(String[] args){
 
+    public static Server getInstance(int port){
+        if(serverInstance == null){
+            serverInstance = new Server(port);
+        }
+        return serverInstance;
+    }
+
+    public Server(int port){
         try{
 
-
-            server = new ServerSocket(3000);
-            server.setReuseAddress(true);
-
-
-            while(running){
+            this.server = new ServerSocket(port);
+            this.games = Collections.synchronizedList(new ArrayList<Game>());
+            System.out.println("Init Server");
+            this.start();
 
 
-                Socket client = server.accept();
-                System.out.printf("New client %s", client.getInetAddress());
-
-                ClientHandler clientHandler = new ClientHandler(client);
-
-                clients.add(clientHandler);
-
-                pool.execute(clientHandler);
-
-            }
-
-
-
-
-
-        }catch (IOException error){
-
-        }finally{
-
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
 
+    @Override
+    public void run(){
+
+        while(running){
+
+            try{
+                Socket client = server.accept();
+
+                System.out.printf("Client conneted %s \n", client.getInetAddress());
+
+                ClientHandler newClient = new ClientHandler(client);
+
+
+                new Thread(newClient).start();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

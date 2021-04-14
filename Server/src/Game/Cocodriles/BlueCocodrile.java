@@ -4,9 +4,12 @@ import Game.GameObject;
 
 public class BlueCocodrile extends GameObject implements Cocodrile {
 
+    int liana;
 
-    public BlueCocodrile(){
+    public BlueCocodrile(int liana){
+
         this.updatePosition(0,0);
+        this.liana = liana;
     }
 
     @Override
