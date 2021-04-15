@@ -1,0 +1,18 @@
+
+R
+java:S1128"7Remove this unused import 'org.json.simple.JSONObject'.(‚ƒç‘ÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+M	java:S106$"9Replace this use of System.out or System.err by a logger.(Ü²÷#
+U
+java:S1128
+"?Remove this unused import 'java.util.zip.InflaterOutputStream'.(íãØ¯
+O
+java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ
+=
+java:S2189"""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ
+>
+java:S1148*"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+>
+java:S11486"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+T
+java:S1128	">Remove this unused import 'java.nio.charset.StandardCharsets'.(ï˜ÞÛ

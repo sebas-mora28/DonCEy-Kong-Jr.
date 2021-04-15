@@ -1,0 +1,10 @@
+
+n
+java:S1450"SRemove the "posX" field and declare it as a local variable in the relevant methods.(˜•»Şıÿÿÿÿ
+n
+java:S1450"SRemove the "posY" field and declare it as a local variable in the relevant methods.(¡Êéşûÿÿÿÿ
+C
+java:S1068"(Remove this unused "posX" private field.(˜•»Şıÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
+C
+java:S1068"(Remove this unused "posY" private field.(¡Êéşûÿÿÿÿ

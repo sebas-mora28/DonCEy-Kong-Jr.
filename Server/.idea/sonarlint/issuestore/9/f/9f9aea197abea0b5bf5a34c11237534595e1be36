@@ -1,0 +1,12 @@
+
+Q
+java:S11723"/Remove this unused method parameter "newState".(ƒÈÄƒûÿÿÿÿ8„í€/
+@
+java:S1068"*Remove this unused "fruits" private field.(øÍé×
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
+O
+java:S1068"4Remove this unused "donkeyKongJunior" private field.(—÷øÛøÿÿÿÿ
+V
+java:S1611:"4Remove the parentheses around the "player" parameter(Ø”ÿËÿÿÿÿÿ8öæç€/
+Y
+java:S1128"7Remove this unused import 'org.json.simple.JSONObject'.(‚ƒç‘ÿÿÿÿÿ8ôÚÙ€/

@@ -1,5 +1,7 @@
 package App;
 
+import Game.Game;
+import Server.Server;
 import netscape.javascript.JSObject;
 
 import javax.swing.*;
@@ -9,6 +11,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Window {
+
+
+    ButtonGroup enemies;
+    JCheckBox enemyRed;
+    JCheckBox enemyBlue;
+    JComboBox<Integer> gameId;
+    JButton addEnemy;
+    JButton addFruit;
+    JButton deleteFruit;
+    JComboBox<Integer> liana;
+    ButtonGroup fruits;
+    JCheckBox banana;
+    JCheckBox apple;
+
+
 
 
     public Window(){
@@ -23,54 +40,90 @@ public class Window {
         contentPane.setLayout(null);
         frame.setContentPane(contentPane);
 
-
-        ButtonGroup enemies = new ButtonGroup();
-        JRadioButton enemyRed = new JRadioButton("Red");
+        enemies = new ButtonGroup();
+        enemyRed = new JCheckBox("Red");
         enemyRed.setSelected(true);
-        enemyRed.setBounds(20, 25, 75, 25);
+        enemyRed.setBounds(10, 125, 75, 25);
         enemies.add(enemyRed);
         frame.getContentPane().add(enemyRed);
 
-
-        JRadioButton enemyBlue = new JRadioButton("Blue");
-        enemyBlue.setBounds(95, 25, 75, 25);
-        enemies.add(enemyRed);
+        enemyBlue = new JCheckBox("Blue");
+        enemyBlue.setBounds(85, 125, 75, 25);
+        enemies.add(enemyBlue);
         frame.getContentPane().add(enemyBlue);
 
-        JButton addEnemy = new JButton("Add enemy");
-        addEnemy.setBounds(10, 50, 125, 25);
+        addEnemy = new JButton("Add enemy");
+        addEnemy.setBounds(10, 150, 125, 25);
         addEnemy.addActionListener(new AddEnemyAction());
         frame.getContentPane().add(addEnemy);
 
 
-        JButton addFruit = new JButton("Add Fruit");
-        addFruit.setBounds(10, 100, 125, 25);
+        addFruit = new JButton("Add Fruit");
+        addFruit.setBounds(150, 150, 125, 25);
         addFruit.addActionListener(new AddFruit());
         frame.getContentPane().add(addFruit);
 
-        JButton deleteFruit = new JButton("Delete Fruit");
+        deleteFruit = new JButton("Delete Fruit");
         deleteFruit.addActionListener(new DeleteFruit());
-        deleteFruit.setBounds(10, 150, 125, 25);
+        deleteFruit.setBounds(280, 150, 125, 25);
         frame.getContentPane().add(deleteFruit);
 
 
-        JComboBox<Integer> liana = new JComboBox<Integer>();
-        liana.setBounds(200, 80, 50, 30);
+
+        fruits = new ButtonGroup();
+        banana = new JCheckBox("Banana");
+        banana.setSelected(true);
+        banana.setBounds(185, 125, 100, 25);
+        fruits.add(banana);
+        frame.getContentPane().add(banana);
+
+        apple = new JCheckBox("Apple");
+        apple.setBounds(290, 125, 75, 25);
+        fruits.add(apple);
+        frame.getContentPane().add(apple);
+
+        liana = new JComboBox<Integer>();
+        liana.setBounds(250, 50, 50, 30);
         for(int i=0; i<10; i++){ liana.addItem(i);}
         frame.getContentPane().add(liana);
 
+        gameId = new JComboBox<Integer>();
+        gameId.addItem(1);
+        gameId.addItem(2);
+        gameId.setBounds(125, 50, 50, 30);
+        frame.getContentPane().add(gameId);
 
-        JComboBox<Integer> numberGame = new JComboBox<Integer>();
-        numberGame.addItem(1);
-        numberGame.addItem(2);
-        numberGame.setBounds(275, 80, 50, 30);
-        frame.getContentPane().add(numberGame);
 
         frame.setVisible(true);
 
     }
 
-    static class AddEnemyAction implements ActionListener {
+    class AddEnemyAction implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+
+            for (Game game : Server.games) {
+
+                if(game.getId() == (int) gameId.getSelectedItem()){
+                    if(enemyRed.isSelected()){
+                        game.putEnemy("red", (int)liana.getSelectedItem());
+                    }
+                    if(enemyBlue.isSelected()){
+                        game.putEnemy("blue", (int) liana.getSelectedItem());
+                    }
+                }
+
+            }
+
+
+
+
+        }
+    }
+
+    class AddFruit implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
@@ -78,15 +131,7 @@ public class Window {
         }
     }
 
-    static class AddFruit implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
-
-        }
-    }
-
-    static class DeleteFruit implements ActionListener {
+    class DeleteFruit implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {

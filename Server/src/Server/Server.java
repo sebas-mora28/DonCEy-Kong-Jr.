@@ -54,7 +54,6 @@ public class Server extends Thread{
 
                 ClientHandler newClient = new ClientHandler(client);
 
-
                 new Thread(newClient).start();
 
             } catch (IOException e) {

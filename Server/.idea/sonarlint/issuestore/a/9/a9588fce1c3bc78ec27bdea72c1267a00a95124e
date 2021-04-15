@@ -1,0 +1,32 @@
+
++
+java:S1700"Rename field "server"(îè®Ï
+P
+java:S2209""5Change this instance-reference to a static reference.(é ¹ñşÿÿÿÿ
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(ûêˆøÿÿÿÿ
+>
+java:S1148<"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>
+java:S1148)"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+g
+java:S1104"QMake games a static final constant or non-public and provide accessors if needed.(Éó•±
+J
+java:S1444"4Make this "public static serverInstance" field final(Æ×®Ï
+p
+java:S1104"ZMake serverInstance a static final constant or non-public and provide accessors if needed.(Æ×®Ï
+J
+java:S1128"4Remove this unused import 'java.lang.reflect.Array'.(‡¡É˜
+A
+java:S1444"+Make this "public static games" field final(Éó•±
+;
+java:S2386#" Make member "games" "protected".(åâÖÚùÿÿÿÿ
+=
+java:S3010#""Remove this assignment of "games".(åâÖÚùÿÿÿÿ
+l
+java:S34575"Q%n should be used in place of \n to produce the platform-specific line separator.(ûêˆøÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+>
+java:S3010""#Remove this assignment of "server".(é ¹ñşÿÿÿÿ
+N	java:S106$"9Replace this use of System.out or System.err by a logger.(ŞÌ‚Ú
+P
+java:S2209#"5Change this instance-reference to a static reference.(åâÖÚùÿÿÿÿ

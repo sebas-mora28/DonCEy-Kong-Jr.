@@ -1,0 +1,18 @@
+
+œ
+java:S1186j"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯ÕÊŠøÿÿÿÿ
+n
+java:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÅØúT
+œ
+java:S1186r"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯ÕÊŠøÿÿÿÿ
+_
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
+O
+java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ
+L
+java:S1128"6Remove this unused import 'javax.swing.border.Border'.(şŒ©ƒ
+K
+java:S1066Z"/Merge this if statement with the enclosing one.(–Ñş:8ëö•/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ï†¦ıÿÿÿÿ
+t
+java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(Üë¸‚úÿÿÿÿ
