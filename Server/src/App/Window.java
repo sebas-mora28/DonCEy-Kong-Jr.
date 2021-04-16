@@ -10,20 +10,25 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static Server.Server.games;
+
 public class Window {
 
 
-    ButtonGroup enemies;
-    JCheckBox enemyRed;
-    JCheckBox enemyBlue;
-    JComboBox<Integer> gameId;
-    JButton addEnemy;
-    JButton addFruit;
-    JButton deleteFruit;
-    JComboBox<Integer> liana;
-    ButtonGroup fruits;
-    JCheckBox banana;
-    JCheckBox apple;
+    private ButtonGroup enemies;
+    private JCheckBox enemyRed;
+    private JCheckBox enemyBlue;
+    private JComboBox<Integer> gameId;
+    private JButton addEnemy;
+    private JButton addFruit;
+    private JButton deleteFruit;
+    private JComboBox<Integer> liana;
+    private ButtonGroup fruits;
+    private JCheckBox banana;
+    private JCheckBox apple;
+    public static JTextArea console;
+    private JScrollPane scrollPane;
+
 
 
 
@@ -70,32 +75,48 @@ public class Window {
 
 
 
+        console = new JTextArea("");
+        console.setBounds(5, 5, 275 , 110);
+        console.setEditable(false);
+        frame.getContentPane().add(console);
+
+        scrollPane = new JScrollPane(console);
+        scrollPane.setBounds(5,5, 275, 110);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        frame.getContentPane().add(scrollPane);
+
         fruits = new ButtonGroup();
         banana = new JCheckBox("Banana");
+        banana.setActionCommand("banana");
         banana.setSelected(true);
         banana.setBounds(185, 125, 100, 25);
         fruits.add(banana);
         frame.getContentPane().add(banana);
 
         apple = new JCheckBox("Apple");
+        apple.setActionCommand("apple");
         apple.setBounds(290, 125, 75, 25);
         fruits.add(apple);
         frame.getContentPane().add(apple);
 
         liana = new JComboBox<Integer>();
-        liana.setBounds(250, 50, 50, 30);
+        liana.setBounds(380, 50, 50, 30);
         for(int i=0; i<10; i++){ liana.addItem(i);}
         frame.getContentPane().add(liana);
 
         gameId = new JComboBox<Integer>();
         gameId.addItem(1);
         gameId.addItem(2);
-        gameId.setBounds(125, 50, 50, 30);
+        gameId.setBounds(310, 50, 50, 30);
         frame.getContentPane().add(gameId);
 
 
         frame.setVisible(true);
 
+    }
+
+    public static void updateConsole(String message){
+        console.setText(console.getText() + "\n" + message);
     }
 
     class AddEnemyAction implements ActionListener {
@@ -104,7 +125,7 @@ public class Window {
         public void actionPerformed(ActionEvent actionEvent) {
 
 
-            for (Game game : Server.games) {
+            for (Game game : games) {
 
                 if(game.getId() == (int) gameId.getSelectedItem()){
                     if(enemyRed.isSelected()){
@@ -127,6 +148,13 @@ public class Window {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            String type = fruits.getSelection().getActionCommand();
+            for(Game game : Server.games){
+                if(game.getId() == (int)(gameId.getSelectedItem())){
+                    game.putFruit(type, (int) liana.getSelectedItem());
+                }
+
+            }
 
         }
     }
@@ -135,6 +163,12 @@ public class Window {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+
+            String type = fruits.getSelection().getActionCommand();
+            for(Game game : Server.games){
+                if(game.getId() == (int)(gameId).getSelectedItem()){
+                }
+            }
 
         }
     }

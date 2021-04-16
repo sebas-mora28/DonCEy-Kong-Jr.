@@ -3,8 +3,7 @@ import Server.Server;
 import Server.ClientHandler;
 
 import java.io.IOException;
-
-
+import java.util.ArrayList;
 
 
 public class Main {
@@ -17,8 +16,6 @@ public class Main {
 
 
         Window app = new Window();
-
-
 
 
 

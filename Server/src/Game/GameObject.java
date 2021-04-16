@@ -3,8 +3,9 @@ package Game;
 public class GameObject {
 
 
-    private int posX;
-    private int posY;
+    public int posX;
+    public int posY;
+    public int speed;
 
 
     public void updatePosition(int posX, int posY){
@@ -12,6 +13,8 @@ public class GameObject {
         this.posY = posY;
 
     }
+
+
 
 
 }

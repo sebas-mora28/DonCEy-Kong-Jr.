@@ -2,15 +2,22 @@ package Server;
 
 import netscape.javascript.JSObject;
 import org.json.simple.*;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import javax.swing.*;
 
 public class Serializer {
 
+    private static JSONParser parser = new JSONParser();
 
-    public static JSONObject serializerPutFruit(int position, int gameId){
+
+    public static JSONObject serializerPutFruit(String type, int liana, int gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "putFruit");
         obj.put("game_id", gameId);
-        obj.put("position", position);
+        obj.put("type", type);
+        obj.put("liana", liana);
         return obj;
     }
     
@@ -46,6 +53,12 @@ public class Serializer {
 
     }
 
+    public static JSONObject serializerEndGame(){
+        JSONObject obj = new JSONObject();
+        obj.put("command","endGame");
+        return obj;
+    }
+
     public static JSONObject serializerNewGame(int game_id){
         JSONObject obj = new JSONObject();
         obj.put("command", "newGameAccepted");
@@ -53,6 +66,7 @@ public class Serializer {
         return obj;
 
     }
+
 
 
 }

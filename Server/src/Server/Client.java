@@ -1,5 +1,8 @@
 package Server;
 
+import org.json.simple.JSONObject;
+
+import javax.management.relation.RoleUnresolved;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -10,9 +13,11 @@ class Client {
     // driver code
     public static void main(String[] args)
     {
+
+
         // establish a connection by providing host and port
         // number
-        try (Socket socket = new Socket("localhost", 3000)) {
+        try (Socket socket = new Socket("localhost", 4000)) {
 
 
             System.out.println("Start");
@@ -30,24 +35,40 @@ class Client {
             Scanner sc = new Scanner(System.in);
             String line = null;
 
-            while (!"exit".equalsIgnoreCase(line)) {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("command","new game");
+            jsonObject.put("gameId", 2);
+            out.println(jsonObject.toJSONString());
+            System.out.println(in.readLine());
 
-                // reading from user
-                line = sc.nextLine();
 
-                // sending the user input to server
-                out.println(line);
-                out.flush();
+            JSONObject fruit = new JSONObject();
+            fruit.put("command","moveDKJ");
+            fruit.put("gameId", 2);
+            fruit.put("posX", 24);
+            fruit.put("posY", 25);
 
-                // displaying server reply
-                System.out.println("Server replied "
-                        + in.readLine());
+            int time = 1;
+
+            boolean running = true;
+            while(running){
+                //System.out.println(fruit.toString());
+                String xd = fruit.toJSONString();
+                out.println(xd);
+                System.out.println("pasa");
+                Thread.sleep(10);
+                //System.out.println(time);
+                time++;
+                if(time > 1000){
+                    running = false;
+                    break;
+                }
             }
 
+
             // closing the scanner object
-            sc.close();
         }
-        catch (IOException e) {
+        catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
