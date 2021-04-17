@@ -1,11 +1,17 @@
 
+™
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8Ë­äœ/
+P
+java:S1854":Remove this useless assignment to local variable "server".(»ûĞ
+
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8Ë­äœ/
+C
+java:S1481"(Remove this unused "app" local variable.(‹»À¤üÿÿÿÿ
 F
 java:S1128"1Remove this unused import 'Server.ClientHandler'.(í±Ó"
 R
-java:S1854"7Remove this useless assignment to local variable "app".(‹»À¤üÿÿÿÿ
-P
-java:S1854":Remove this useless assignment to local variable "server".(»ûĞ
+java:S1854"7Remove this useless assignment to local variable "app".(‹»À¤üÿÿÿÿ
 A
-java:S1481"+Remove this unused "server" local variable.(»ûĞ
-C
-java:S1481"(Remove this unused "app" local variable.(‹»À¤üÿÿÿÿ
+java:S1481"+Remove this unused "server" local variable.(»ûĞ
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¼¿ÂÃ/

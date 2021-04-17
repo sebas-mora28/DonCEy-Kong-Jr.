@@ -1,18 +1,23 @@
 
-œ
-java:S1186j"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯ÕÊŠøÿÿÿÿ
-n
-java:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÅØúT
-œ
-java:S1186r"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯ÕÊŠøÿÿÿÿ
-_
-java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
-O
-java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ
+F	java:S108©")Either remove or fill this block of code.(ù‘¡ß8¼ªÅÈ/
+{
+java:S2293k"YReplace the type specification in this constructor call with the diamond operator ("<>").(Üë¸‚úÿÿÿÿ8›££/
+{
+java:S2293f"YReplace the type specification in this constructor call with the diamond operator ("<>").(Áè ıÿÿÿÿ8›££/
 L
 java:S1128"6Remove this unused import 'javax.swing.border.Border'.(şŒ©ƒ
-K
-java:S1066Z"/Merge this if statement with the enclosing one.(–Ñş:8ëö•/
+O
+java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ
+o
+java:S1104"SMake console a static final constant or non-public and provide accessors if needed.(éÜçr8ĞËå¨/
+L
+java:S1481§")Remove this unused "type" local variable.(ßäİ¤üÿÿÿÿ8¼ªÅÈ/
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ï†¦ıÿÿÿÿ
-t
-java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(Üë¸‚úÿÿÿÿ
+f
+java:S3252)"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8ƒ«ô¢/
+I
+java:S1444"-Make this "public static console" field final(éÜçr8ĞËå¨/
+F
+java:S3010N"$Remove this assignment of "console".(Êì½Ìıÿÿÿÿ8óüå¨/
+[
+java:S1854§"8Remove this useless assignment to local variable "type".(ßäİ¤üÿÿÿÿ8¼ªÅÈ/

@@ -3,12 +3,12 @@ package Game;
 public class GameObject {
 
 
-    public int posX;
-    public int posY;
-    public int speed;
+    public Integer posX;
+    public Integer posY;
+    public Integer speed;
 
 
-    public void updatePosition(int posX, int posY){
+    public void updatePosition(Integer posX, Integer posY){
         this.posX = posX;
         this.posY = posY;
 

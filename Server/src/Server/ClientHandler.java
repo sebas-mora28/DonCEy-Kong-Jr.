@@ -23,8 +23,8 @@ public class ClientHandler implements Runnable {
     private BufferedReader in;
     private PrintWriter out;
     private JSONParser parser;
-    private final int MAX_GAMES = 2;
-    private final int MAX_NUM_OF_OBSERVERS = 2;
+    private final Integer MAX_GAMES = 2;
+    private final Integer MAX_NUM_OF_OBSERVERS = 2;
     private Game game;
     private static boolean isGame1Taken = false;
     private static boolean isGame2Taken = false;
@@ -50,26 +50,15 @@ public class ClientHandler implements Runnable {
 
                 String response = in.readLine();
 
-
                 if(response == null){
-                    if(game == null){
-                        break;
-                    }
 
+                    //Verifica que el cliente que esta jugando no se haya desconectado de la partida
                     if(game.getPlayer() == this){
-                        game.endGame();
-                        if(game.getId() == 1) {isGame1Taken = false;};
-                        if(game.getId() ==2) {isGame2Taken = false;}
-                        Window.updateConsole("Partida " + game.getId() + " terminada");
-                        Server.games.remove(this.game);
-                        this.isActive = false;
-                        this.client.close();
-                        this.in.close();
-                        this.out.close();
+                        this.endGame();
                         break;
 
                     }else{
-                        Window.updateConsole("Observador de la partida " + game.getId() + " desconectado");
+                        Window.updateConsole("Observer from game " + game.getId() + " disconnected");
                         this.game.removeObserver(this);
                         this.client.close();
                         break;
@@ -78,7 +67,6 @@ public class ClientHandler implements Runnable {
 
                 }
 
-                //System.out.printf("Client: %s \n", response);
                 JSONObject responseJson = (JSONObject)(this.parser.parse(response));
                 String command = responseJson.get("command").toString();
 
@@ -93,7 +81,7 @@ public class ClientHandler implements Runnable {
                                 createNewGame(game_id);
                                 isGame1Taken = true;
                             }else{
-                                Window.updateConsole("Partida 1 ocupada : No se puede conectar");
+                                Window.updateConsole("Client tried to connect game 1, but it's taken");
                             }
                         }
 
@@ -102,13 +90,12 @@ public class ClientHandler implements Runnable {
                                 createNewGame(game_id);
                                 isGame2Taken = true;
                             }else{
-                                Window.updateConsole("Partida 3 ocupada: No se puede conectar");
+                                Window.updateConsole("Client tried to connect game 2, but it's taken");
                             }
                         }
                         continue;
 
                     }else{
-                        System.out.println("Todas las partidas se encuentran ocupadas");
                         continue;
                     }
                 }
@@ -121,9 +108,9 @@ public class ClientHandler implements Runnable {
                             if(game.numObservers() <= MAX_NUM_OF_OBSERVERS){
                                 this.game = game;
                                 game.addObserver(this);
-                                Window.updateConsole("Nuevo observador agregado a la partida " + game_id);
+                                Window.updateConsole("New observer added to game " + game_id);
                             }else{
-                                Window.updateConsole("Maxima cantidad de observadores en la partida " + game_id);
+                                Window.updateConsole("Client tried to observe game " + game_id + " but it's full");
                             }
                         }
                     }
@@ -140,20 +127,14 @@ public class ClientHandler implements Runnable {
                     continue;
                 }
 
-
-
-
-
-
             }
         }catch (SocketException e){
-            System.out.println("Puta error");
+            try { this.endGame(); }
+            catch (IOException er) { er.printStackTrace(); }
         }
         catch (IOException | ParseException e) {
-            System.out.println("Error1");
             e.printStackTrace();
         }catch (NullPointerException e){
-            System.out.println("Error2");
             e.printStackTrace();
         }
 
@@ -161,11 +142,37 @@ public class ClientHandler implements Runnable {
     }
 
 
-    private void createNewGame(int game_id){
+    private void endGame() throws IOException {
+        game.endGame();
+        freeGame(game.getId());
+        Window.updateConsole("Game  " + game.getId() + " end: player disconnected");
+        Server.games.remove(this.game);
+        this.isActive = false;
+        this.client.close();
+        this.in.close();
+        this.out.close();
+
+    }
+
+
+
+    private void freeGame(Integer game_id){
+        if(game_id ==1){
+            isGame1Taken = false;
+        } else if(game_id ==2) {
+            isGame2Taken = false;
+        } else{
+            System.out.println("Invalid id");
+
+        }
+    }
+
+
+    private void createNewGame(Integer game_id){
         Game game = new Game(game_id, this);
         Server.games.add(game);
         this.game = game;
-        Window.updateConsole("Nueva partida id: " + game_id);
+        Window.updateConsole("New game id: " + game_id);
 
     }
 

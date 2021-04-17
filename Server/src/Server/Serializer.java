@@ -12,58 +12,75 @@ public class Serializer {
     private static JSONParser parser = new JSONParser();
 
 
-    public static JSONObject serializerPutFruit(String type, int liana, int gameId){
+    public static String serializerPutFruit(String type, int liana, int gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "putFruit");
         obj.put("game_id", gameId);
         obj.put("type", type);
         obj.put("liana", liana);
-        return obj;
+        return obj.toJSONString();
     }
+
+    public static String serializerDeleteFruit(String type, int liana, int gameId){
+        JSONObject obj = new JSONObject();
+        obj.put("command", "DeleteFruit");
+        obj.put("game_id", gameId);
+        obj.put("type", type);
+        obj.put("liana", liana);
+        return obj.toJSONString();
+    }
+
     
-    public static JSONObject serializerPutEnimies(String color, int liana, int gameId){
+    public static String serializerPutEnimies(String color, int liana, int gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "putEnemy");
-        obj.put("game_id", gameId);
+        obj.put("gameId", gameId);
         obj.put("liana", liana);
         obj.put("color", color);
-        return obj;
+        return obj.toJSONString();
     }
 
-    public static JSONObject serializerUpdateGame(){
+    public static String serializerKill(Integer gameId){
         JSONObject obj = new JSONObject();
-        return obj;
+        obj.put("command","kill");
+        obj.put("gameId", gameId);
+        return obj.toJSONString();
     }
 
-    public static JSONObject serializerUpdateScore(int score, int game_id){
+    public static String serializerUpdateGame(){
+        JSONObject obj = new JSONObject();
+        return obj.toJSONString();
+    }
+
+    public static String serializerUpdateScore(Integer score, Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "updateScore");
-        obj.put("game_id", game_id);
+        obj.put("gameId", gameId);
         obj.put("score", score);
-        return obj;
+        return obj.toJSONString();
     }
 
-    public static JSONObject serializerMoveDKJ(int posX, int posy, int game_id){
+    public static String serializerMoveDKJ(Integer posX, Integer posy, Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "moveDKJ");
-        obj.put("game_id", game_id);
+        obj.put("gameId", gameId);
         obj.put("posX", posX);
         obj.put("posY", posy);
-        return obj;
+        return obj.toJSONString();
 
     }
 
-    public static JSONObject serializerEndGame(){
+    public static String serializerEndGame(){
         JSONObject obj = new JSONObject();
         obj.put("command","endGame");
-        return obj;
+        return obj.toJSONString();
     }
 
-    public static JSONObject serializerNewGame(int game_id){
+    public static String serializerNewGame(Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "newGameAccepted");
-        obj.put("game_id", game_id);
-        return obj;
+        obj.put("gameId", gameId);
+        return obj.toJSONString();
 
     }
 

@@ -1,12 +1,25 @@
 
-Q
-java:S11723"/Remove this unused method parameter "newState".(ƒÈÄƒûÿÿÿÿ8„í€/
-@
-java:S1068"*Remove this unused "fruits" private field.(øÍé×
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
-O
-java:S1068"4Remove this unused "donkeyKongJunior" private field.(—÷øÛøÿÿÿÿ
-V
-java:S1611:"4Remove the parentheses around the "player" parameter(Ø”ÿËÿÿÿÿÿ8öæç€/
-Y
-java:S1128"7Remove this unused import 'org.json.simple.JSONObject'.(‚ƒç‘ÿÿÿÿÿ8ôÚÙ€/
+L
+java:S1172m"/Remove this unused method parameter "newState".(Õ²¨€8„í€/
+R
+java:S1611t"6Remove the parentheses around the "observer" parameter(’ô¯u8´Œ¤³/
+X
+java:S1117ƒ":Rename "player" which hides the field declared at line 30.(°Æ‚8´Œ¤³/
+V	java:S106"9Replace this use of System.out or System.err by a logger.(îñàñ8¶±îÇ/
+M
+java:S1144m"0Remove this unused private "updateState" method.(Õ²¨€8ôŒ¡¦/
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8ÓÖñĞ/
+F
+java:S1068")Remove this unused "game1" private field.(‘ñ¦¢8úÛÕÈ/
+E
+java:S1068")Remove this unused "game2" private field.(½°«8Çù”Ç/
+J	java:S108;")Either remove or fill this block of code.(üÑ—Ğüÿÿÿÿ8¨¢ÇË/
+K
+java:S1068")Remove this unused "score" private field.(µ¼æÿÿÿÿÿ8ƒê‹¥/
+R
+java:S1611ƒ"4Remove the parentheses around the "player" parameter(°Æ‚8´Œ¤³/
+‰
+java:S1130s"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(•™ë™8·¡ÒÈ/
+K
+java:S1068")Remove this unused "lives" private field.(ö˜åâøÿÿÿÿ8ı¸Œ¥/

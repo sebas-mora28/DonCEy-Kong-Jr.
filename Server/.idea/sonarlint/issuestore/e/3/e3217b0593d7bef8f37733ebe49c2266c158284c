@@ -1,18 +1,60 @@
 
-R
-java:S1128"7Remove this unused import 'org.json.simple.JSONObject'.(‚ƒç‘ÿÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
-M	java:S106$"9Replace this use of System.out or System.err by a logger.(Ü²÷#
+S
+java:S2696^"6Make the enclosing method "static" or remove this set.(Ä‘ Š8ŒäàË/
+r	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8ŒäàË/
 U
-java:S1128
-"?Remove this unused import 'java.util.zip.InflaterOutputStream'.(íãØ¯
+java:S1128"?Remove this unused import 'java.util.zip.InflaterOutputStream'.(íãØ¯
+S
+java:S2696>"6Make the enclosing method "static" or remove this set.(³×œ8ŒäàË/
+X	java:S125Q"<This block of commented-out lines of code should be removed.(ª÷ÿÍ8–Ù±Ï/
+z	java:S1350"YReduce the total number of break and continue statements in this loop to use at most one.(Úİ²Œûÿÿÿÿ8ƒ‰üÃ/
+>
+java:S1170"!Make this final field static too.(¿©¤·8ƒ‰üÃ/
+9
+java:S1116="Remove this empty statement.(€Œ™æ8­ÏßË/
+Z
+java:S1117w"8Rename "game" which hides the field declared at line 28.(õ“Ù—øÿÿÿÿ8ŒäàË/
+U	java:S106o"9Replace this use of System.out or System.err by a logger.(†ÙÊÙ8ŒäàË/
+p	java:S116"TRename this field "MAX_GAMES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿©¤·8ƒ‰üÃ/
+[
+java:S1117…"8Rename "game" which hides the field declared at line 28.(õ“Ù—øÿÿÿÿ8ŒäàË/
 O
-java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ
-=
-java:S2189"""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
->
-java:S1148*"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
->
-java:S11486"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ
+€	java:S116"_Rename this field "MAX_NUM_OF_OBSERVERS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áì—¬ùÿÿÿÿ8ÖÖåÊ/
+i
+java:S1192Y"GDefine a constant instead of duplicating this literal "gameId" 3 times.(äìÃıÿÿÿÿ8ŒäàË/
+s	java:S117†"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8ŒäàË/
+9
+java:S3626‚"Remove this redundant jump.(ÉŠ©ƒ8ŒäàË/
+S
+java:S2696="6Make the enclosing method "static" or remove this set.(€Œ™æ8‹îİË/
+C
+java:S1170"!Make this final field static too.(áì—¬ùÿÿÿÿ8ÖÖåÊ/
+o
+java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 70 to the 15 allowed.(“–ış8ƒ‰üÃ/
+S
+java:S2696g"6Make the enclosing method "static" or remove this set.(Ğ›š8ŒäàË/
+`
+java:S1128">Remove this unused import 'javax.swing.plaf.BorderUIResource'.(œËùğşÿÿÿÿ8ÜŸá¤/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
 T
-java:S1128	">Remove this unused import 'java.nio.charset.StandardCharsets'.(ï˜ŞÛ
+java:S1128">Remove this unused import 'java.nio.charset.StandardCharsets'.(ï˜ŞÛ
+9
+java:S3626Œ"Remove this redundant jump.(ÉŠ©ƒ8ŒäàË/
+r	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8ŒäàË/
+s	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÈã¨üÿÿÿÿ8ÍÌœ×/
+F
+java:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÌœ×/
+F
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÌœ×/
+F
+java:S1148·"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÌœ×/
+F
+java:S1148¹"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÌœ×/
+V	java:S106–"9Replace this use of System.out or System.err by a logger.(„¬îû8ÍÌœ×/
+[	java:S106™"9Replace this use of System.out or System.err by a logger.(·”ò…ıÿÿÿÿ8ÍÌœ×/
+[	java:S106œ"9Replace this use of System.out or System.err by a logger.(òÚ™ìøÿÿÿÿ8ÍÌœ×/
+V
+java:S1117¥"8Rename "game" which hides the field declared at line 28.(éÔÎ8ÍÌœ×/
+c
+java:S2147¸"ECombine this catch with the one at line 182, which has the same body.(ßÈ´8ÍÌœ×/

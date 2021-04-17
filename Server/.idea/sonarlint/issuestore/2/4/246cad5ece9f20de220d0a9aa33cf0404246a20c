@@ -1,8 +1,18 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
 V
 java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ8‡‘£€/
 }
-java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "obj".(¼ó“ğùÿÿÿÿ8š„¯€/
+java:S1488""[Immediately return this expression instead of assigning it to the temporary variable "obj".(¼ó“ğùÿÿÿÿ8š„¯€/
+m	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›İØ„8ñ¦¤/
+r	java:S117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó˜Òƒùÿÿÿÿ8Õà¤/
+m	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’—»ú8®Â™¦/
 P
-java:S1118":Add a private constructor to hide the implicit public one.(êòŒ
+java:S1118
+":Add a private constructor to hide the implicit public one.(êòŒ
+e
+java:S1192"HDefine a constant instead of duplicating this literal "game_id" 5 times.(è‰×8Õà¤/
+e
+java:S1192"HDefine a constant instead of duplicating this literal "command" 6 times.(ğ„ôÎ8Õà¤/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+_
+java:S1128"BRemove this unused import 'org.json.simple.parser.ParseException'.(ƒÁ‡8Ë§üĞ/

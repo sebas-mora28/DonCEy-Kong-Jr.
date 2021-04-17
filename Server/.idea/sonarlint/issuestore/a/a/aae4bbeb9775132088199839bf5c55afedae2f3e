@@ -1,10 +1,8 @@
 
-n
-java:S1450"SRemove the "posX" field and declare it as a local variable in the relevant methods.(˜•»Şıÿÿÿÿ
-n
-java:S1450"SRemove the "posY" field and declare it as a local variable in the relevant methods.(¡Êéşûÿÿÿÿ
-C
-java:S1068"(Remove this unused "posX" private field.(˜•»Şıÿÿÿÿ
+r
+java:S1104"PMake posY a static final constant or non-public and provide accessors if needed.(²½­¹øÿÿÿÿ8À·ÄÎ/
+s
+java:S1104"QMake speed a static final constant or non-public and provide accessors if needed.(¥ğ‡ğøÿÿÿÿ8îÆÎ/
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
-C
-java:S1068"(Remove this unused "posY" private field.(¡Êéşûÿÿÿÿ
+m
+java:S1104"PMake posX a static final constant or non-public and provide accessors if needed.(”«8ß™ÄÎ/

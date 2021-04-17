@@ -2,19 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4edd750-195a-487c-96ba-ee057a3b3df3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Fruit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Entities/Fruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a094072b9474e3a4112f7a9e7eea235850a62ef" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a094072b9474e3a4112f7a9e7eea235850a62ef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f9aea197abea0b5bf5a34c11237534595e1be36" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f9aea197abea0b5bf5a34c11237534595e1be36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9588fce1c3bc78ec27bdea72c1267a00a95124e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9588fce1c3bc78ec27bdea72c1267a00a95124e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aae4bbeb9775132088199839bf5c55afedae2f3e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aae4bbeb9775132088199839bf5c55afedae2f3e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3217b0593d7bef8f37733ebe49c2266c158284c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3217b0593d7bef8f37733ebe49c2266c158284c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Cocodriles/BlueCocodrile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Cocodriles/BlueCocodrile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Cocodriles/RedCocodrile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Cocodriles/RedCocodrile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Game/DonkeyKongJunior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/DonkeyKongJunior.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Game/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Cocodriles/BlueCocodrile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Cocodriles/BlueCocodrile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Cocodriles/BlueCocodrile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/BlueCrocodrile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Cocodriles/Cocodrile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodrile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Cocodriles/RedCocodrile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/RedCrocodrile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/DonkeyKongJunior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Fruit.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Serializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.Client" />
       <module name="Server" />
@@ -106,7 +121,8 @@
       <option name="presentableId" value="Default" />
       <updated>1618397569446</updated>
       <workItem from="1618397570995" duration="3049000" />
-      <workItem from="1618457711615" duration="47678000" />
+      <workItem from="1618457711615" duration="48394000" />
+      <workItem from="1618646601368" duration="11440000" />
     </task>
     <servers />
   </component>

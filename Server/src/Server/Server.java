@@ -11,7 +11,11 @@ import java.util.List;
 import Game.Game;
 import org.json.simple.*;
 
-
+/**
+ * @author Sebastian Mora
+ * @brief Server implementation
+ *
+ */
 public class Server extends Thread{
 
     public static List<Game> games;
@@ -20,7 +24,12 @@ public class Server extends Thread{
     public static Server serverInstance;
 
 
-
+    /**
+     * @author Sebastian Mora
+     * @brief Singleton implementation, returns server instance.
+     * @param port
+     * @return server instance
+     */
     public static Server getInstance(int port){
         if(serverInstance == null){
             serverInstance = new Server(port);
@@ -28,7 +37,12 @@ public class Server extends Thread{
         return serverInstance;
     }
 
-    public Server(int port){
+    /**
+     * @author Sebastian Mora
+     * @brief Class constructor, declared private because of Singleton.
+     * @param port
+     */
+    private Server(int port){
         try{
 
             this.server = new ServerSocket(port);
@@ -42,6 +56,10 @@ public class Server extends Thread{
         }
     }
 
+    /**\
+     * @author Sebastian Mora
+     * @brief
+     */
     @Override
     public void run(){
 

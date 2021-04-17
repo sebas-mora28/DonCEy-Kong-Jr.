@@ -1,12 +1,12 @@
-package Game.Cocodriles;
+package Game.Entities;
 
 import Game.GameObject;
 
-public class BlueCocodrile extends GameObject implements Cocodrile {
+public class BlueCrocodrile extends GameObject implements Crocodrile {
 
-    int liana;
+    Integer liana;
 
-    public BlueCocodrile(int liana){
+    public BlueCrocodrile(int liana){
         this.speed = 1;
         this.updatePosition(0,0);
         this.liana = liana;

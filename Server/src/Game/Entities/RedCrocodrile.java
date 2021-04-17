@@ -1,16 +1,14 @@
-package Game.Cocodriles;
+package Game.Entities;
 
-import Game.Cocodriles.Cocodrile;
-import Game.Game;
 import Game.GameObject;
 
-public class RedCocodrile extends GameObject implements Cocodrile {
+public class RedCrocodrile extends GameObject implements Crocodrile {
 
-    int liana;
+    private Integer liana;
 
 
 
-    public RedCocodrile(int liana){
+    public RedCrocodrile(int liana){
         // Establece la posicion inicial del cocodrillo
         this.updatePosition(0,0);
 
@@ -23,6 +21,11 @@ public class RedCocodrile extends GameObject implements Cocodrile {
 
         //Se define el comportamiento del cocodrile dependiendo del tipo
 
+
+    }
+
+    public void upSpeed(){
+        this.speed += 100;
 
     }
 }

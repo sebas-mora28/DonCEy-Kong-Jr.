@@ -37,14 +37,14 @@ class Client {
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("command","new game");
-            jsonObject.put("gameId", 2);
+            jsonObject.put("gameId", 1);
             out.println(jsonObject.toJSONString());
             System.out.println(in.readLine());
 
 
             JSONObject fruit = new JSONObject();
             fruit.put("command","moveDKJ");
-            fruit.put("gameId", 2);
+            fruit.put("gameId", 1);
             fruit.put("posX", 24);
             fruit.put("posY", 25);
 
@@ -59,7 +59,7 @@ class Client {
                 Thread.sleep(10);
                 //System.out.println(time);
                 time++;
-                if(time > 1000){
+                if(time > 10000){
                     running = false;
                     break;
                 }
