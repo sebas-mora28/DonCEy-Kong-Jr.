@@ -1,6 +1,4 @@
 
-N
-src/Game/DonkeyKongJunior.java,3/0/3010876b5412f5c48031ea2de4bf97a478384b2d
 J
 src/Server/Serializer.java,2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c
 C
@@ -15,15 +13,17 @@ M
 src/Server/ClientHandler.java,e/3/e3217b0593d7bef8f37733ebe49c2266c158284c
 H
 src/Game/GameObject.java,a/a/aae4bbeb9775132088199839bf5c55afedae2f3e
-U
-%src/Game/Cocodriles/RedCocodrile.java,4/6/4645e7b6e3599aabfa00d8296f476f4c8c8d2446
-C
-src/Game/Fruit.java,c/5/c5593737e56ad49251c49a4e2830a61ce2e5a950
-R
-"src/Game/Cocodriles/Cocodrile.java,4/a/4aa9a523364978062df83d3f85dcf5b46d5b63de
-V
-&src/Game/Cocodriles/BlueCocodrile.java,d/4/d4dd68c8f22fc78807b04527627d3c12bc14a50a
 F
 src/Server/Client.java,f/1/f12c489083e3d64dea2e5e45d2fbed8b298c5088
 L
 src/SocketServerExample.java,f/5/f5fa6967d5f9636d3ca945cbd5b37d8e7d08c7d9
+L
+src/Game/Entities/Fruit.java,9/9/9902d4f9610e3bd4b2174d94ccbaf074f05667bd
+W
+'src/Game/Entities/DonkeyKongJunior.java,9/e/9edd7a06576263c2b6839075cb5c928aa612d174
+U
+%src/Game/Entities/BlueCrocodrile.java,8/a/8a1fe09f7eaabc204e50b15e1ff399baac694703
+T
+$src/Game/Entities/RedCrocodrile.java,f/8/f89c9fde8c08c03c0738bca46ee687a791e8e6b5
+Q
+!src/Game/Entities/Crocodrile.java,6/9/69413268ea9cc70ee073ccb71454504626db6176

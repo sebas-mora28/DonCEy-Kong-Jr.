@@ -1,6 +1,0 @@
-
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡ö¤Ž
-o
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(âÁã•þÿÿÿÿ
-<
-java:S1128"&Remove this unused import 'Game.Game'.(²ÙŒ©

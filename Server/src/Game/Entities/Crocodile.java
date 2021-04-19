@@ -1,6 +1,6 @@
 package Game.Entities;
 
-public interface Crocodrile {
+public interface Crocodile {
 
     void move();
 

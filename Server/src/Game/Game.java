@@ -1,10 +1,7 @@
 package Game;
 
 import App.Window;
-import Game.Entities.Crocodrile;
-import Game.Entities.DonkeyKongJunior;
-import Game.Entities.Fruit;
-import Game.Entities.RedCrocodrile;
+import Game.Entities.*;
 import Server.ClientHandler;
 import Server.Serializer;
 import org.json.simple.JSONObject;
@@ -21,12 +18,10 @@ public class Game {
     private Integer score;
     private Integer lives;
     private DonkeyKongJunior donkeyKongJunior;
-    private List<Crocodrile> cocodriles;
+    private List<Crocodile> cocodriles;
     private List<Fruit> fruits;
     private List<ClientHandler> observers;
     private JSONParser parser;
-
-
     private ClientHandler player;
 
 
@@ -72,10 +67,10 @@ public class Game {
             this.attacked(commandJSON);
         }
         if(commandJSON.get("command").equals("win")){
-
+            this.win(commandJSON);
         }
-
-
+        if(commandJSON.get("command").equals("moveEntity")){
+        }
 
     }
 
@@ -145,12 +140,12 @@ public class Game {
     public void putEnemy(String color, Integer liana){
         if(color.equals("blue")){
             Window.updateConsole("Cocodrilo azul agregado a partida" + id);
-            cocodriles.add(new RedCrocodrile(liana));
+            cocodriles.add(new BlueCrocodile(liana));
 
 
         }else if(color.equals("red")){
             Window.updateConsole("Cocodrilo rojo agregado a partida" + id);
-            cocodriles.add(new RedCrocodrile(liana));
+            cocodriles.add(new RedCrocodile(liana));
         }
         this.sendToPlayers(Serializer.serializerPutEnimies(color, liana, this.id));
 
@@ -206,8 +201,8 @@ public class Game {
      * @param observer new observer. ClientHandler instance
      */
     public void addObserver(ClientHandler observer){
-
         this.observers.add(observer);
+        observer.send(Serializer.serializerObserverAdded(this.id));
     }
 
 

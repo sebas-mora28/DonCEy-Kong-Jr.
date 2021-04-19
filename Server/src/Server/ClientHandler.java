@@ -30,6 +30,12 @@ public class ClientHandler implements Runnable {
     private static boolean isGame2Taken = false;
     private boolean isActive = true;
 
+
+    /**
+     * @author Sebastian Mora
+     * @brief Class constructor
+     * @param client clientHandler instance that represents client who is playing
+     */
     public ClientHandler(Socket client) throws IOException {
         this.client = client;
         this.out = new PrintWriter(client.getOutputStream(), true);
@@ -39,6 +45,10 @@ public class ClientHandler implements Runnable {
 
     }
 
+    /**
+     * @author Sebastian Mora
+     * @brief Override run method from Runnable interface
+     */
     @Override
     public void run() {
 
@@ -142,6 +152,11 @@ public class ClientHandler implements Runnable {
     }
 
 
+    /**
+     * @author Sebastian Mora
+     * @brief Finish all the resources involved in game. It's call when the player disconnects
+     * @throws IOException
+     */
     private void endGame() throws IOException {
         game.endGame();
         freeGame(game.getId());
@@ -155,7 +170,11 @@ public class ClientHandler implements Runnable {
     }
 
 
-
+    /**
+     * @author Sebastian Mora
+     * @brief Free a game when the player disconnects, by its id.
+     * @param game_id Integer that represents game id
+     */
     private void freeGame(Integer game_id){
         if(game_id ==1){
             isGame1Taken = false;
@@ -168,6 +187,11 @@ public class ClientHandler implements Runnable {
     }
 
 
+    /**
+     * @author Sebastian Mora
+     * @brief  Creates a new Game instance and add it to games list.
+     * @param game_id Integer that represents game id
+     */
     private void createNewGame(Integer game_id){
         Game game = new Game(game_id, this);
         Server.games.add(game);
@@ -177,6 +201,11 @@ public class ClientHandler implements Runnable {
     }
 
 
+    /**
+     * @author Sebastian Mora
+     * @brief Sends a message to client socket associated.
+     * @param message String that represents the message
+     */
     public synchronized void send(String message) {
         try {
 

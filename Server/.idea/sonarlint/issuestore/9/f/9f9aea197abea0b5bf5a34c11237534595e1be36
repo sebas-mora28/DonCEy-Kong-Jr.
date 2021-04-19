@@ -1,25 +1,27 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
-L
-java:S1172m"/Remove this unused method parameter "newState".(Õ²¨€8„í€/
-R
-java:S1611t"6Remove the parentheses around the "observer" parameter(’ô¯u8´Œ¤³/
-X
-java:S1117ƒ":Rename "player" which hides the field declared at line 30.(°Æ‚8´Œ¤³/
-V	java:S106"9Replace this use of System.out or System.err by a logger.(îñàñ8¶±îÇ/
-M
-java:S1144m"0Remove this unused private "updateState" method.(Õ²¨€8ôŒ¡¦/
-U	java:S1063"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8ÓÖñĞ/
 F
-java:S1068")Remove this unused "game1" private field.(‘ñ¦¢8úÛÕÈ/
-E
-java:S1068")Remove this unused "game2" private field.(½°«8Çù”Ç/
-J	java:S108;")Either remove or fill this block of code.(üÑ—Ğüÿÿÿÿ8¨¢ÇË/
-K
-java:S1068")Remove this unused "score" private field.(µ¼æÿÿÿÿÿ8ƒê‹¥/
+java:S1144"(Remove this unused private "win" method.(ùÇÓˆ8áÁáù/
+F
+java:S1068")Remove this unused "lives" private field.(Ò´àÛ8Œ£ˆø/
+d
+java:S1192A"HDefine a constant instead of duplicating this literal "command" 4 times.(ª¢·l8” Ùù/
+N
+java:S1144Ù"0Remove this unused private "updateState" method.(Õ²¨€8é’ú/
+Y
+java:S1611ã"6Remove the parentheses around the "observer" parameter(°õ²şÿÿÿÿ8é’ú/
 R
-java:S1611ƒ"4Remove the parentheses around the "player" parameter(°Æ‚8´Œ¤³/
-‰
-java:S1130s"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(•™ë™8·¡ÒÈ/
-K
-java:S1068")Remove this unused "lives" private field.(ö˜åâøÿÿÿÿ8ı¸Œ¥/
+java:S1611ı"4Remove the parentheses around the "player" parameter(®ß8é’ú/
+I
+java:S1172"+Remove this unused method parameter "info".(ùÇÓˆ8üæş/
+[
+java:S4973g"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
+\
+java:S4973¶"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
+V	java:S106‘"9Replace this use of System.out or System.err by a logger.(îñàñ8é’ú/
+U	java:S106="9Replace this use of System.out or System.err by a logger.(Ğ¦÷8Œ£ˆø/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
+M
+java:S1172Ù"/Remove this unused method parameter "newState".(Õ²¨€8é’ú/
+D	java:S108J")Either remove or fill this block of code.(Ä¬Â58šàù/
+X
+java:S1117ı":Rename "player" which hides the field declared at line 30.(®ß8é’ú/
