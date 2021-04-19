@@ -2,18 +2,13 @@ package Server;
 
 import App.Window;
 import Game.Game;
-import netscape.javascript.JSObject;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
-import java.nio.charset.StandardCharsets;
-import java.util.zip.InflaterOutputStream;
 
 public class ClientHandler implements Runnable {
 
@@ -26,8 +21,8 @@ public class ClientHandler implements Runnable {
     private final Integer MAX_GAMES = 2;
     private final Integer MAX_NUM_OF_OBSERVERS = 2;
     private Game game;
-    private static boolean isGame1Taken = false;
-    private static boolean isGame2Taken = false;
+    private static boolean isGame1Available = false;
+    private static boolean isGame2Available = false;
     private boolean isActive = true;
 
 
@@ -60,11 +55,10 @@ public class ClientHandler implements Runnable {
 
                 String response = in.readLine();
 
-                if(response == null){
+                if(response == null){ //Verifica que el cliente que esta jugando no se haya desconectado de la partida
 
-                    //Verifica que el cliente que esta jugando no se haya desconectado de la partida
                     if(game.getPlayer() == this){
-                        this.endGame();
+                        this.finishResources();
                         break;
 
                     }else{
@@ -81,49 +75,12 @@ public class ClientHandler implements Runnable {
                 String command = responseJson.get("command").toString();
 
                 if(command.equals("new game")){
-
-                    if(Server.games.size() < MAX_GAMES){
-
-                        Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
-
-                        if(game_id == 1){
-                            if(!isGame1Taken){
-                                createNewGame(game_id);
-                                isGame1Taken = true;
-                            }else{
-                                Window.updateConsole("Client tried to connect game 1, but it's taken");
-                            }
-                        }
-
-                        if(game_id == 2){
-                            if(!isGame2Taken){
-                                createNewGame(game_id);
-                                isGame2Taken = true;
-                            }else{
-                                Window.updateConsole("Client tried to connect game 2, but it's taken");
-                            }
-                        }
-                        continue;
-
-                    }else{
-                        continue;
-                    }
+                    this.newGameHandler(responseJson);
+                    continue;
                 }
 
                 if(command.equals("observer")){
-                    Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
-
-                    for(Game game : Server.games){
-                        if(game.getId() == game_id){
-                            if(game.numObservers() <= MAX_NUM_OF_OBSERVERS){
-                                this.game = game;
-                                game.addObserver(this);
-                                Window.updateConsole("New observer added to game " + game_id);
-                            }else{
-                                Window.updateConsole("Client tried to observe game " + game_id + " but it's full");
-                            }
-                        }
-                    }
+                    this.observerHandler(responseJson);
                     continue;
                 }
                 else{
@@ -139,7 +96,7 @@ public class ClientHandler implements Runnable {
 
             }
         }catch (SocketException e){
-            try { this.endGame(); }
+            try { this.finishResources(); }
             catch (IOException er) { er.printStackTrace(); }
         }
         catch (IOException | ParseException e) {
@@ -157,7 +114,7 @@ public class ClientHandler implements Runnable {
      * @brief Finish all the resources involved in game. It's call when the player disconnects
      * @throws IOException
      */
-    private void endGame() throws IOException {
+    private void finishResources() throws IOException {
         game.endGame();
         freeGame(game.getId());
         Window.updateConsole("Game  " + game.getId() + " end: player disconnected");
@@ -172,14 +129,71 @@ public class ClientHandler implements Runnable {
 
     /**
      * @author Sebastian Mora
+     * @brief Verifies whether a new game can be created.
+     * @param responseJson response obtained from client
+     */
+    public void newGameHandler(JSONObject responseJson){
+        if(Server.games.size() < MAX_GAMES){
+
+            Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
+
+            if(game_id == 1){
+                if(!isGame1Available){
+                    createNewGame(game_id);
+                    isGame1Available = true;
+                }else{
+                    Window.updateConsole("Client tried to connect game 1, but it is unavailable");
+                }
+            }
+
+            if(game_id == 2){
+                if(!isGame2Available){
+                    createNewGame(game_id);
+                    isGame2Available = true;
+                }else{
+                    Window.updateConsole("Client tried to connect game 2, but it is unavailable");
+                }
+            }
+
+        }else{
+            Window.updateConsole("No games available");
+        }
+
+    }
+
+    /**
+     * @author Sebastian Mora
+     * @brief Verifies whether client can observe a game given the game id.
+     * @param responseJson response obtained from client
+     */
+    public void observerHandler(JSONObject responseJson){
+        Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
+
+        for(Game game : Server.games){
+            if(game.getId() == game_id){
+                if(game.numObservers() <= MAX_NUM_OF_OBSERVERS){
+                    this.game = game;
+                    game.addObserver(this);
+                    Window.updateConsole("New observer added to game " + game_id);
+                }else{
+                    Window.updateConsole("Client tried to observe game " + game_id + " but it's full");
+                }
+            }
+        }
+
+    }
+
+
+    /**
+     * @author Sebastian Mora
      * @brief Free a game when the player disconnects, by its id.
      * @param game_id Integer that represents game id
      */
     private void freeGame(Integer game_id){
         if(game_id ==1){
-            isGame1Taken = false;
+            isGame1Available = false;
         } else if(game_id ==2) {
-            isGame2Taken = false;
+            isGame2Available = false;
         } else{
             System.out.println("Invalid id");
 

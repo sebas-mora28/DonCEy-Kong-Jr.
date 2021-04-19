@@ -84,7 +84,7 @@ public class Game {
         Integer posX = Integer.parseInt(info.get("posX").toString());
         Integer posY = Integer.parseInt(info.get("posY").toString());
         this.donkeyKongJunior.updatePosition(posX, posY);
-        this.sendToPlayers(Serializer.serializerMoveDKJ(posX, posY, id));
+        this.sendPlayers(Serializer.serializerMoveDKJ(posX, posY, id));
     }
 
 
@@ -103,7 +103,7 @@ public class Game {
 
         }
         this.score += 100;
-        this.sendToPlayers(Serializer.serializerUpdateScore(this.score, this.id));
+        this.sendPlayers(Serializer.serializerUpdateScore(this.score, this.id));
     }
 
     /**
@@ -114,7 +114,7 @@ public class Game {
      */
     private void attacked(JSONObject info){
         Integer gameId = Integer.parseInt(info.get("gameID").toString());
-        this.sendToPlayers(Serializer.serializerKill(gameId));
+        this.sendPlayers(Serializer.serializerKill(gameId));
     }
 
 
@@ -147,7 +147,7 @@ public class Game {
             Window.updateConsole("Cocodrilo rojo agregado a partida" + id);
             cocodriles.add(new RedCrocodile(liana));
         }
-        this.sendToPlayers(Serializer.serializerPutEnimies(color, liana, this.id));
+        this.sendPlayers(Serializer.serializerPutEnimies(color, liana, this.id));
 
     }
 
@@ -161,7 +161,7 @@ public class Game {
      */
     public void putFruit(String type, Integer liana){
         fruits.add(new Fruit(type, liana));
-        sendToPlayers(Serializer.serializerPutFruit(type, liana, this.id));
+        sendPlayers(Serializer.serializerPutFruit(type, liana, this.id));
 
     }
 
@@ -212,7 +212,7 @@ public class Game {
      * @param newState
      */
     private void updateState(String newState){
-        this.sendToPlayers(Serializer.serializerUpdateGame());
+        this.sendPlayers(Serializer.serializerUpdateGame());
 
     }
 
@@ -232,7 +232,7 @@ public class Game {
      * @brief Confirms to the player that a game was created successfully
      */
     private void newGame(){
-        this.sendToPlayers(Serializer.serializerNewGame(this.id));
+        this.sendPlayers(Serializer.serializerNewGame(this.id));
 
     }
 
@@ -240,10 +240,10 @@ public class Game {
 
     /**
      * @author Sebastian Mora
-     * @brief This function receives a command to send it to player and observers.
+     * @brief This function receives a command and send it to player and observers.
      * @param command JSON string with the command ready to be sent.
      */
-    public void sendToPlayers(String command){
+    public void sendPlayers(String command){
 
         if(player != null) {
             player.send(command);
