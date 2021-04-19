@@ -54,8 +54,7 @@ class Client {
             while(running){
                 //System.out.println(fruit.toString());
                 String xd = fruit.toJSONString();
-                out.println(xd);
-                System.out.println("pasa");
+                out.println(xd);;
                 Thread.sleep(10);
                 //System.out.println(time);
                 time++;

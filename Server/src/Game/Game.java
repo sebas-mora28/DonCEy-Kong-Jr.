@@ -18,7 +18,7 @@ public class Game {
     private Integer score;
     private Integer lives;
     private DonkeyKongJunior donkeyKongJunior;
-    private List<Crocodile> cocodriles;
+    private List<GameObject> crocodiles;
     private List<Fruit> fruits;
     private List<ClientHandler> observers;
     private JSONParser parser;
@@ -35,7 +35,7 @@ public class Game {
 
         this.donkeyKongJunior = new DonkeyKongJunior();
         this.observers = Collections.synchronizedList(new ArrayList<>());
-        this.cocodriles = Collections.synchronizedList(new ArrayList<>());
+        this.crocodiles = Collections.synchronizedList(new ArrayList<>());
         this.fruits = Collections.synchronizedList(new ArrayList<>());
         this.id = id;
         this.score = 0;
@@ -61,7 +61,7 @@ public class Game {
             this.moveDJK(commandJSON);
         }
         if(commandJSON.get("command").equals("fruit")){
-            this.updateScore(commandJSON);
+            this.fruitCaught(commandJSON);
         }
         if(commandJSON.get("command").equals("attacked")){
             this.attacked(commandJSON);
@@ -93,17 +93,29 @@ public class Game {
      * @brief Update player score
      * @param info information needed contained in a JSON object
      */
-    private void updateScore(JSONObject info){
+    private void fruitCaught(JSONObject info){
         Integer liana = Integer.parseInt(info.get("liana").toString());
         String type = info.get("type").toString();
         for(Fruit fruit : fruits){
             if(fruit.getType().equals(type) && fruit.getLiana() == liana){
                 this.deleteFruit(type, liana);
+                this.deleteFruit(type, liana);
             }
 
         }
-        this.score += 100;
+        this.updateScore(this.score + 100);
+    }
+
+
+    /**
+     * @author Sebastian Mora
+     * @brief Updates player score
+     * @param newScore Integer that represents the new score
+     */
+    private void updateScore(Integer newScore){
+        this.score = newScore;
         this.sendPlayers(Serializer.serializerUpdateScore(this.score, this.id));
+
     }
 
     /**
@@ -124,8 +136,15 @@ public class Game {
      * @param info information needed contained in a JSON object
      */
     private void win(JSONObject info){
+
         //Se desuelve DonkeyKong a la posicion original
+
+
         //Se aumenta la velocidad de los cocodrilos
+        for(GameObject crocodile : crocodiles){
+            crocodile.setSpeed(crocodile.getSpeed() + 10);
+        }
+
 
     }
 
@@ -138,16 +157,19 @@ public class Game {
      * @param liana Position where the enemy has to be placed.
      */
     public void putEnemy(String color, Integer liana){
+        GameObject crocodile = null;
         if(color.equals("blue")){
             Window.updateConsole("Cocodrilo azul agregado a partida" + id);
-            cocodriles.add(new BlueCrocodile(liana));
+            crocodile = new BlueCrocodile(liana);
+            crocodiles.add(crocodile);
 
 
         }else if(color.equals("red")){
             Window.updateConsole("Cocodrilo rojo agregado a partida" + id);
-            cocodriles.add(new RedCrocodile(liana));
+            crocodile = new RedCrocodile(liana);
+            crocodiles.add(crocodile);
         }
-        this.sendPlayers(Serializer.serializerPutEnimies(color, liana, this.id));
+        this.sendPlayers(Serializer.serializerPutEnimies(color, liana, this.id, crocodile.getSpeed()));
 
     }
 
@@ -181,7 +203,7 @@ public class Game {
             }
         }
         fruits.remove(fruitToRemoved);
-        Serializer.serializerDeleteFruit(type, liana, this.id);
+        sendPlayers(Serializer.serializerDeleteFruit(type, liana, this.id));
     }
 
 
@@ -221,7 +243,7 @@ public class Game {
      * @brief Notify to all observers that game is over.
      */
     public void endGame()  {
-        this.observers.stream().forEach((observer)-> observer.send(Serializer.serializerEndGame()));
+        this.observers.stream().forEach((observer)-> observer.send(Serializer.serializerGameOver()));
         this.observers.removeAll(this.observers);
 
     }

@@ -30,9 +30,10 @@ public class Window {
     private JScrollPane scrollPane;
 
 
-
-
-
+    /**
+     * @author Sebastian Mora
+     * @brief Class Constructor
+     */
     public Window(){
 
 
@@ -101,7 +102,7 @@ public class Window {
 
         liana = new JComboBox<Integer>();
         liana.setBounds(380, 50, 50, 30);
-        for(int i=0; i<10; i++){ liana.addItem(i);}
+        for(int i=1; i<10; i++){ liana.addItem(i);}
         frame.getContentPane().add(liana);
 
         gameId = new JComboBox<Integer>();
@@ -115,9 +116,16 @@ public class Window {
 
     }
 
-    public static void updateConsole(String message){
-        console.setText(console.getText() + "\n" + message);
+
+    /**
+     * @author Sebastian Mora
+     * @brief Updates console content
+     * @param text new text
+     */
+    public static void updateConsole(String text){
+        console.setText(console.getText() + "\n" + text);
     }
+
 
     class AddEnemyAction implements ActionListener {
 
@@ -167,6 +175,7 @@ public class Window {
             String type = fruits.getSelection().getActionCommand();
             for(Game game : Server.games){
                 if(game.getId() == (int)(gameId).getSelectedItem()){
+                    game.deleteFruit(type, Integer.parseInt(liana.getSelectedItem().toString()) );
                 }
             }
 

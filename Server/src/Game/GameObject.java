@@ -5,9 +5,7 @@ public class GameObject {
 
     public Integer posX;
     public Integer posY;
-
-
-    public Integer speed;
+    public static Integer speed;
     public Integer liana;
     public Integer id;
 

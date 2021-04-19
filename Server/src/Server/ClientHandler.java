@@ -84,8 +84,8 @@ public class ClientHandler implements Runnable {
                     continue;
                 }
                 else{
+                    Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
                     for(Game game : Server.games){
-                        Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
                         if(game.getId() == game_id){
                             game.filterCommand(response);
 
