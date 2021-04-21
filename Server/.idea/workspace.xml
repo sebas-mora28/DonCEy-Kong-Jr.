@@ -2,12 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4edd750-195a-487c-96ba-ee057a3b3df3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/src/socket/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/socket/Socket.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/socket/Socket.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/socket/Socket.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/socket/Socket.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69413268ea9cc70ee073ccb71454504626db6176" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a1fe09f7eaabc204e50b15e1ff399baac694703" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9902d4f9610e3bd4b2174d94ccbaf074f05667bd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9902d4f9610e3bd4b2174d94ccbaf074f05667bd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f9aea197abea0b5bf5a34c11237534595e1be36" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f9aea197abea0b5bf5a34c11237534595e1be36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9588fce1c3bc78ec27bdea72c1267a00a95124e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9588fce1c3bc78ec27bdea72c1267a00a95124e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aae4bbeb9775132088199839bf5c55afedae2f3e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aae4bbeb9775132088199839bf5c55afedae2f3e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3217b0593d7bef8f37733ebe49c2266c158284c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3217b0593d7bef8f37733ebe49c2266c158284c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f12c489083e3d64dea2e5e45d2fbed8b298c5088" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f12c489083e3d64dea2e5e45d2fbed8b298c5088" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f5fa6967d5f9636d3ca945cbd5b37d8e7d08c7d9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f5fa6967d5f9636d3ca945cbd5b37d8e7d08c7d9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/8/f89c9fde8c08c03c0738bca46ee687a791e8e6b5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Game/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Serializer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.Client" />
       <module name="Server" />
@@ -83,8 +105,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -104,7 +126,9 @@
       <workItem from="1618717142263" duration="423000" />
       <workItem from="1618729151199" duration="365000" />
       <workItem from="1618741209961" duration="1976000" />
-      <workItem from="1618765521984" duration="12396000" />
+      <workItem from="1618765521984" duration="12443000" />
+      <workItem from="1618852661301" duration="1200000" />
+      <workItem from="1618985308585" duration="23847000" />
     </task>
     <servers />
   </component>

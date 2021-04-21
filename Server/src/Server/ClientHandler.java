@@ -34,7 +34,7 @@ public class ClientHandler implements Runnable {
     public ClientHandler(Socket client) throws IOException {
         this.client = client;
         this.out = new PrintWriter(client.getOutputStream(), true);
-        this.in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        this.in = new BufferedReader(new InputStreamReader(client.getInputStream(), "US-ASCII"));
         this.parser = new JSONParser();
 
 
@@ -47,13 +47,20 @@ public class ClientHandler implements Runnable {
     @Override
     public void run() {
 
+        //this.send(Serializer.serializerNewGame(1));
+
+
+
 
         try {
 
+
             while(isActive){
 
-
                 String response = in.readLine();
+                System.out.println(response);
+         ;
+
 
                 if(response == null){ //Verifica que el cliente que esta jugando no se haya desconectado de la partida
 
@@ -71,10 +78,11 @@ public class ClientHandler implements Runnable {
 
                 }
 
+
                 JSONObject responseJson = (JSONObject)(this.parser.parse(response));
                 String command = responseJson.get("command").toString();
 
-                if(command.equals("new game")){
+                if(command.equals("newGame")){
                     this.newGameHandler(responseJson);
                     continue;
                 }
@@ -223,8 +231,10 @@ public class ClientHandler implements Runnable {
     public synchronized void send(String message) {
         try {
 
+            System.out.println("Enviando");
+            this.out.println(message);;
             this.out  = new PrintWriter(client.getOutputStream(), true);
-            this.out.println(message);
+
 
             if(this.out.checkError()){
                 throw new IOException("Client Disconnected");

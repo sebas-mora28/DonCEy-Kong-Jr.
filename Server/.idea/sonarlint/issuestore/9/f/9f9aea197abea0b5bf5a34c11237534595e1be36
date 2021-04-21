@@ -1,27 +1,27 @@
 
-F
-java:S1144"(Remove this unused private "win" method.(ùÇÓˆ8áÁáù/
-F
-java:S1068")Remove this unused "lives" private field.(Ò´àÛ8Œ£ˆø/
-d
-java:S1192A"HDefine a constant instead of duplicating this literal "command" 4 times.(ª¢·l8” Ùù/
-N
-java:S1144Ù"0Remove this unused private "updateState" method.(Õ²¨€8é’ú/
-Y
-java:S1611ã"6Remove the parentheses around the "observer" parameter(°õ²şÿÿÿÿ8é’ú/
-R
-java:S1611ı"4Remove the parentheses around the "player" parameter(®ß8é’ú/
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8Œ£ˆø/
 I
-java:S1172"+Remove this unused method parameter "info".(ùÇÓˆ8üæş/
-[
-java:S4973g"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
-\
-java:S4973¶"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
-V	java:S106‘"9Replace this use of System.out or System.err by a logger.(îñàñ8é’ú/
-U	java:S106="9Replace this use of System.out or System.err by a logger.(Ğ¦÷8Œ£ˆø/
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
+java:S1172Š"+Remove this unused method parameter "info".(ùÇÓˆ8üæş/
 M
-java:S1172Ù"/Remove this unused method parameter "newState".(Õ²¨€8é’ú/
-D	java:S108J")Either remove or fill this block of code.(Ä¬Â58šàù/
+java:S1172ì"/Remove this unused method parameter "newState".(Õ²¨€8é’ú/
 X
-java:S1117ı":Rename "player" which hides the field declared at line 30.(®ß8é’ú/
+java:S1117":Rename "player" which hides the field declared at line 25.(®ß8é’ú/
+V	java:S106¤"9Replace this use of System.out or System.err by a logger.(îñàñ8é’ú/
+E	java:S108H")Either remove or fill this block of code.(¾ä¬ë8“‹É/
+R
+java:S1611"4Remove the parentheses around the "player" parameter(®ß8é’ú/
+N
+java:S1144ì"0Remove this unused private "updateState" method.(Õ²¨€8é’ú/
+d
+java:S1192<"HDefine a constant instead of duplicating this literal "command" 5 times.(ª¢·l8” Ùù/
+F
+java:S1068")Remove this unused "lives" private field.(Ò´àÛ8Œ£ˆø/
+[
+java:S4973d"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
+\
+java:S4973É"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
+e
+java:S2259¬"GA "NullPointerException" could be thrown; "crocodile" is nullable here.(½˜Êè8ç‰Ù/
+S
+java:S1611ö"6Remove the parentheses around the "observer" parameter(½‡›68ç‰Ù/

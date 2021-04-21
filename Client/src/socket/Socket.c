@@ -1,88 +1,65 @@
 #include "Socket.h"
+#include "cJson.h"
 
-char* listen_socket(char *ip, int port){
-    int sock;
-    struct sockaddr_in server;
-    char server_reply[2000];
 
-    // create socket
-    sock = socket(AF_INET , SOCK_STREAM , 0);
+int client;
+struct sockaddr_in server;
+char server_reply[2000];
+pthread_t pthread_read;
+pthread_t pthread_send;
+
+void initClient(){
+    client = createSocket();
+    pthread_create(&pthread_send, NULL, &listen_socket, NULL);
+
+
+
+}
+
+int createSocket(){
+    int sock = socket(AF_INET , SOCK_STREAM , 0);
     if (sock == -1){
         printf("Could not create socket");
     }
     printf("Socket created\n");
 
-    server.sin_addr.s_addr = inet_addr(ip);
+    server.sin_addr.s_addr = inet_addr(IP);
     server.sin_family = AF_INET;
-    server.sin_port = htons(port);
+    server.sin_port = htons(PORT);
 
     // connect to remote server
-    if (connect(sock , (struct sockaddr *)&server , sizeof(server)) < 0){
+    if (connect(sock , (struct sockaddr *)&server , sizeof(server)) != 0){
         perror("connect failed. Error");
-        return 1;
+        exit(1);
     }
     printf("Connected\n");
+    return sock;
 
-    // keep listening
-    int working = 1;
-    while(working){
-        // receive a reply from the server
-        if(recv(sock , server_reply , 2000 , 0) < 0){
-            printf("recv failed");
-            break;
-        }
-    }
-
-    char *msj = server_reply;
-
-    close(sock);
-    return msj;
 }
 
-char* write_socket(char *ip, int port, char *msj){
-    int sock;
-    struct sockaddr_in server;
-    char server_reply[2000];
+void *listen_socket(){
+    while(1){
 
-    // create socket
-    sock = socket(AF_INET , SOCK_STREAM , 0);
-    if (sock == -1){
-        printf("Could not create socket");
+        if (read(client, server_reply, 2000) > 0) {
+            printf("Pasa");
+            printf("Server %s \n", server_reply);
+
+        };
     }
-    printf("Socket created\n");
+ }
 
-    server.sin_addr.s_addr = inet_addr(ip);
-    server.sin_family = AF_INET;
-    server.sin_port = htons(port);
 
-    // connect to remote server
-    if (connect(sock , (struct sockaddr *)&server , sizeof(server)) < 0){
-        perror("connect failed. Error");
-        return 1;
-    }
-    printf("Connected\n");
+void write_socket(char *msj) {
 
-    // keep communicating with server
-    int working = 1;
-    while(working){
-        // send some data
-        if(send(sock , msj , strlen(msj) , 0) < 0){
-            printf("Send failed");
-            return 1;
-        }
-        printf("Data send\n");
-
-        // receive a reply from the server
-        if(recv(sock , server_reply , 2000 , 0) < 0){
-            printf("recv failed");
-            break;
-        }
-        //printf("Server reply: ");
-        //puts(server_reply);
-        working = 0;
-    }
-
-    close(sock);
-    msj = server_reply;
-    return msj;
+    char sendBuff[2500];
+    bzero(sendBuff, sizeof(sendBuff));
+    strcpy(sendBuff, msj);
+    printf("Envia %s \n", sendBuff);
+    write(client, msj, strlen(msj));
+    char *line_delimeter = "\n";
+    write(client, line_delimeter, strlen(line_delimeter));
 }
+
+
+
+

@@ -1,15 +1,15 @@
 
-i
-java:S1192%"GDefine a constant instead of duplicating this literal "gameId" 5 times.(»Âì¸ıÿÿÿÿ8¶öÄù/
-e
-java:S1192"HDefine a constant instead of duplicating this literal "command" 8 times.(ğ„ôÎ8Õà¤/
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+V
+java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ8‡‘£€/
 _
 java:S1128"BRemove this unused import 'org.json.simple.parser.ParseException'.(ƒÁ‡8Ë§üĞ/
+i
+java:S1192?"GDefine a constant instead of duplicating this literal "gameId" 6 times.(»Âì¸ıÿÿÿÿ8¶öÄù/
 W
 java:S1118
 ":Add a private constructor to hide the implicit public one.(êòŒ8ŒÎù/
+e
+java:S1192"HDefine a constant instead of duplicating this literal "command" 9 times.(ğ„ôÎ8Õà¤/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
 h
-java:S1192"FDefine a constant instead of duplicating this literal "liana" 3 times.(ğã²˜şÿÿÿÿ8Àô‰ú/
-V
-java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ8‡‘£€/
+java:S1192"FDefine a constant instead of duplicating this literal "liana" 3 times.(ğã²˜şÿÿÿÿ8Àô‰ú/

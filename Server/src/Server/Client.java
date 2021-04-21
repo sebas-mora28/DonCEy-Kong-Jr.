@@ -36,7 +36,7 @@ class Client {
             String line = null;
 
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("command","new game");
+            jsonObject.put("command","newGame");
             jsonObject.put("gameId", 1);
             out.println(jsonObject.toJSONString());
             System.out.println(in.readLine());

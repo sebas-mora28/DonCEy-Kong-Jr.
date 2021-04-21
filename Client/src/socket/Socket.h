@@ -10,8 +10,16 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include "constants.h"
+#include <stdlib.h>
+#include <pthread.h>
 
-char* listen_socket(char *ip, int port);
-char* write_socket(char *ip, int port, char *msj);
+
+
+void initClient();
+void *listen_socket();
+void write_socket(char* msj);
+int createSocket();
+void writeServer(char* msj);
 
 #endif //PROJECT_SOCKET_H

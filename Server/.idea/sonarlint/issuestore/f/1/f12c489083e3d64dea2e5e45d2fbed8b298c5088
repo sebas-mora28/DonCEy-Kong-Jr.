@@ -1,19 +1,20 @@
 
+X	java:S125;"<This block of commented-out lines of code should be removed.(Ù´óù8»ƒøÕ/
+b
+java:S2142F"FEither re-interrupt this method or rethrow the "InterruptedException".(¹™Âp8õ•Ô/
 X	java:S1257"<This block of commented-out lines of code should be removed.(šò¢8§ÚöÕ/
-Z	java:S106:"9Replace this use of System.out or System.err by a logger.(Ü’Ò·şÿÿÿÿ8Ä¯Ö/
+>
+java:S1148G"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+T	java:S106*"9Replace this use of System.out or System.err by a logger.(Ü²÷#8ä¨Ğ/
+T
+java:S25896"7Remove this expression which always evaluates to "true"(›ûÅò8¬öÕ/
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÊËïò
 b
 java:S1128"ERemove this unused import 'javax.management.relation.RoleUnresolved'.(œáû‘8¦¶ÜÏ/
 K
 java:S1481$")Remove this unused "line" local variable.(ÑÕšøÿÿÿÿ8ÛÉ™Ï/
-b
-java:S2142G"FEither re-interrupt this method or rethrow the "InterruptedException".(¹™Âp8õ•Ô/
-T
-java:S25896"7Remove this expression which always evaluates to "true"(›ûÅò8¬öÕ/
-X	java:S125<"<This block of commented-out lines of code should be removed.(Ù´óù8»ƒøÕ/
-T	java:S106*"9Replace this use of System.out or System.err by a logger.(Ü²÷#8ä¨Ğ/
 I
 java:S1481#"'Remove this unused "sc" local variable.(ğÛ²¸øÿÿÿÿ8®¹˜Ï/
 >
-java:S1148H"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ÊËïò
+java:S11169"Remove this empty statement.(°Áıûÿÿÿÿ8æ‰Ù/

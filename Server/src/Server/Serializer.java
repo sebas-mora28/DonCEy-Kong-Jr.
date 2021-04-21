@@ -142,7 +142,7 @@ public class Serializer {
      */
     public static String serializerNewGame(Integer gameId){
         JSONObject obj = new JSONObject();
-        obj.put("command", "GameAccepted");
+        obj.put("command", "gameAccepted");
         obj.put("gameId", gameId);
         return obj.toJSONString();
 

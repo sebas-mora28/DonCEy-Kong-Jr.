@@ -267,6 +267,7 @@ public class Game {
      */
     public void sendPlayers(String command){
 
+        System.out.println("Comienza a enviar");
         if(player != null) {
             player.send(command);
             observers.stream().forEach((player)-> player.send(command));

@@ -1,63 +1,55 @@
 
-S
-java:S2696["6Make the enclosing method "static" or remove this set.(Ğ›š8æ½Ù÷/
-T
-java:S2696¡"6Make the enclosing method "static" or remove this set.(©ğ»8ï×êø/
-O
-java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ
-F
-java:S1148ˆ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ï×êø/
 i
-java:S1192M"GDefine a constant instead of duplicating this literal "gameId" 3 times.(äìÃıÿÿÿÿ8æ½Ù÷/
-C
-java:S1170"!Make this final field static too.(Íç€àşÿÿÿÿ8ÖÖåÊ/
-o
-java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(“–ış8ƒ‰üÃ/
-8
-java:S3626"Remove this redundant jump.(ÉŠ©ƒ8æ½Ù÷/
-r	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8æ½Ù÷/
-U
-java:S1128"?Remove this unused import 'java.util.zip.InflaterOutputStream'.(íãØ¯
+java:S1192W"GDefine a constant instead of duplicating this literal "gameId" 3 times.(äìÃıÿÿÿÿ8ÿ‘´Ó/
+E
+java:S1148i"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8äü³Ó/
 T
-java:S1128">Remove this unused import 'java.nio.charset.StandardCharsets'.(ï˜ŞÛ
-S
-java:S2696R"6Make the enclosing method "static" or remove this set.(Ä‘ Š8æ½Ù÷/
-r	java:S117y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8æ½Ù÷/
-F
-java:S1148…"#Use a logger to log this exception.(…şÏ«üÿÿÿÿ8ÖÒ›û/
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
-s	java:S117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(² û”ûÿÿÿÿ8ï×êø/
-F
-java:S1148À"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ï×êø/
-s	java:S117«"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ü±ÿÿÿÿÿ8ï×êø/
-`
-java:S1128">Remove this unused import 'javax.swing.plaf.BorderUIResource'.(œËùğşÿÿÿÿ8ÜŸá¤/
-Y
-java:S2696£"6Make the enclosing method "static" or remove this set.(Ñ¯şÖüÿÿÿÿ8ï×êø/
-[	java:S106¥"9Replace this use of System.out or System.err by a logger.(ãÆ×ëÿÿÿÿÿ8ï×êø/
-Z
-java:S1117j"8Rename "game" which hides the field declared at line 28.(õ“Ù—øÿÿÿÿ8æ½Ù÷/
-C
-java:S1170"!Make this final field static too.(İ¡×Şıÿÿÿÿ8ƒ‰üÃ/
-F
-java:S1148¾"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ï×êø/
-Z
-java:S1117x"8Rename "game" which hides the field declared at line 28.(õ“Ù—øÿÿÿÿ8æ½Ù÷/
-z	java:S1350"YReduce the total number of break and continue statements in this loop to use at most one.(Úİ²Œûÿÿÿÿ8ƒ‰üÃ/
-[
-java:S4973z"9Use the "equals" method if value comparison was intended.(®ÀõÍşÿÿÿÿ8¦ô¢ø/
-u	java:S116"TRename this field "MAX_GAMES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ¡×Şıÿÿÿÿ8ƒ‰üÃ/
-€	java:S116"_Rename this field "MAX_NUM_OF_OBSERVERS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íç€àşÿÿÿÿ8ÖÖåÊ/
-[
-java:S4973k"9Use the "equals" method if value comparison was intended.(®ÀõÍşÿÿÿÿ8¦ô¢ø/
-F
-java:S1148Š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ï×êø/
-c
-java:S2147‰"ECombine this catch with the one at line 135, which has the same body.(ßÈ´8ï×êø/
-V
-java:S1117¬"8Rename "game" which hides the field declared at line 28.(éÔÎ8ï×êø/
-c
-java:S2147¿"ECombine this catch with the one at line 189, which has the same body.(ßÈ´8ï×êø/
-r	java:S117h"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8æ½Ù÷/
+java:S2696Ä"6Make the enclosing method "static" or remove this set.(¸º8ó‘¼Ó/
 8
-java:S3626u"Remove this redundant jump.(ÉŠ©ƒ8æ½Ù÷/
+java:S3626T"Remove this redundant jump.(ÉŠ©ƒ8ÿ‘´Ó/
+s	java:S117ª"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8ó‘¼Ó/
+E
+java:S1148d"#Use a logger to log this exception.(…şÏ«üÿÿÿÿ8ÿ‘´Ó/
+s	java:S117Ñ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ü±ÿÿÿÿÿ8ó‘¼Ó/
+E
+java:S1148g"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿ‘´Ó/
+C
+java:S1170"!Make this final field static too.(İ¡×Şıÿÿÿÿ8ßı¢Ó/
+o
+java:S37760"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(“–ış8ßı¢Ó/
+Y
+java:S2696"6Make the enclosing method "static" or remove this set.(Ûé†äıÿÿÿÿ8ÿ‘´Ó/
+[
+java:S1117¬"8Rename "game" which hides the field declared at line 23.(õ“Ù—øÿÿÿÿ8ó‘¼Ó/
+s	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8ÿ‘´Ó/
+s	java:S117À"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(² û”ûÿÿÿÿ8ó‘¼Ó/
+F
+java:S1148é"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó‘¼Ó/
+[
+java:S4973Y"9Use the "equals" method if value comparison was intended.(®ÀõÍşÿÿÿÿ8ÿ‘´Ó/
+r	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8ÿ‘´Ó/
+T
+java:S2696Â"6Make the enclosing method "static" or remove this set.(‰‚„¸8ó‘¼Ó/
+V
+java:S1117Ò"8Rename "game" which hides the field declared at line 23.(éÔÎ8ó‘¼Ó/
+T
+java:S2696˜"6Make the enclosing method "static" or remove this set.(äå«8ÿ‘´Ó/
+z	java:S1355"YReduce the total number of break and continue statements in this loop to use at most one.(Úİ²Œûÿÿÿÿ8€ïĞ/
+C
+java:S1170"!Make this final field static too.(Íç€àşÿÿÿÿ8ßı¢Ó/
+c
+java:S2147ê"ECombine this catch with the one at line 232, which has the same body.(ßÈ´8ó‘¼Ó/
+€	java:S116"_Rename this field "MAX_NUM_OF_OBSERVERS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íç€àşÿÿÿÿ8ßı¢Ó/
+[	java:S106Æ"9Replace this use of System.out or System.err by a logger.(ãÆ×ëÿÿÿÿÿ8ó‘¼Ó/
+8
+java:S3626^"Remove this redundant jump.(ÉŠ©ƒ8ÿ‘´Ó/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+u	java:S116"TRename this field "MAX_GAMES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ¡×Şıÿÿÿÿ8ßı¢Ó/
+\
+java:S4973­"9Use the "equals" method if value comparison was intended.(®ÀõÍşÿÿÿÿ8ó‘¼Ó/
+b
+java:S2147h"ECombine this catch with the one at line 102, which has the same body.(ßÈ´8ÿ‘´Ó/
+Z
+java:S1117X"8Rename "game" which hides the field declared at line 23.(õ“Ù—øÿÿÿÿ8äü³Ó/
+F
+java:S1148ë"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó‘¼Ó/

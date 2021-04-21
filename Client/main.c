@@ -25,27 +25,28 @@ void connect_player (GtkWidget *widget){
     cJSON_AddStringToObject(root, "gameId", "1");
 
     // print json
-    msj = cJSON_Print(root);
-    printf("%s\n", msj);
+    msj = cJSON_PrintUnformatted(root);
+    //printf("%s\n", msj);
 
     // print server response
-    response = write_socket(serverIp,port, msj);
-    printf("The answer is: \n");
-    puts(response);
+
+    write_socket(msj);
+    printf("\n The answer is: \n");
+    //puts(response);
 
     // deserialize server json response
-    cJSON *deserialize = cJSON_Parse(response);
-    if(deserialize == NULL){
-        const char *error_ptr = cJSON_GetErrorPtr();
-        if (error_ptr != NULL){
-            fprintf(stderr, "Error before: %s\n", error_ptr);
-        }
-    }
+    //cJSON *deserialize = cJSON_Parse(response);
+    //if(deserialize == NULL){
+    //    const char *error_ptr = cJSON_GetErrorPtr();
+    //    if (error_ptr != NULL){
+    //        fprintf(stderr, "Error before: %s\n", error_ptr);
+    //    }
+    //}
 
-    cJSON *command = cJSON_GetObjectItemCaseSensitive(deserialize,"command");
-    printf("The command is: ");
-    msj = cJSON_GetStringValue(command);
-    puts(msj);
+    //cJSON *command = cJSON_GetObjectItemCaseSensitive(deserialize,"command");
+    //printf("The command is: ");
+    //msj = cJSON_GetStringValue(command);
+    //puts(msj);
 
     //const char* str = msj;
     if (strcmp ("play", msj) == 0) {
@@ -75,7 +76,13 @@ void connect_observer (GtkWidget *widget){
 
 int main(int argc, char *argv[]){
     // initialize gtk
+    initClient();
     gtk_init(&argc, &argv);
+
+
+
+
+
 
     // create window
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);

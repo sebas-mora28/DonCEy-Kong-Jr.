@@ -21,9 +21,9 @@ L
 src/Game/Entities/Fruit.java,9/9/9902d4f9610e3bd4b2174d94ccbaf074f05667bd
 W
 'src/Game/Entities/DonkeyKongJunior.java,9/e/9edd7a06576263c2b6839075cb5c928aa612d174
-U
-%src/Game/Entities/BlueCrocodrile.java,8/a/8a1fe09f7eaabc204e50b15e1ff399baac694703
+P
+ src/Game/Entities/Crocodile.java,5/6/5696de08c9685b2f0df9cb933d1d62a2082b644d
+S
+#src/Game/Entities/RedCrocodile.java,c/1/c11ec0a93c2a1e93532e1b35e460b346c7af448a
 T
-$src/Game/Entities/RedCrocodrile.java,f/8/f89c9fde8c08c03c0738bca46ee687a791e8e6b5
-Q
-!src/Game/Entities/Crocodrile.java,6/9/69413268ea9cc70ee073ccb71454504626db6176
+$src/Game/Entities/BlueCrocodile.java,c/7/c705316ad8f89cfd50f05e95ccb8e7cc8c458313
