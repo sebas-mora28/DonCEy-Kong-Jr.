@@ -2,13 +2,13 @@ package App;
 
 import Game.Game;
 import Server.Server;
-import netscape.javascript.JSObject;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import static Server.Server.games;
 
@@ -22,7 +22,8 @@ public class Window {
     private JButton addEnemy;
     private JButton addFruit;
     private JButton deleteFruit;
-    private JComboBox<Integer> liana;
+    private JComboBox<Integer> row;
+    private JComboBox<Integer> column;
     private ButtonGroup fruits;
     private JCheckBox banana;
     private JCheckBox apple;
@@ -34,13 +35,13 @@ public class Window {
      * @author Sebastian Mora
      * @brief Class Constructor
      */
-    public Window(){
+    public Window() throws IOException {
 
 
         JFrame frame = new JFrame("Console");
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(450,300);
+        frame.setSize(1000,650);
 
         JPanel contentPane = new JPanel();
         contentPane.setLayout(null);
@@ -100,16 +101,41 @@ public class Window {
         fruits.add(apple);
         frame.getContentPane().add(apple);
 
-        liana = new JComboBox<Integer>();
-        liana.setBounds(380, 50, 50, 30);
-        for(int i=1; i<10; i++){ liana.addItem(i);}
-        frame.getContentPane().add(liana);
 
+        JLabel row_label = new JLabel("Row");
+        row_label.setBounds(380, 10, 50, 15);
+        frame.getContentPane().add(row_label);
+        row = new JComboBox<Integer>();
+        row.setBounds(380, 30, 50, 30);
+        for(int i=1; i<10; i++){ row.addItem(i);}
+        frame.getContentPane().add(row);
+
+
+        JLabel column_label = new JLabel("Column");
+        column_label.setBounds(380, 70, 70, 15);
+        frame.getContentPane().add(column_label);
+        column = new JComboBox<Integer>();
+        column.setBounds(380, 90, 50, 30);
+        for(int i=1; i<10; i++){ column.addItem(i);}
+        frame.getContentPane().add(column);
+
+
+
+        JLabel gameId_label = new JLabel("Game");
+        gameId_label.setBounds(310, 10, 50, 15);
+        frame.getContentPane().add(gameId_label);
         gameId = new JComboBox<Integer>();
         gameId.addItem(1);
         gameId.addItem(2);
-        gameId.setBounds(310, 50, 50, 30);
+        gameId.setBounds(310, 30, 50, 30);
         frame.getContentPane().add(gameId);
+
+
+
+        BufferedImage image = ImageIO.read(getClass().getResource("matrixGame.png"));
+        JLabel imageLabel = new JLabel(new ImageIcon(image));
+        imageLabel.setBounds(460, 20, 550,600);
+        frame.getContentPane().add(imageLabel);
 
 
         frame.setVisible(true);
@@ -137,10 +163,10 @@ public class Window {
 
                 if(game.getId() == (int) gameId.getSelectedItem()){
                     if(enemyRed.isSelected()){
-                        game.putEnemy("red", (int)liana.getSelectedItem());
+                        game.putEnemy("red", (int)row.getSelectedItem(), (int)column.getSelectedItem());
                     }
                     if(enemyBlue.isSelected()){
-                        game.putEnemy("blue", (int) liana.getSelectedItem());
+                        game.putEnemy("blue", (int) row.getSelectedItem(), (int)column.getSelectedItem());
                     }
                 }
 
@@ -159,7 +185,7 @@ public class Window {
             String type = fruits.getSelection().getActionCommand();
             for(Game game : Server.games){
                 if(game.getId() == (int)(gameId.getSelectedItem())){
-                    game.putFruit(type, (int) liana.getSelectedItem());
+                    game.putFruit(type, (int) row.getSelectedItem(), (int) column.getSelectedItem());
                 }
 
             }
@@ -175,7 +201,7 @@ public class Window {
             String type = fruits.getSelection().getActionCommand();
             for(Game game : Server.games){
                 if(game.getId() == (int)(gameId).getSelectedItem()){
-                    game.deleteFruit(type, Integer.parseInt(liana.getSelectedItem().toString()) );
+                    game.deleteFruit(type, (int) row.getSelectedItem(), (int) column.getSelectedItem() );
                 }
             }
 

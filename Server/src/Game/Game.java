@@ -94,12 +94,12 @@ public class Game {
      * @param info information needed contained in a JSON object
      */
     private void fruitCaught(JSONObject info){
-        Integer liana = Integer.parseInt(info.get("liana").toString());
+        Integer row = Integer.parseInt(info.get("row").toString());
+        Integer column = Integer.parseInt(info.get("column").toString());
         String type = info.get("type").toString();
         for(Fruit fruit : fruits){
-            if(fruit.getType().equals(type) && fruit.getLiana() == liana){
-                this.deleteFruit(type, liana);
-                this.deleteFruit(type, liana);
+            if(fruit.getType().equals(type) && fruit.getRow() == row && fruit.getColumn() == column){
+                this.deleteFruit(type, row, column);
             }
 
         }
@@ -153,23 +153,24 @@ public class Game {
      * @author Sebastian Mora
      * @brief This function it's call when command 'putEnemy' is received. Indicates the creation of
      *        a new enemy.
-     * @param color Indicates the color of the enemy. Might be red or blue.
-     * @param liana Position where the enemy has to be placed.
+     * @param type Indicates the color of the enemy. Might be red or blue.
+     * @param row-column Position where the enemy has to be placed.
      */
-    public void putEnemy(String color, Integer liana){
+    public void putEnemy(String type, Integer row, Integer column){
         GameObject crocodile = null;
-        if(color.equals("blue")){
+        if(type.equals("blue")){
             Window.updateConsole("Cocodrilo azul agregado a partida" + id);
-            crocodile = new BlueCrocodile(liana);
+            crocodile = new BlueCrocodile(row, column);
             crocodiles.add(crocodile);
 
 
-        }else if(color.equals("red")){
+        }else if(type.equals("red")){
             Window.updateConsole("Cocodrilo rojo agregado a partida" + id);
-            crocodile = new RedCrocodile(liana);
+            crocodile = new RedCrocodile(row, column);
             crocodiles.add(crocodile);
         }
-        this.sendPlayers(Serializer.serializerPutEnimies(color, liana, this.id, crocodile.getSpeed()));
+        Matrix.updateMatrix(row, column, 0);
+        this.sendPlayers(Serializer.serializerPutEnimies(type, row, column, this.id, crocodile.getSpeed()));
 
     }
 
@@ -179,11 +180,13 @@ public class Game {
      * @brief This function it's call when command 'putFruit' is received. Indicates the creation of
      *        a new fruit.
      * @param type Indicates the type of the fruit. Might be banana or apple.
-     * @param liana Position where the fruit has to be placed.
+     * @param row-column Position where the fruit has to be placed.
      */
-    public void putFruit(String type, Integer liana){
-        fruits.add(new Fruit(type, liana));
-        sendPlayers(Serializer.serializerPutFruit(type, liana, this.id));
+    public void putFruit(String type, Integer row, Integer column){
+        fruits.add(new Fruit(type, row, column));
+        sendPlayers(Serializer.serializerPutFruit(type, row, column, this.id));
+        Matrix.updateMatrix(row, column, 0);
+        Window.updateConsole("Fruta tipo: " + type + "a gregada a la partida " + this.id);
 
     }
 
@@ -193,17 +196,18 @@ public class Game {
      * @brief This function it's call when command 'putEnemy' is received. Indicates the creation of
      *        a new enemy.
      * @param type Indicates the type of the fruit. Might be red banana or apple .
-     * @param liana Position where the enemy has to be placed.
+     * @param row-column Position where the enemy has to be placed.
      */
-    public void deleteFruit(String type, Integer liana){
+    public void deleteFruit(String type, Integer row, Integer column){
         Fruit fruitToRemoved = null;
         for(Fruit fruit : fruits){
-            if(fruit.getType().equals(type) && fruit.getLiana() == liana){
+            if(fruit.getType().equals(type) && fruit.getRow() == row && fruit.getColumn() == column){
                 fruitToRemoved = fruit;
             }
         }
         fruits.remove(fruitToRemoved);
-        sendPlayers(Serializer.serializerDeleteFruit(type, liana, this.id));
+        Matrix.updateMatrix(row, column, 5);
+        sendPlayers(Serializer.serializerDeleteFruit(type, row, column, this.id));
     }
 
 

@@ -1,27 +1,32 @@
 
-U	java:S1068"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8Œ£ˆø/
-I
-java:S1172Š"+Remove this unused method parameter "info".(ùÇÓˆ8üæş/
-M
-java:S1172ì"/Remove this unused method parameter "newState".(Õ²¨€8é’ú/
-X
-java:S1117":Rename "player" which hides the field declared at line 25.(®ß8é’ú/
-V	java:S106¤"9Replace this use of System.out or System.err by a logger.(îñàñ8é’ú/
-E	java:S108H")Either remove or fill this block of code.(¾ä¬ë8“‹É/
+V
+java:S4973e"9Use the "equals" method if value comparison was intended.(€Ô¿ç8ûœ‘É/
+V	java:S106¨"9Replace this use of System.out or System.err by a logger.(îñàñ8é’ú/
+e
+java:S2259­"GA "NullPointerException" could be thrown; "crocodile" is nullable here.(ûºÅı8ç‰Ù/
+S
+java:S1611ù"6Remove the parentheses around the "observer" parameter(½‡›68ç‰Ù/
 R
-java:S1611"4Remove the parentheses around the "player" parameter(®ß8é’ú/
+java:S1611”"4Remove the parentheses around the "player" parameter(®ß8é’ú/
+X
+java:S1117”":Rename "player" which hides the field declared at line 25.(®ß8é’ú/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
+V	java:S106‘"9Replace this use of System.out or System.err by a logger.(Î¿é®8²å»/
 N
-java:S1144ì"0Remove this unused private "updateState" method.(Õ²¨€8é’ú/
-d
-java:S1192<"HDefine a constant instead of duplicating this literal "command" 5 times.(ª¢·l8” Ùù/
+java:S1144ï"0Remove this unused private "updateState" method.(Õ²¨€8é’ú/
+V
+java:S4973e"9Use the "equals" method if value comparison was intended.(€Ô¿ç8¹¿‘É/
 F
 java:S1068")Remove this unused "lives" private field.(Ò´àÛ8Œ£ˆø/
-[
-java:S4973d"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
-\
-java:S4973É"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ŒÏ›/
-e
-java:S2259¬"GA "NullPointerException" could be thrown; "crocodile" is nullable here.(½˜Êè8ç‰Ù/
-S
-java:S1611ö"6Remove the parentheses around the "observer" parameter(½‡›68ç‰Ù/
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8Œ£ˆø/
+E	java:S108H")Either remove or fill this block of code.(¾ä¬ë8“‹É/
+M
+java:S1172ï"/Remove this unused method parameter "newState".(Õ²¨€8é’ú/
+I
+java:S1172Š"+Remove this unused method parameter "info".(ùÇÓˆ8üæş/
+W
+java:S4973Ë"9Use the "equals" method if value comparison was intended.(€Ô¿ç8ûÒÉ/
+W
+java:S4973Ë"9Use the "equals" method if value comparison was intended.(€Ô¿ç8ûÒÉ/
+d
+java:S1192<"HDefine a constant instead of duplicating this literal "command" 5 times.(ª¢·l8” Ùù/

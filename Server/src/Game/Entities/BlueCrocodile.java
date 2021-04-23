@@ -1,19 +1,19 @@
 package Game.Entities;
 
-import Game.GameObject;
-
-public class BlueCrocodile extends GameObject implements Crocodile {
+public class BlueCrocodile extends GameObject implements Cocodrile {
 
 
     /**
      * @author Sebastian Mora
      * @brief Class constructor
-     * @param liana liana position
+     * @param row liana position
      */
-    public BlueCrocodile(int liana){
-        this.speed = 1;
+    public BlueCrocodile(Integer row, Integer column){
+        this.setSpeed(1);
         this.updatePosition(0,0);
-        this.liana = liana;
+        this.setRow(row);
+        this.setColumn(column);
+        this.setType("blue");
     }
 
     @Override

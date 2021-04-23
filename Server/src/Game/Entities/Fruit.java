@@ -1,21 +1,20 @@
 package Game.Entities;
 
-import Game.Game;
-import Game.GameObject;
-
 public class Fruit extends GameObject {
 
-    String type;
+    private String type;
 
 
     /**
      * @author Sebastian Mora
      * @brief Class constructor
      * @param type fruit type
-     * @param liana liana position
+     * @param row row position
+     * @param column row position
      */
-    public Fruit( String type, Integer liana){
-        this.liana = liana;
+    public Fruit( String type, Integer row, Integer column){
+        this.setRow(row);
+        this.setColumn(column);
         this.type = type;
     }
 

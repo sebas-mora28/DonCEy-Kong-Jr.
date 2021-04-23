@@ -1,0 +1,10 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îä¨ÿ
+O
+java:S1144‚",Remove this unused private "getPosX" method.(±¡‡Öüÿÿÿÿ8º˜à/
+X
+java:S2696l"6Make the enclosing method "static" or remove this set.(èâ‰êüÿÿÿÿ8å‰Ù/
+W
+java:S2209l"5Change this instance-reference to a static reference.(èâ‰êüÿÿÿÿ8å‰Ù/
+J
+java:S1144Š",Remove this unused private "getPosY" method.(¡â¹8º˜à/

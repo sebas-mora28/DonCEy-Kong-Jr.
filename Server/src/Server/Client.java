@@ -19,7 +19,6 @@ class Client {
         // number
         try (Socket socket = new Socket("localhost", 4000)) {
 
-
             System.out.println("Start");
 
             // writing to server

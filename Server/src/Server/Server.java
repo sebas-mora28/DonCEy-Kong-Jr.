@@ -30,7 +30,7 @@ public class Server extends Thread{
      * @param port
      * @return server instance
      */
-    public static Server getInstance(int port){
+    public static Server getInstance(Integer port){
         if(serverInstance == null){
             serverInstance = new Server(port);
         }
@@ -42,7 +42,7 @@ public class Server extends Thread{
      * @brief Class constructor, declared private because of Singleton.
      * @param port
      */
-    private Server(int port){
+    private Server(Integer port){
         try{
 
             this.server = new ServerSocket(port);

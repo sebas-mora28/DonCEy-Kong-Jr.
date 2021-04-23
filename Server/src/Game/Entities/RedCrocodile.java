@@ -1,38 +1,23 @@
 package Game.Entities;
 
-import Game.GameObject;
-
-public class RedCrocodile extends GameObject implements Crocodile {
-
-
-
-
-    /**
-     * @atuhor Sebastian Mora
-     * @brief Class constructor
-     * @param liana crocodile location
-     */
-    public RedCrocodile(int liana){
-        this.updatePosition(0,0);
-        this.liana = liana;
-        this.speed = 1;
-    }
-
-    @Override
-    public void move() {
-
-        //Se define el comportamiento del cocodrile dependiendo del tipo
-
-
-    }
+public class RedCrocodile extends GameObject implements Cocodrile{
 
 
     /**
      * @author Sebastian Mora
-     * @brief Increases crocodile speed
+     * @brief Class constructor
+     * @param row liana position
      */
-    public void upSpeed(){
-        this.speed += 100;
+    public RedCrocodile(Integer row, Integer column){
+        this.setSpeed(1);
+        this.updatePosition(0,0);
+        this.setRow(row);
+        this.setColumn(column);
+        this.setType("red");
+    }
+
+    @Override
+    public void move() {
 
     }
 }
