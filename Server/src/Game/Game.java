@@ -102,11 +102,11 @@ public class Game {
         for(int i=0; i<fruits.size(); i++){
             Fruit fruit = fruits.get(i);
             if(fruit.getType().equals(type) && fruit.getLiana() == liana){
+                this.donkeyKongJunior.increaseScore(fruit.getScore());
                 this.deleteFruit(type, liana);
             }
 
         }
-        this.donkeyKongJunior.increaseScore();
         updateScore(this.donkeyKongJunior.getScore());
     }
 
@@ -130,7 +130,7 @@ public class Game {
     private void attacked(JSONObject info){
         Integer gameId = Integer.parseInt(info.get("gameId").toString());
         this.donkeyKongJunior.decrementLives();
-        this.sendPlayers(Serializer.serializerLives(gameId, this.donkeyKongJunior.getLifes()));
+        this.sendPlayers(Serializer.serializerLives(this.donkeyKongJunior.getLifes(), gameId));
     }
 
 
@@ -177,9 +177,9 @@ public class Game {
      * @param type Indicates the type of the fruit. Might be banana or apple.
      * @param liana Position where the fruit has to be placed.
      */
-    public void putFruit(String type, Integer liana){
-        fruits.add(new Fruit(type, liana));
-        sendPlayers(Serializer.serializerPutFruit(type, liana ,id));
+    public void putFruit(String type, Integer liana, Integer score){
+        fruits.add(new Fruit(type, liana, score));
+        sendPlayers(Serializer.serializerPutFruit(type, liana,id));
         //Matrix.updateMatrix(row, column, 0);
         Window.updateConsole("Fruta tipo: " + type + " a gregada a la partida " + this.id);
 
@@ -226,7 +226,7 @@ public class Game {
         observer.send(Serializer.serializerObserverAdded(this.id));
 
         try{
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         }catch (InterruptedException e){}
 
 
@@ -235,8 +235,12 @@ public class Game {
         }
 
         for(Fruit fruit : fruits){
-            observer.send(Serializer.serializerPutFruit(fruit.getType(), fruit.getLiana(), this.id));
+            observer.send(Serializer.serializerPutFruit(fruit.getType(), fruit.getLiana(),this.id));
         }
+
+        System.out.println(donkeyKongJunior.getScore());
+        observer.send(Serializer.serializerScore(donkeyKongJunior.getScore(), this.id));
+        observer.send(Serializer.serializerLives(donkeyKongJunior.getLifes(), this.id));
     }
 
 

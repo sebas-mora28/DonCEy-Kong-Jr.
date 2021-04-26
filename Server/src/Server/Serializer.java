@@ -20,7 +20,7 @@ public class Serializer {
      * @param gameId game Id
      * @return JSON string
      */
-    public static String serializerPutFruit(String type, Integer liana, Integer gameId){
+    public static String serializerPutFruit(String type, Integer liana,Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "putFruit");
         obj.put("gameId", gameId);
@@ -73,7 +73,7 @@ public class Serializer {
      * @param gameId game id
      * @return JSON string
      */
-    public static String serializerLives(Integer gameId, Integer lives){
+    public static String serializerLives(Integer lives, Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command","lives");
         obj.put("lives",lives);

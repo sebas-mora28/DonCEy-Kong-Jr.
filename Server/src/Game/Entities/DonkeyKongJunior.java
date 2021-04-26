@@ -62,8 +62,8 @@ public class DonkeyKongJunior extends GameObject {
      * @author Sebastian Mora
      * @brief increases score
      */
-    public void increaseScore() {
-        this.score += 100;
+    public void increaseScore(Integer score) {
+        this.score += score;
     }
 
     /**

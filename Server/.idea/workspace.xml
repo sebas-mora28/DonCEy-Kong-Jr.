@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4edd750-195a-487c-96ba-ee057a3b3df3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Entities/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Fruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Serializer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +136,7 @@
       <workItem from="1619133449243" duration="6927000" />
       <workItem from="1619162339501" duration="21180000" />
       <workItem from="1619306025273" duration="25668000" />
-      <workItem from="1619440910581" duration="9279000" />
+      <workItem from="1619440910581" duration="13023000" />
     </task>
     <servers />
   </component>

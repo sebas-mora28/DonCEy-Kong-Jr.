@@ -23,6 +23,7 @@ public class Window {
     private JButton addEnemy;
     private JButton addFruit;
     private JButton deleteFruit;
+    private JTextField score;
     private JComboBox<Integer> liana;
     private JComboBox<Integer> column;
     private ButtonGroup fruits;
@@ -84,6 +85,14 @@ public class Window {
         console.setEditable(false);
         frame.getContentPane().add(console);
 
+
+        JLabel score_label = new JLabel("score");
+        score_label.setBounds(90, 130, 50, 15);
+        frame.getContentPane().add(score_label);
+        score = new JTextField();
+        score.setBounds(90, 150, 50, 30);
+        frame.getContentPane().add(score);
+
         scrollPane = new JScrollPane(console);
         scrollPane.setBounds(5,5, 275, 110);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -121,12 +130,12 @@ public class Window {
 
 
         JLabel gameId_label = new JLabel("Game");
-        gameId_label.setBounds(50, 130, 50, 15);
+        gameId_label.setBounds(10, 130, 50, 15);
         frame.getContentPane().add(gameId_label);
         gameId = new JComboBox<Integer>();
         gameId.addItem(1);
         gameId.addItem(2);
-        gameId.setBounds(50, 150, 50, 30);
+        gameId.setBounds(10, 150, 50, 30);
         frame.getContentPane().add(gameId);
 
 
@@ -136,10 +145,6 @@ public class Window {
         imageLabel.setBounds(290, 5, 500,500);
         frame.getContentPane().add(imageLabel);
 
-        //BufferedImage logo = ImageIO.read(getClass().getResource("logo.png"));
-        //JLabel logoLabel = new JLabel(new ImageIcon(logo));
-        //logoLabel.setBounds(1, 150, 300,300);
-        //frame.getContentPane().add(logoLabel);
 
         frame.setVisible(true);
 
@@ -186,9 +191,10 @@ public class Window {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             String type = fruits.getSelection().getActionCommand();
+            Integer score_ = Integer.parseInt(score.getText());
             for(Game game : Server.games){
                 if(game.getId() == (int)(gameId.getSelectedItem())){
-                    game.putFruit(type, (int) liana.getSelectedItem());
+                    game.putFruit(type, (int) liana.getSelectedItem(), score_);
                 }
 
             }
