@@ -68,6 +68,7 @@ _Noreturn void *listen_socket(){
             }
             if(strcmp(command,"lives") == 0){
                 int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
+                printf("vidas %d", newLives);
                 updateLives(newLives);
             }
             if(strcmp(command,"score") == 0){

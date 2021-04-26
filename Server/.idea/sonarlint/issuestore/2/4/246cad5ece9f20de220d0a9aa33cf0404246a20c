@@ -1,15 +1,15 @@
 
-h
-java:S1192"FDefine a constant instead of duplicating this literal "liana" 3 times.(ğã²˜şÿÿÿÿ8â…Ù…/
-_
-java:S1128"BRemove this unused import 'org.json.simple.parser.ParseException'.(ƒÁ‡8Ë§üĞ/
 W
 java:S1118
-":Add a private constructor to hide the implicit public one.(êòŒ8ŒÎù/
+":Add a private constructor to hide the implicit public one.(êòŒ8¼ú/
 V
-java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ8‡‘£€/
+java:S1128"9Remove this unused import 'netscape.javascript.JSObject'.(Å²ÒÌ8¼ú/
 f
-java:S1192"IDefine a constant instead of duplicating this literal "command" 10 times.(ğ„ôÎ8½“É/
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+java:S1192"IDefine a constant instead of duplicating this literal "command" 10 times.(ğ„ôÎ8¼ú/
+_
+java:S1128"BRemove this unused import 'org.json.simple.parser.ParseException'.(ƒÁ‡8¼ú/
 i
-java:S1192"GDefine a constant instead of duplicating this literal "gameId" 9 times.(»Âì¸ıÿÿÿÿ8½“É/
+java:S1192"GDefine a constant instead of duplicating this literal "gameId" 9 times.(»Âì¸ıÿÿÿÿ8¼ú/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹8¼ú/
+h
+java:S1192"FDefine a constant instead of duplicating this literal "liana" 3 times.(ğã²˜şÿÿÿÿ8¼ú/

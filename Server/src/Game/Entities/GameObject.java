@@ -9,6 +9,10 @@ public class GameObject {
     private Integer liana;
     private Integer id;
     private String type;
+    private Integer facing;
+    private Integer jumping;
+    private Integer onLiana;
+    private Integer falling;
 
 
 
@@ -106,19 +110,88 @@ public class GameObject {
     }
 
 
-    private Integer getPosX() {
+    /**
+     * @author Sebastian Mora
+     * @brief Returns game pos x
+     * @return posX
+     */
+    public Integer getPosX() {
         return posX;
     }
 
-    private void setPosX(Integer posX) {
+    public void setPosX(Integer posX) {
         this.posX = posX;
     }
 
-    private Integer getPosY() {
+    /**
+     * @author Sebastian Mora
+     * @brief Returns pos y
+     * @return game posY
+     */
+    public Integer getPosY() {
         return posY;
     }
 
-    private void setPosY(Integer posY) {
+    public void setPosY(Integer posY) {
         this.posY = posY;
     }
+
+
+    /**
+     * @author Sebastian Mora
+     * @brief Returns pos y
+     * @return game posY
+     */
+    public Integer getFacing() {
+        return facing;
+    }
+
+    /**
+     * @author Sebastian Mora
+     * @brief Sets facing
+     * @param facing facing
+     */
+    public void setFacing(Integer facing) {
+        this.facing = facing;
+    }
+
+    /**
+     * @author Sebastian Mora
+     * @brief Returns jumping
+     * @return jumpin
+     */
+    public Integer getJumping() {
+        return jumping;
+    }
+
+    public void setJumping(Integer jumping) {
+        this.jumping = jumping;
+    }
+
+    /**
+     * @author Sebastian Mora
+     * @brief Returns onLiana
+     * @return onLiana
+     */
+    public Integer getOnLiana() {
+        return onLiana;
+    }
+
+    public void setOnLiana(Integer onLiana) {
+        this.onLiana = onLiana;
+    }
+
+    /**
+     * @author Sebastian Mora
+     * @brief Returns falling
+     * @return falling
+     */
+    public Integer getFalling() {
+        return falling;
+    }
+
+    public void setFalling(Integer falling) {
+        this.falling = falling;
+    }
+
 }

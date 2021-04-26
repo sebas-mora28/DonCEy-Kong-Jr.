@@ -1,2 +1,10 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îä¨ÿ
+w	java:S116"VRename this field "posX_inital" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ëñ³ÿÿÿÿÿ8Ûº‰ú/
+j	java:S1000"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éĞ•í8Ûº‰ú/
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œæè¬8Ûº‰ú/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îä¨ÿ8Ûº‰ú/
+o	java:S100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷¯¤Œşÿÿÿÿ8Ûº‰ú/
+j	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äİÿ8Ûº‰ú/
+r	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷¯¤Œşÿÿÿÿ8Ûº‰ú/
+w	java:S116"VRename this field "posY_inital" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æâéªûÿÿÿÿ8Ûº‰ú/
+m	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éĞ•í8Ûº‰ú/

@@ -52,7 +52,6 @@ public class Server extends Thread{
 
 
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -75,7 +74,6 @@ public class Server extends Thread{
                 new Thread(newClient).start();
 
             } catch (IOException e) {
-                e.printStackTrace();
             }
         }
     }

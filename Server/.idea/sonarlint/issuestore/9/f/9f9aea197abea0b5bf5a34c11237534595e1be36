@@ -1,36 +1,34 @@
 
-I
-java:S1172‰"+Remove this unused method parameter "info".(ùÇÓˆ8üæş/
-M
-java:S1172ï"/Remove this unused method parameter "newState".(Õ²¨€8é’ú/
-V	java:S106°"9Replace this use of System.out or System.err by a logger.(îñàñ8é’ú/
-N
-java:S1144ï"0Remove this unused private "updateState" method.(Õ²¨€8é’ú/
+Y
+java:S1117"6Rename "id" which hides the field declared at line 19.(›ÔòÔùÿÿÿÿ8ùèÿù/
+V	java:S106"9Replace this use of System.out or System.err by a logger.(Î¿é®8ùèÿù/
+R
+java:S1611¨"4Remove the parentheses around the "player" parameter(®ß8ùèÿù/
+Y	java:S125·"<This block of commented-out lines of code should be removed.(†ÚãÆ8ùèÿù/
 S
-java:S1611ù"6Remove the parentheses around the "observer" parameter(½‡›68ç‰Ù/
-V	java:S106š"9Replace this use of System.out or System.err by a logger.(Î¿é®8ã¿¥/
-Y	java:S125«"<This block of commented-out lines of code should be removed.(†ÚãÆ8‹ÅŞ…/
-V	java:S106‘"9Replace this use of System.out or System.err by a logger.(Î¿é®8²å»/
-e
-java:S2259¬"GA "NullPointerException" could be thrown; "crocodile" is nullable here.(ú½È8ç‰Ù/
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
-R
-java:S1611”"4Remove the parentheses around the "player" parameter(®ß8é’ú/
-^	java:S125Ğ"<This block of commented-out lines of code should be removed.(Ëâğìüÿÿÿÿ8ôÊì…/
-Y	java:S125»"<This block of commented-out lines of code should be removed.(†ÚãÆ8ó«ê…/
-F
-java:S1068")Remove this unused "lives" private field.(Ò´àÛ8Œ£ˆø/
+java:S1611†"6Remove the parentheses around the "observer" parameter(½‡›68ùèÿù/
 X
-java:S1117œ":Rename "player" which hides the field declared at line 25.(®ß8ã¿¥/
-U	java:S1068"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8Œ£ˆø/
+java:S1117¨":Rename "player" which hides the field declared at line 25.(®ß8ùèÿù/
+[	java:S106ñ"9Replace this use of System.out or System.err by a logger.(î¹´Æÿÿÿÿÿ8Šå‹û/
 [
-java:S4973d"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ÕŞ/
-E	java:S108H")Either remove or fill this block of code.(¾ä¬ë8“‹É/
-R
-java:S1611œ"4Remove the parentheses around the "player" parameter(®ß8ã¿¥/
-X
-java:S1117”":Rename "player" which hides the field declared at line 25.(®ß8é’ú/
-d
-java:S1192<"HDefine a constant instead of duplicating this literal "command" 5 times.(ª¢·l8” Ùù/
+java:S4973h"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ùèÿù/
 \
-java:S4973Ë"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ÕŞ/
+java:S4973Ç"9Use the "equals" method if value comparison was intended.(¹²Îíøÿÿÿÿ8ùèÿù/
+E	java:S108F")Either remove or fill this block of code.(¾ä¬ë8ùèÿù/
+K	java:S108æ")Either remove or fill this block of code.(‚¦¡ûûÿÿÿÿ8ùèÿù/
+N
+java:S1144ü"0Remove this unused private "updateState" method.(Õ²¨€8ùèÿù/
+d
+java:S1192:"HDefine a constant instead of duplicating this literal "command" 5 times.(ª¢·l8ùèÿù/
+U	java:S1066"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8ùèÿù/
+M
+java:S1172ü"/Remove this unused method parameter "newState".(Õ²¨€8ùèÿù/
+R
+java:S1611¡"4Remove the parentheses around the "player" parameter(®ß8ùèÿù/
+X
+java:S1117¡":Rename "player" which hides the field declared at line 25.(®ß8ùèÿù/
+V	java:S106¼"9Replace this use of System.out or System.err by a logger.(îñàñ8ùèÿù/
+i
+java:S2142æ"FEither re-interrupt this method or rethrow the "InterruptedException".(‚¦¡ûûÿÿÿÿ8ùèÿù/
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ8ùèÿù/
+^	java:S125Ì"<This block of commented-out lines of code should be removed.(Ëâğìüÿÿÿÿ8ùèÿù/
