@@ -62,7 +62,6 @@ void moveEnemy(Enemy* enemyList) {
 
         }
 
-        moveEntity(current->posX, current->posY, current->liana, )
         current = current->next;
     }
 

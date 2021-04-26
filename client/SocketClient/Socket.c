@@ -31,7 +31,7 @@ int createSocket(){
     if (sock == -1){
         printf("Could not create socket");
     }
-    printf("Socket created\n");
+
 
     server.sin_addr.s_addr = inet_addr(IP);
     server.sin_family = AF_INET;
@@ -42,7 +42,6 @@ int createSocket(){
         perror("connect failed. Error");
         exit(1);
     }
-    printf("Connected\n");
     return sock;
 
 }

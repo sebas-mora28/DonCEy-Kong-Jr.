@@ -182,7 +182,9 @@ void renderDonkeyKongJr(){
     SDL_RenderCopy(renderer, donkeyKongJr->currentSprite, NULL, &dstrect);
     if(!isObserver){
         if(donkeyKongJr->posX != donkeyKongJr->prevPositionX || donkeyKongJr->posY != donkeyKongJr->prevPositionY){
-            serializeMoveDKJ(donkeyKongJr->posX, donkeyKongJr->posY, donkeyKongJr->facing ,donkeyKongJr->jumping, donkeyKongJr->falling, donkeyKongJr->onLiana ,gameId);
+            if(!isObserver){
+                serializeMoveDKJ(donkeyKongJr->posX, donkeyKongJr->posY, donkeyKongJr->facing ,donkeyKongJr->jumping, donkeyKongJr->falling, donkeyKongJr->onLiana ,gameId);
+            }
             donkeyKongJr->prevPositionX = donkeyKongJr->posX;
             donkeyKongJr->prevPositionY = donkeyKongJr->posY;
         }
@@ -217,7 +219,10 @@ void enemiesCollision() {
             renderDonkeyKongJr();
             SDL_RenderPresent(renderer);
             falling();
-            serializeAttacked(gameId);
+            if(!isObserver){
+                serializeAttacked(gameId);
+            }
+
             SDL_Delay(3000);
             setDefaultValues();
         }
@@ -241,7 +246,9 @@ void fruitCollision(){
         if (donkeyKongJr->posX >= current->posX - COLLISION_RANGE && donkeyKongJr->posX <= current->posX + COLLISION_RANGE && donkeyKongJr->posY >= current->posY - COLLISION_RANGE && donkeyKongJr->posY <= current->posY + COLLISION_RANGE) {
             if(current->sprite != NULL){
                 current->sprite = NULL;
-                serializeFruitCaught(current->liana, current->type, gameId);
+                if(!isObserver){
+                    serializeFruitCaught(current->liana, current->type, gameId);
+                }
             }
         }
             current = current->next;
