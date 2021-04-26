@@ -5,9 +5,8 @@ public class GameObject {
 
     private Integer posX;
     private Integer posY;
-    private static Integer speed;
-    private Integer row;
-    private Integer column;
+    private Integer speed;
+    private Integer liana;
     private Integer id;
     private String type;
 
@@ -53,18 +52,8 @@ public class GameObject {
      * @brief Returns game object row position
      * @return row number
      */
-    public Integer getRow() {
-        return this.row;
-    }
-
-
-    /**
-     * @author Sebastia Mora
-     * @brief Returns game object column position
-     * @return column number
-     */
-    public Integer getColumn() {
-        return this.column;
+    public Integer getLiana() {
+        return this.liana;
     }
 
 
@@ -72,20 +61,10 @@ public class GameObject {
     /**
      * @author Sebastian Mora
      * @brief Sets game object row position
-     * @param row
+     * @param liana
      */
-    public void setRow(Integer row) {
-        this.row = row;
-    }
-
-
-    /**
-     * @author Sebastian Mora
-     * @brief Sets game object column position
-     * @param column
-     */
-    public void setColumn(Integer column) {
-        this.column = column;
+    public void setLiana(Integer liana) {
+        this.liana = liana;
     }
 
 

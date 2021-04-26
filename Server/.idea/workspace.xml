@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Server:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b4edd750-195a-487c-96ba-ee057a3b3df3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App/matrixGame.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Entities/Cocodrile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Server_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/CrocodileFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a094072b9474e3a4112f7a9e7eea235850a62ef" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a094072b9474e3a4112f7a9e7eea235850a62ef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/5696de08c9685b2f0df9cb933d1d62a2082b644d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/70bf03fed15670f17ee7ad74dbb7c4aa3c5c02f6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/70bf03fed15670f17ee7ad74dbb7c4aa3c5c02f6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/7/971f752a33367fb2568e910b68bdda637ba0e711" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9902d4f9610e3bd4b2174d94ccbaf074f05667bd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9902d4f9610e3bd4b2174d94ccbaf074f05667bd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9edd7a06576263c2b6839075cb5c928aa612d174" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9edd7a06576263c2b6839075cb5c928aa612d174" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f9aea197abea0b5bf5a34c11237534595e1be36" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f9aea197abea0b5bf5a34c11237534595e1be36" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9588fce1c3bc78ec27bdea72c1267a00a95124e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9588fce1c3bc78ec27bdea72c1267a00a95124e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aae4bbeb9775132088199839bf5c55afedae2f3e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c11ec0a93c2a1e93532e1b35e460b346c7af448a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c11ec0a93c2a1e93532e1b35e460b346c7af448a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c705316ad8f89cfd50f05e95ccb8e7cc8c458313" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c705316ad8f89cfd50f05e95ccb8e7cc8c458313" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c11ec0a93c2a1e93532e1b35e460b346c7af448a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c705316ad8f89cfd50f05e95ccb8e7cc8c458313" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cff015a60b5bcdef5b00c8de93e9bb90a5e371e8" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3217b0593d7bef8f37733ebe49c2266c158284c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3217b0593d7bef8f37733ebe49c2266c158284c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f12c489083e3d64dea2e5e45d2fbed8b298c5088" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f12c489083e3d64dea2e5e45d2fbed8b298c5088" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f5fa6967d5f9636d3ca945cbd5b37d8e7d08c7d9" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/Game/GameObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/BlueCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/BlueCrocodile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/Crocodile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/matrixGame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Entities/BlueCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/BlueCrocodile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Entities/Cocodrile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Entities/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Fruit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/RedCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/RedCrocodile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Entities/RedCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/RedCrocodile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Matrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Serializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SocketServerExample.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,7 +66,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/App" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -111,13 +115,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Server_jar/Server.jar" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="JAR Application.Server.jar" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.Server.jar" />
         <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
@@ -143,7 +153,9 @@
       <workItem from="1618985308585" duration="23847000" />
       <workItem from="1619059607761" duration="11760000" />
       <workItem from="1619133449243" duration="6927000" />
-      <workItem from="1619162339501" duration="6883000" />
+      <workItem from="1619162339501" duration="21180000" />
+      <workItem from="1619306025273" duration="25668000" />
+      <workItem from="1619440910581" duration="7960000" />
     </task>
     <servers />
   </component>

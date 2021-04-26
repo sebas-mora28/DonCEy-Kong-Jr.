@@ -16,20 +16,16 @@ public class Serializer {
      * @author Sebastian Mora
      * @brief Serializes putFruit command information into a JSON
      * @param type fruit type
-     * @param row row position
-     * @param column column position
+     * @param liana row position
      * @param gameId game Id
      * @return JSON string
      */
-    public static String serializerPutFruit(String type, Integer row, Integer column, Integer gameId){
+    public static String serializerPutFruit(String type, Integer liana, Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "putFruit");
         obj.put("gameId", gameId);
         obj.put("type", type);
-        obj.put("liana", 1);
-        //obj.put("row", row);
-        obj.put("id", 1);
-        //obj.put("column", column);
+        obj.put("liana", liana);
         return obj.toJSONString();
     }
 
@@ -38,18 +34,16 @@ public class Serializer {
      * @author Sebastian Mora
      * @brief Serializes deleteFruit command information into a JSON
      * @param type fruit type
-     * @param row column position
-     * @param column column position
+     * @param liana liana position
      * @param gameId game id position
      * @return JSON string
      */
-    public static String serializerDeleteFruit(String type, Integer row, Integer column, Integer gameId){
+    public static String serializerDeleteFruit(String type, Integer liana, Integer gameId){
         JSONObject obj = new JSONObject();
-        obj.put("command", "DeleteFruit");
+        obj.put("command", "deleteFruit");
         obj.put("gameId", gameId);
         obj.put("type", type);
-        obj.put("row", row);
-        obj.put("column", column);
+        obj.put("liana", liana);
         return obj.toJSONString();
     }
 
@@ -57,20 +51,18 @@ public class Serializer {
     /**
      * @author Sebastian Mora
      * @brief Serializes putEnemies command information into a JSON
-     * @param color enemy color
-     * @param row row position
-     * @param column column position
+     * @param type enemy color
+     * @param liana row position
      * @param gameId game id
      * @param speed enemy speed
      * @return JSON string
      */
-    public static String serializerPutEnimies(String color, Integer row, Integer column, Integer gameId, Integer speed){
+    public static String serializerPutEnimies(String type, Integer liana, Integer gameId, Integer speed){
         JSONObject obj = new JSONObject();
         obj.put("command", "putEnemy");
         obj.put("gameId", gameId);
-        obj.put("row", row);
-        obj.put("column", column);
-        obj.put("color", color);
+        obj.put("liana", liana);
+        obj.put("type", type);
         obj.put("speed", speed);
         return obj.toJSONString();
     }
@@ -81,9 +73,10 @@ public class Serializer {
      * @param gameId game id
      * @return JSON string
      */
-    public static String serializerKill(Integer gameId){
+    public static String serializerLives(Integer gameId, Integer lives){
         JSONObject obj = new JSONObject();
-        obj.put("command","kill");
+        obj.put("command","lives");
+        obj.put("lives",lives);
         obj.put("gameId", gameId);
         return obj.toJSONString();
     }
@@ -102,9 +95,9 @@ public class Serializer {
      * @param gameId game id
      * @return JSON string
      */
-    public static String serializerUpdateScore(Integer score, Integer gameId){
+    public static String serializerScore(Integer score, Integer gameId){
         JSONObject obj = new JSONObject();
-        obj.put("command", "updateScore");
+        obj.put("command", "score");
         obj.put("gameId", gameId);
         obj.put("score", score);
         return obj.toJSONString();
@@ -119,12 +112,16 @@ public class Serializer {
      * @param gameId game id
      * @return JSON string
      */
-    public static String serializerMoveDKJ(Integer posX, Integer posy, Integer gameId){
+    public static String serializerMoveDKJ(Integer posX, Integer posy, Integer facing, Integer jumping, Integer falling, Integer onLiana,  Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "moveDKJ");
         obj.put("gameId", gameId);
         obj.put("posX", posX);
         obj.put("posY", posy);
+        obj.put("facing", facing);
+        obj.put("jumping", jumping);
+        obj.put("falling", falling);
+        obj.put("onLiana", onLiana);
         return obj.toJSONString();
 
     }
@@ -165,6 +162,14 @@ public class Serializer {
     public static String serializerObserverAdded(Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "ObserverAccepted");
+        obj.put("gameId", gameId);
+        return obj.toJSONString();
+
+    }
+
+    public static String serializerConnectionRefused(Integer gameId){
+        JSONObject obj = new JSONObject();
+        obj.put("command", "connectionRefused");
         obj.put("gameId", gameId);
         return obj.toJSONString();
 

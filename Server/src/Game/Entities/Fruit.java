@@ -1,5 +1,7 @@
 package Game.Entities;
 
+import Game.Entities.GameObject;
+
 public class Fruit extends GameObject {
 
     private String type;
@@ -9,12 +11,10 @@ public class Fruit extends GameObject {
      * @author Sebastian Mora
      * @brief Class constructor
      * @param type fruit type
-     * @param row row position
-     * @param column row position
+     * @param liana row position
      */
-    public Fruit( String type, Integer row, Integer column){
-        this.setRow(row);
-        this.setColumn(column);
+    public Fruit( String type, Integer liana){
+        this.setLiana(liana);
         this.type = type;
     }
 

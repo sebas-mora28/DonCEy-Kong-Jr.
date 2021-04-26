@@ -2,6 +2,8 @@ package Game;
 
 import App.Window;
 import Game.Entities.*;
+import Game.Entities.Crocodriles.CrocodileFactory;
+import Game.Entities.Fruit;
 import Server.ClientHandler;
 import Server.Serializer;
 import org.json.simple.JSONObject;
@@ -15,8 +17,6 @@ import java.util.List;
 public class Game {
 
     private Integer id;
-    private Integer score;
-    private Integer lives;
     private DonkeyKongJunior donkeyKongJunior;
     private List<GameObject> crocodiles;
     private List<Fruit> fruits;
@@ -38,8 +38,6 @@ public class Game {
         this.crocodiles = Collections.synchronizedList(new ArrayList<>());
         this.fruits = Collections.synchronizedList(new ArrayList<>());
         this.id = id;
-        this.score = 0;
-        this.lives = 1;
         this.player = player;
         this.parser = new JSONParser();
         this.newGame();
@@ -83,8 +81,12 @@ public class Game {
     private void moveDJK(JSONObject info) {
         Integer posX = Integer.parseInt(info.get("posX").toString());
         Integer posY = Integer.parseInt(info.get("posY").toString());
+        Integer facing = Integer.parseInt(info.get("facing").toString());
+        Integer jumping = Integer.parseInt(info.get("jumping").toString());
+        Integer falling = Integer.parseInt(info.get("falling").toString());
+        Integer onLiana = Integer.parseInt(info.get("onLiana").toString());
         this.donkeyKongJunior.updatePosition(posX, posY);
-        this.sendPlayers(Serializer.serializerMoveDKJ(posX, posY, id));
+        this.sendObservers(Serializer.serializerMoveDKJ(posX, posY, facing, jumping, falling , onLiana,id));
     }
 
 
@@ -94,16 +96,18 @@ public class Game {
      * @param info information needed contained in a JSON object
      */
     private void fruitCaught(JSONObject info){
-        Integer row = Integer.parseInt(info.get("row").toString());
-        Integer column = Integer.parseInt(info.get("column").toString());
+        Integer liana = Integer.parseInt(info.get("liana").toString());
         String type = info.get("type").toString();
-        for(Fruit fruit : fruits){
-            if(fruit.getType().equals(type) && fruit.getRow() == row && fruit.getColumn() == column){
-                this.deleteFruit(type, row, column);
+
+        for(int i=0; i<fruits.size(); i++){
+            Fruit fruit = fruits.get(i);
+            if(fruit.getType().equals(type) && fruit.getLiana() == liana){
+                this.deleteFruit(type, liana);
             }
 
         }
-        this.updateScore(this.score + 100);
+        this.donkeyKongJunior.increaseScore();
+        updateScore(this.donkeyKongJunior.getScore());
     }
 
 
@@ -113,8 +117,7 @@ public class Game {
      * @param newScore Integer that represents the new score
      */
     private void updateScore(Integer newScore){
-        this.score = newScore;
-        this.sendPlayers(Serializer.serializerUpdateScore(this.score, this.id));
+        this.sendPlayers(Serializer.serializerScore(newScore, this.id));
 
     }
 
@@ -125,8 +128,9 @@ public class Game {
      * @param info information needed contained in a JSON object
      */
     private void attacked(JSONObject info){
-        Integer gameId = Integer.parseInt(info.get("gameID").toString());
-        this.sendPlayers(Serializer.serializerKill(gameId));
+        Integer gameId = Integer.parseInt(info.get("gameId").toString());
+        this.donkeyKongJunior.decrementLives();
+        this.sendPlayers(Serializer.serializerLives(gameId, this.donkeyKongJunior.getLifes()));
     }
 
 
@@ -136,14 +140,16 @@ public class Game {
      * @param info information needed contained in a JSON object
      */
     private void win(JSONObject info){
+        Integer id = Integer.parseInt(info.get("gameId").toString());
+        sendObservers(Serializer.serializerMoveDKJ(donkeyKongJunior.getPosX_inital(), donkeyKongJunior.getPosY_inital(), 1, 0 ,0, 0,id));
 
-        //Se desuelve DonkeyKong a la posicion original
-
-
-        //Se aumenta la velocidad de los cocodrilos
         for(GameObject crocodile : crocodiles){
-            crocodile.setSpeed(crocodile.getSpeed() + 10);
+            crocodile.setSpeed(crocodile.getSpeed() + 1);
         }
+
+
+        this.donkeyKongJunior.increaseScoreWin();
+        updateScore(this.donkeyKongJunior.getScore());
 
 
     }
@@ -154,23 +160,12 @@ public class Game {
      * @brief This function it's call when command 'putEnemy' is received. Indicates the creation of
      *        a new enemy.
      * @param type Indicates the color of the enemy. Might be red or blue.
-     * @param row-column Position where the enemy has to be placed.
+     * @param liana Position where the enemy has to be placed.
      */
-    public void putEnemy(String type, Integer row, Integer column){
-        GameObject crocodile = null;
-        if(type.equals("blue")){
-            Window.updateConsole("Cocodrilo azul agregado a partida" + id);
-            crocodile = new BlueCrocodile(row, column);
-            crocodiles.add(crocodile);
-
-
-        }else if(type.equals("red")){
-            Window.updateConsole("Cocodrilo rojo agregado a partida" + id);
-            crocodile = new RedCrocodile(row, column);
-            crocodiles.add(crocodile);
-        }
-        Matrix.updateMatrix(row, column, 0);
-        this.sendPlayers(Serializer.serializerPutEnimies(type, row, column, this.id, crocodile.getSpeed()));
+    public void putEnemy(String type, Integer liana){
+        GameObject crocodile = CrocodileFactory.createCrocodile(type, liana);
+        crocodiles.add(crocodile);
+        this.sendPlayers(Serializer.serializerPutEnimies(type, liana, this.id, crocodile.getSpeed()));
 
     }
 
@@ -180,13 +175,13 @@ public class Game {
      * @brief This function it's call when command 'putFruit' is received. Indicates the creation of
      *        a new fruit.
      * @param type Indicates the type of the fruit. Might be banana or apple.
-     * @param row-column Position where the fruit has to be placed.
+     * @param liana Position where the fruit has to be placed.
      */
-    public void putFruit(String type, Integer row, Integer column){
-        fruits.add(new Fruit(type, row, column));
-        sendPlayers(Serializer.serializerPutFruit(type, row, column, this.id));
-        Matrix.updateMatrix(row, column, 0);
-        Window.updateConsole("Fruta tipo: " + type + "a gregada a la partida " + this.id);
+    public void putFruit(String type, Integer liana){
+        fruits.add(new Fruit(type, liana));
+        sendPlayers(Serializer.serializerPutFruit(type, liana ,id));
+        //Matrix.updateMatrix(row, column, 0);
+        Window.updateConsole("Fruta tipo: " + type + " a gregada a la partida " + this.id);
 
     }
 
@@ -196,18 +191,18 @@ public class Game {
      * @brief This function it's call when command 'putEnemy' is received. Indicates the creation of
      *        a new enemy.
      * @param type Indicates the type of the fruit. Might be red banana or apple .
-     * @param row-column Position where the enemy has to be placed.
+     * @param liana Position where the enemy has to be placed.
      */
-    public void deleteFruit(String type, Integer row, Integer column){
+    public void deleteFruit(String type, Integer liana){
         Fruit fruitToRemoved = null;
         for(Fruit fruit : fruits){
-            if(fruit.getType().equals(type) && fruit.getRow() == row && fruit.getColumn() == column){
+            if(fruit.getType().equals(type) && fruit.getLiana() == liana){
                 fruitToRemoved = fruit;
             }
         }
         fruits.remove(fruitToRemoved);
-        Matrix.updateMatrix(row, column, 5);
-        sendPlayers(Serializer.serializerDeleteFruit(type, row, column, this.id));
+        //Matrix.updateMatrix(liana, 5);
+        sendPlayers(Serializer.serializerDeleteFruit(type, liana, this.id));
     }
 
 
@@ -226,9 +221,22 @@ public class Game {
      * @brief Add a new observer to observer list.
      * @param observer new observer. ClientHandler instance
      */
-    public void addObserver(ClientHandler observer){
+    public void addObserver(ClientHandler observer) {
         this.observers.add(observer);
         observer.send(Serializer.serializerObserverAdded(this.id));
+
+        try{
+            Thread.sleep(3000);
+        }catch (InterruptedException e){}
+
+
+        for(GameObject enemie : crocodiles){
+            observer.send(Serializer.serializerPutEnimies(enemie.getType(), enemie.getLiana(), this.id, enemie.getSpeed()));
+        }
+
+        for(Fruit fruit : fruits){
+            observer.send(Serializer.serializerPutFruit(fruit.getType(), fruit.getLiana(), this.id));
+        }
     }
 
 
@@ -274,6 +282,13 @@ public class Game {
         System.out.println("Comienza a enviar");
         if(player != null) {
             player.send(command);
+            observers.stream().forEach((player)-> player.send(command));
+        }
+    }
+
+    public void sendObservers(String command){
+
+        if(player != null) {
             observers.stream().forEach((player)-> player.send(command));
         }
     }

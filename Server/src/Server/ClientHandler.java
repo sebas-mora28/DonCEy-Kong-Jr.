@@ -58,8 +58,6 @@ public class ClientHandler implements Runnable {
             while(isActive){
 
                 String response = in.readLine();
-                System.out.println(response);
-         ;
 
 
                 if(response == null){ //Verifica que el cliente que esta jugando no se haya desconectado de la partida
@@ -151,6 +149,7 @@ public class ClientHandler implements Runnable {
                     isGame1Available = true;
                 }else{
                     Window.updateConsole("Client tried to connect game 1, but it is unavailable");
+                    send(Serializer.serializerConnectionRefused(game_id));
                 }
             }
 
@@ -160,6 +159,7 @@ public class ClientHandler implements Runnable {
                     isGame2Available = true;
                 }else{
                     Window.updateConsole("Client tried to connect game 2, but it is unavailable");
+                    send(Serializer.serializerConnectionRefused(game_id));
                 }
             }
 
@@ -185,6 +185,7 @@ public class ClientHandler implements Runnable {
                     Window.updateConsole("New observer added to game " + game_id);
                 }else{
                     Window.updateConsole("Client tried to observe game " + game_id + " but it's full");
+                    send(Serializer.serializerConnectionRefused(game_id));
                 }
             }
         }
