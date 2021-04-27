@@ -18,6 +18,6 @@ void serializeAttacked(int id);
 
 void serializeWin(int win);
 
-void moveEntity(int posX, int posY, int liana, int id);
+void moveEntity(int posX, int posY, int liana, int goingDown);
 
 #endif //PROJECT_SERIALIZER_H

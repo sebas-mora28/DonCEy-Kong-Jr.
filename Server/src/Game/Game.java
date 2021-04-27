@@ -68,6 +68,7 @@ public class Game {
             this.win(commandJSON);
         }
         if(commandJSON.get("command").equals("moveEntity")){
+            System.out.println(command);
         }
 
     }
@@ -130,7 +131,23 @@ public class Game {
     private void attacked(JSONObject info){
         Integer gameId = Integer.parseInt(info.get("gameId").toString());
         this.donkeyKongJunior.decrementLives();
-        this.sendPlayers(Serializer.serializerLives(this.donkeyKongJunior.getLifes(), gameId));
+
+        if(this.donkeyKongJunior.getLifes() == 0){
+            this.gameOver();
+
+        }else{
+            this.sendPlayers(Serializer.serializerLives(this.donkeyKongJunior.getLifes(), gameId));
+        }
+
+    }
+
+
+
+    private void updateEnemiesSpeed(){
+        if(crocodiles.size()!= 0){
+            sendPlayers(Serializer.serializerUpdateSpeedEnemies(crocodiles.get(0).getSpeed(), this.id));
+        }
+
     }
 
 
@@ -150,8 +167,6 @@ public class Game {
 
         this.donkeyKongJunior.increaseScoreWin();
         updateScore(this.donkeyKongJunior.getScore());
-
-
     }
 
 
@@ -165,7 +180,7 @@ public class Game {
     public void putEnemy(String type, Integer liana){
         GameObject crocodile = CrocodileFactory.createCrocodile(type, liana);
         crocodiles.add(crocodile);
-        this.sendPlayers(Serializer.serializerPutEnimies(type, liana, this.id, crocodile.getSpeed()));
+        this.sendPlayers(Serializer.serializerPutEnemies(type, liana, this.id, crocodile.getSpeed()));
 
     }
 
@@ -226,21 +241,25 @@ public class Game {
         observer.send(Serializer.serializerObserverAdded(this.id));
 
         try{
-            Thread.sleep(4000);
+            Thread.sleep(200);
+            for(GameObject enemie : crocodiles){
+                Thread.sleep(200);
+                System.out.println("Entrra");
+                observer.send(Serializer.serializerPutEnemies(enemie.getType(), enemie.getLiana(), this.id, enemie.getSpeed()));
+
+                for(Fruit fruit : fruits){
+                    Thread.sleep(200);
+                    observer.send(Serializer.serializerPutFruit(fruit.getType(), fruit.getLiana(),this.id));
+                }
+            }
         }catch (InterruptedException e){}
 
 
-        for(GameObject enemie : crocodiles){
-            observer.send(Serializer.serializerPutEnimies(enemie.getType(), enemie.getLiana(), this.id, enemie.getSpeed()));
-        }
 
-        for(Fruit fruit : fruits){
-            observer.send(Serializer.serializerPutFruit(fruit.getType(), fruit.getLiana(),this.id));
-        }
 
-        System.out.println(donkeyKongJunior.getScore());
-        observer.send(Serializer.serializerScore(donkeyKongJunior.getScore(), this.id));
-        observer.send(Serializer.serializerLives(donkeyKongJunior.getLifes(), this.id));
+        //System.out.println(donkeyKongJunior.getScore());
+        //observer.send(Serializer.serializerScore(donkeyKongJunior.getScore(), this.id));
+        //observer.send(Serializer.serializerLives(donkeyKongJunior.getLifes(), this.id));
     }
 
 
@@ -250,7 +269,7 @@ public class Game {
      * @param newState
      */
     private void updateState(String newState){
-        this.sendPlayers(Serializer.serializerUpdateGame());
+        //this.sendPlayers(Serializer.serializerUpdateGame());
 
     }
 
@@ -258,9 +277,11 @@ public class Game {
      * author Sebastian Mora
      * @brief Notify to all observers that game is over.
      */
-    public void endGame()  {
-        this.observers.stream().forEach((observer)-> observer.send(Serializer.serializerGameOver()));
-        this.observers.removeAll(this.observers);
+    public void gameOver()  {
+        donkeyKongJunior.setDefaultScore();
+        donkeyKongJunior.setDefaultLives();
+        sendPlayers(Serializer.serializerGameOver(donkeyKongJunior.getScore(), donkeyKongJunior.getLifes()));
+
 
     }
 

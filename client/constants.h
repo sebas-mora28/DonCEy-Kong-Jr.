@@ -9,7 +9,7 @@
 #define Y_INITIAL  600
 
 
-#define DIFF_X_FRUIT 20
+#define DIFF_X_FRUIT 15
 #define DIFF_X_ENEMIES 20
 #define DIFF_FRUIT_Y 80
 #define DIFF_ENEMY_Y 10
@@ -37,6 +37,7 @@
 
 
 #define DELAY 30
+#define DELAY_ANIMATION 500
 #define WIDTH 700
 #define HEIGHT 700
 

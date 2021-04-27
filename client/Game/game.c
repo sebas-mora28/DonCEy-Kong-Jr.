@@ -156,13 +156,10 @@ void gameLoop(){
             SDL_RenderCopy(renderer, background, NULL, NULL);
 
 
-            hasWin();
+            renderTextures();
             collisions();
-            renderFruits();
-            renderEnemies();
-            renderDonkeyKongJr();
-            renderScore();
-        renderLives();
+            hasWin();
+
 
             SDL_RenderPresent(renderer);
             SDL_Delay(DELAY);
@@ -193,6 +190,29 @@ void renderDonkeyKongJr(){
 }
 
 
+
+
+void renderTextures(){
+    renderFruits();
+    renderEnemies();
+    renderDonkeyKongJr();
+    renderScore();
+    renderLives();
+
+}
+
+
+/**
+ *
+ */
+void renderDKJKillAnimation(){
+    donkeyKongJr->currentSprite = donkeyKongJr->dead;
+    SDL_Rect dstrect = {donkeyKongJr->posX, donkeyKongJr->posY, 80, 40};
+    SDL_RenderCopy(renderer, donkeyKongJr->currentSprite, NULL, &dstrect);
+}
+
+
+
 /**
  * Name: collisions
  * Description:
@@ -215,16 +235,16 @@ void enemiesCollision() {
     while (current != NULL) {
 
         if (donkeyKongJr->posX >= current->posX - COLLISION_RANGE && donkeyKongJr->posX <= current->posX + COLLISION_RANGE && donkeyKongJr->posY >= current->posY - COLLISION_RANGE && donkeyKongJr->posY <= current->posY + COLLISION_RANGE) {
-            donkeyKongJr->currentSprite = donkeyKongJr->dead;
-            renderDonkeyKongJr();
+            renderDKJKillAnimation();
             SDL_RenderPresent(renderer);
             falling();
             if(!isObserver){
                 serializeAttacked(gameId);
             }
-
-            SDL_Delay(3000);
+            SDL_Delay(DELAY_ANIMATION);
             setDefaultValues();
+            break;
+
         }
 
             current = current->next;
@@ -247,6 +267,7 @@ void fruitCollision(){
             if(current->sprite != NULL){
                 current->sprite = NULL;
                 if(!isObserver){
+
                     serializeFruitCaught(current->liana, current->type, gameId);
                 }
             }
@@ -255,6 +276,7 @@ void fruitCollision(){
 
         }
     }
+
 
 
 
@@ -359,6 +381,9 @@ void renderLives(){
 }
 
 
+
+
+
 /**
  * Name: hasWin
  * Description: Verifies if a player won
@@ -370,8 +395,7 @@ void hasWin(){
         }
         donkeyKongJr->currentSprite = donkeyKongJr->win;
         renderDonkeyKongJr();
-        SDL_RenderPresent(renderer);
-        SDL_Delay(3000);
+        //SDL_Delay(DELAY_ANIMATION);
         setDefaultValues();
 
         Enemy *temp = enemyList;
@@ -384,6 +408,16 @@ void hasWin(){
 
 }
 
+
+/**
+ *
+ */
+void gameOver(int score_, int lives_){
+    donkeyKongJr->score = score_;
+    donkeyKongJr->lives = lives_;
+    setDefaultValues();
+
+}
 
 
 /**

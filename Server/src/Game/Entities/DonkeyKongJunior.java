@@ -66,6 +66,24 @@ public class DonkeyKongJunior extends GameObject {
         this.score += score;
     }
 
+
+    /**
+     * @author Sebastian Mora
+     * @brief Sets default score
+     */
+    public void setDefaultScore() {
+        this.score = 0;
+    }
+
+
+    /**
+     * @author Sebastian Mora
+     * @brief Sets default lives
+     */
+    public void setDefaultLives() {
+        this.lives = 3;
+    }
+
     /**
      * @author Sebastian Mora
      * @brief increases score

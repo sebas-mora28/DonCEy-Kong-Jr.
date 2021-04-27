@@ -1,6 +1,8 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ξδ¨ÿ
-\
-java:S1161#":Add the "@Override" annotation above this method signature(Φ¨³Ωώÿÿÿÿ8ªΦγμ/
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ΝΪΤΗ8’υσω/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ξδ¨ÿ8’υσω/
 V
-java:S1161":Add the "@Override" annotation above this method signature(€‰»8ªΦγμ/
+java:S1161":Add the "@Override" annotation above this method signature(€‰»8’υσω/
+\
+java:S1161)":Add the "@Override" annotation above this method signature(Φ¨³Ωώÿÿÿÿ8’υσω/

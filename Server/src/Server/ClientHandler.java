@@ -102,8 +102,7 @@ public class ClientHandler implements Runnable {
 
             }
         }catch (SocketException e){
-            try { this.finishResources(); }
-            catch (IOException er) { er.printStackTrace(); }
+            this.finishResources();
         }
         catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -120,15 +119,19 @@ public class ClientHandler implements Runnable {
      * @brief Finish all the resources involved in game. It's call when the player disconnects
      * @throws IOException
      */
-    private void finishResources() throws IOException {
-        game.endGame();
+    public void finishResources() {
+        game.gameOver();
         freeGame(game.getId());
         Window.updateConsole("Game  " + game.getId() + " end: player disconnected");
         Server.games.remove(this.game);
         this.isActive = false;
-        this.client.close();
-        this.in.close();
-        this.out.close();
+        try {
+            this.client.close();
+            this.in.close();
+            this.out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        };
 
     }
 
@@ -165,6 +168,8 @@ public class ClientHandler implements Runnable {
 
         }else{
             Window.updateConsole("No games available");
+            Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
+            send(Serializer.serializerConnectionRefused(game_id));
         }
 
     }
@@ -198,11 +203,13 @@ public class ClientHandler implements Runnable {
      * @brief Free a game when the player disconnects, by its id.
      * @param game_id Integer that represents game id
      */
-    private void freeGame(Integer game_id){
+    public void freeGame(Integer game_id){
         if(game_id ==1){
             isGame1Available = false;
+            Server.games.remove(game);
         } else if(game_id ==2) {
             isGame2Available = false;
+            Server.games.remove(game);
         } else{
             System.out.println("Invalid id");
 

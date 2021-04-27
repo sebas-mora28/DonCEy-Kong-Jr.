@@ -1,11 +1,12 @@
 package Server;
 
-import netscape.javascript.JSObject;
+import Game.Entities.DonkeyKongJunior;
+import Game.Entities.Fruit;
+import Game.Entities.GameObject;
 import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import javax.swing.*;
+import java.util.List;
 
 public class Serializer {
 
@@ -57,7 +58,7 @@ public class Serializer {
      * @param speed enemy speed
      * @return JSON string
      */
-    public static String serializerPutEnimies(String type, Integer liana, Integer gameId, Integer speed){
+    public static String serializerPutEnemies(String type, Integer liana, Integer gameId, Integer speed){
         JSONObject obj = new JSONObject();
         obj.put("command", "putEnemy");
         obj.put("gameId", gameId);
@@ -81,9 +82,26 @@ public class Serializer {
         return obj.toJSONString();
     }
 
-
-    public static String serializerUpdateGame(){
+    public static String serializerUpdateSpeedEnemies(Integer speed, Integer gameId){
         JSONObject obj = new JSONObject();
+        obj.put("command","updateSpeed");
+        obj.put("speed",speed);
+        obj.put("gameId", gameId);
+        return obj.toJSONString();
+
+    }
+
+
+    public static String serializerUpdateGame(DonkeyKongJunior donkeyKongJunior, List<GameObject> enemies, List<Fruit> fruits, Integer id){
+        JSONArray arrayEnemies = new JSONArray();
+
+        for(GameObject enemy : enemies){
+            arrayEnemies.add(Serializer.serializerPutEnemies(enemy.getType(), enemy.getLiana(), id, enemy.getSpeed()));
+
+        }
+        JSONObject obj = new JSONObject();
+
+
         return obj.toJSONString();
     }
 
@@ -132,9 +150,11 @@ public class Serializer {
      * @brief Serializes game over command information into a JSON
      * @return JSON string
      */
-    public static String serializerGameOver(){
+    public static String serializerGameOver(Integer score, Integer lives){
         JSONObject obj = new JSONObject();
         obj.put("command","gameOver");
+        obj.put("score",score);
+        obj.put("lives",lives);
         return obj.toJSONString();
     }
 
@@ -174,6 +194,8 @@ public class Serializer {
         return obj.toJSONString();
 
     }
+
+
 
 
 

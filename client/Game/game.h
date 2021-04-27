@@ -57,8 +57,9 @@ void renderDonkeyKongJr();
 void renderScore();
 void renderLives();
 void updateScore(int score);
-void updateLives(int lifes);
-
+void updateLives(int lives);
+void gameOver(int score_, int lives_);
+void renderTextures();
 
 
 #endif //CLIENT_GAME_CUH

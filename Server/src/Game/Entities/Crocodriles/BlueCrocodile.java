@@ -2,7 +2,7 @@ package Game.Entities.Crocodriles;
 
 import Game.Entities.GameObject;
 
-public class BlueCrocodile extends GameObject {
+public class BlueCrocodile extends GameObject implements Crocodile {
 
 
     /**
@@ -16,4 +16,8 @@ public class BlueCrocodile extends GameObject {
         this.setType("blue");
     }
 
+    @Override
+    public void move() {
+
+    }
 }

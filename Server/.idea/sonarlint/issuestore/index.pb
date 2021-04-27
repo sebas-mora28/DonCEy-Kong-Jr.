@@ -19,3 +19,5 @@ W
 'src/Game/Entities/DonkeyKongJunior.java,9/e/9edd7a06576263c2b6839075cb5c928aa612d174
 Q
 !src/Game/Entities/GameObject.java,7/0/70bf03fed15670f17ee7ad74dbb7c4aa3c5c02f6
+`
+0src/Game/Entities/Crocodriles/BlueCrocodile.java,0/8/081e59fa458a5fb7bc1e4a5e9fb457e256c7e706

@@ -100,6 +100,11 @@ _Noreturn void *listen_socket(){
                 int onLiana = cJSON_GetObjectItem(serverReplyCommand, "onLiana")->valueint;
                 updateDKJPosition(posX, posY, facing, jumping, falling, onLiana);
             }
+            if(strcmp(command, "gameOver") == 0){
+                int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
+                int newScore = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
+                gameOver(newScore, newLives);
+            }
 
 
 
