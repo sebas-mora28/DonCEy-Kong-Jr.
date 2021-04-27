@@ -7,8 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4edd750-195a-487c-96ba-ee057a3b3df3" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/Crocodile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/081e59fa458a5fb7bc1e4a5e9fb457e256c7e706" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a80b3335f2fc584760844de851e39f73dc143184" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab3458071e11c71df5c017d68900fc140a092aa4" afterDir="false" />
+>>>>>>> master
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/246cad5ece9f20de220d0a9aa33cf0404246a20c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a094072b9474e3a4112f7a9e7eea235850a62ef" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a094072b9474e3a4112f7a9e7eea235850a62ef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/70bf03fed15670f17ee7ad74dbb7c4aa3c5c02f6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/70bf03fed15670f17ee7ad74dbb7c4aa3c5c02f6" afterDir="false" />
@@ -21,6 +27,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Game.class" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/BlueCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/BlueCrocodile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/RedCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/RedCrocodile.java" afterDir="false" />
@@ -33,6 +40,12 @@
       <change beforePath="$PROJECT_DIR$/../client/Game/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/game.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/SocketClient/Socket.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/SocketClient/Socket.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/constants.h" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/SocketClient/Socket.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/SocketClient/Socket.c" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,8 +169,12 @@
       <workItem from="1619162339501" duration="21180000" />
       <workItem from="1619306025273" duration="25668000" />
       <workItem from="1619440910581" duration="13023000" />
+<<<<<<< HEAD
       <workItem from="1619542070486" duration="1328000" />
       <workItem from="1619545806730" duration="1595000" />
+=======
+      <workItem from="1619462347596" duration="3436000" />
+>>>>>>> master
     </task>
     <servers />
   </component>

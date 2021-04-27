@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 q
 java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÍÚÔÇ8’õóù/
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îä¨ÿ8’õóù/
@@ -6,3 +7,12 @@ V
 java:S1161":Add the "@Override" annotation above this method signature(€‰»8’õóù/
 \
 java:S1161)":Add the "@Override" annotation above this method signature(Ö¨³Ùşÿÿÿÿ8’õóù/
+=======
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îä¨ÿ8’õóù/
+\
+java:S1161)":Add the "@Override" annotation above this method signature(Ö¨³Ùşÿÿÿÿ8’õóù/
+V
+java:S1161":Add the "@Override" annotation above this method signature(€‰»8’õóù/
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÍÚÔÇ8’õóù/
+>>>>>>> master

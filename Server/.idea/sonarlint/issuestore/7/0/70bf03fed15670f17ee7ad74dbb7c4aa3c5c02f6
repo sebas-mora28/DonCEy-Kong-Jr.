@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 N
 java:S1144m",Remove this unused private "getPosX" method.(±¡‡Öüÿÿÿÿ8Şó ‘/
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îä¨ÿ8ºõÒû/
@@ -8,3 +9,6 @@ X
 java:S2696W"6Make the enclosing method "static" or remove this set.(èâ‰êüÿÿÿÿ8éï·™‘/
 W
 java:S2209W"5Change this instance-reference to a static reference.(èâ‰êüÿÿÿÿ8éï·™‘/
+=======
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îä¨ÿ8ºõÒû/
+>>>>>>> master

@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 >
 java:S1148F"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
 I
@@ -18,3 +19,24 @@ X	java:S1256"<This block of commented-out lines of code should be removed.(šòŽ
 java:S11168"Remove this empty statement.(°Áýûÿÿÿÿ8æ‰ŽÙŽ/
 b
 java:S1128"ERemove this unused import 'javax.management.relation.RoleUnresolved'.(œáû‘8¦¶ÜÏ/
+=======
+I
+java:S1481")Remove this unused "line" local variable.(ŽÑÕšøÿÿÿÿ8ÛÉ™Ï/
+R
+java:S2589"7Remove this expression which always evaluates to "true"(›ûÅò8¬öÕ/
+R	java:S106"9Replace this use of System.out or System.err by a logger.(Ü²÷#8ä¨Ð/
+`
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(¹™Âp8õ•Ô/
+<
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+G
+java:S1481"'Remove this unused "sc" local variable.(ðÛ²¸øÿÿÿÿ8®¹˜Ï/
+m	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
+L	java:S106"9Replace this use of System.out or System.err by a logger.(ÊËïò
+<
+java:S1116"Remove this empty statement.(°Áýûÿÿÿÿ8æ‰ŽÙŽ/
+V	java:S125"<This block of commented-out lines of code should be removed.(Ù´óù8»ƒøÕ/
+V	java:S125"<This block of commented-out lines of code should be removed.(šòŽ¢8§ÚöÕ/
+`
+java:S1128"ERemove this unused import 'javax.management.relation.RoleUnresolved'.(œáû‘8¦¶ÜÏ/
+>>>>>>> master

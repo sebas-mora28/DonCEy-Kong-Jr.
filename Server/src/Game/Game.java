@@ -87,6 +87,10 @@ public class Game {
         Integer falling = Integer.parseInt(info.get("falling").toString());
         Integer onLiana = Integer.parseInt(info.get("onLiana").toString());
         this.donkeyKongJunior.updatePosition(posX, posY);
+        this.donkeyKongJunior.setFacing(facing);
+        this.donkeyKongJunior.setJumping(jumping);
+        this.donkeyKongJunior.setOnLiana(onLiana);
+        this.donkeyKongJunior.setFalling(falling);
         this.sendObservers(Serializer.serializerMoveDKJ(posX, posY, facing, jumping, falling , onLiana,id));
     }
 
@@ -241,6 +245,7 @@ public class Game {
         observer.send(Serializer.serializerObserverAdded(this.id));
 
         try{
+<<<<<<< HEAD
             Thread.sleep(200);
             for(GameObject enemie : crocodiles){
                 Thread.sleep(200);
@@ -253,13 +258,39 @@ public class Game {
                 }
             }
         }catch (InterruptedException e){}
+=======
+            Thread.sleep(2000);
+>>>>>>> master
+
+            for(GameObject enemie : crocodiles){
+                observer.send(Serializer.serializerPutEnimies(enemie.getType(), enemie.getLiana(), this.id, enemie.getSpeed()));
+            }
+            Thread.sleep(1000);
+
+            for(Fruit fruit : fruits){
+                observer.send(Serializer.serializerPutFruit(fruit.getType(), fruit.getLiana(),this.id));
+            }
+
+            System.out.println(donkeyKongJunior.getLifes());
+            observer.send(Serializer.serializerMoveDKJ(donkeyKongJunior.getPosX(), donkeyKongJunior.getPosY(), donkeyKongJunior.getFacing(), donkeyKongJunior.getJumping(), donkeyKongJunior.getFalling(), donkeyKongJunior.getOnLiana(), this.id));
+            Thread.sleep(500);
+            observer.send(Serializer.serializerScore(donkeyKongJunior.getScore(), this.id));
+            Thread.sleep(500);
+            observer.send(Serializer.serializerLives(donkeyKongJunior.getLifes(), this.id));
 
 
 
 
+        }catch (InterruptedException e){}
+
+
+
+<<<<<<< HEAD
         //System.out.println(donkeyKongJunior.getScore());
         //observer.send(Serializer.serializerScore(donkeyKongJunior.getScore(), this.id));
         //observer.send(Serializer.serializerLives(donkeyKongJunior.getLifes(), this.id));
+=======
+>>>>>>> master
     }
 
 

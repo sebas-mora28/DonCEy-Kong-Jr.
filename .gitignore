@@ -132,6 +132,13 @@ hs_err_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij
 
+<<<<<<< HEAD
 build/
 III-Tarea/
 resources/
+=======
+
+build/
+III-Tarea/
+resources
+>>>>>>> master
