@@ -140,15 +140,11 @@ void gameLoop(){
 
 
 
-            moveEnemy(enemyList);
+            if(!isObserver){ moveEnemy(enemyList, gameId); }
 
-            if(donkeyKongJr->jumping){
-                jumping();
-            }
-            if(donkeyKongJr->falling){
-                falling();
 
-            }
+            if(donkeyKongJr->jumping){ jumping(); }
+            if(donkeyKongJr->falling){ falling(); }
 
             SDL_RenderClear(renderer);
 
@@ -175,7 +171,7 @@ void gameLoop(){
  * Description: renders donkey kong Jr texture
  */
 void renderDonkeyKongJr(){
-    SDL_Rect dstrect = {donkeyKongJr->posX, donkeyKongJr->posY, 80, 40};
+    SDL_Rect dstrect = {donkeyKongJr->posX, donkeyKongJr->posY, RECT_WIDTH_DKJ, RECT_HEIGHT_DKJ};
     SDL_RenderCopy(renderer, donkeyKongJr->currentSprite, NULL, &dstrect);
     if(!isObserver){
         if(donkeyKongJr->posX != donkeyKongJr->prevPositionX || donkeyKongJr->posY != donkeyKongJr->prevPositionY){
@@ -192,6 +188,10 @@ void renderDonkeyKongJr(){
 
 
 
+
+/**
+ * Name: renderTexturer
+ */
 void renderTextures(){
     renderFruits();
     renderEnemies();
@@ -203,11 +203,12 @@ void renderTextures(){
 
 
 /**
- *
+ * Name: renderDKJKillAnimation
+ * Description: renders DKJ kill animations
  */
 void renderDKJKillAnimation(){
     donkeyKongJr->currentSprite = donkeyKongJr->dead;
-    SDL_Rect dstrect = {donkeyKongJr->posX, donkeyKongJr->posY, 80, 40};
+    SDL_Rect dstrect = {donkeyKongJr->posX, donkeyKongJr->posY, RECT_WIDTH_DKJ, RECT_HEIGHT_DKJ};
     SDL_RenderCopy(renderer, donkeyKongJr->currentSprite, NULL, &dstrect);
 }
 
@@ -215,7 +216,7 @@ void renderDKJKillAnimation(){
 
 /**
  * Name: collisions
- * Description:
+ * Description: handles games collision
  */
 void collisions(){
     enemiesCollision();
@@ -288,7 +289,7 @@ void renderFruits(){
     if(fruitList != NULL){
         Fruit* temp = fruitList;
         while(temp != NULL){
-            SDL_Rect dstrect = {temp->posX, temp->posY, 40, 40};
+            SDL_Rect dstrect = {temp->posX, temp->posY, RECT_WIDTH, RECT_HEIGHT};
             SDL_RenderCopy(renderer, temp->sprite, NULL, &dstrect);
             temp = temp->next;
 
@@ -306,7 +307,7 @@ void renderEnemies(){
     if(enemyList != NULL){
         Enemy * temp = enemyList;
         while(temp != NULL){
-            SDL_Rect dstrect = {temp->posX, temp->posY, 40, 40};
+            SDL_Rect dstrect = {temp->posX, temp->posY, RECT_WIDTH, RECT_HEIGHT};
             SDL_RenderCopy(renderer, temp->currentSprite, NULL, &dstrect);
             temp = temp->next;
 
@@ -319,12 +320,19 @@ void renderEnemies(){
 
 
 /**
- *
+ * Name: updateScore
+ * Description: updates player score
+ * @param newScore
  */
 void updateScore(int newScore){
-    donkeyKongJr->score = newScore;
+    score = newScore;
 }
 
+/**
+ * Name: updateLives
+ * Description: updates player lives
+ * @param newLives
+ */
 void updateLives(int newLives){
     donkeyKongJr->lives = newLives;
 }
@@ -345,7 +353,7 @@ void renderScore(){
     SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
 
     char score_[20];
-    sprintf(score_, "%d", donkeyKongJr->score);
+    sprintf(score_, "%d", score);
     SDL_Surface* surfaceScore = TTF_RenderText_Solid(Sans, score_, White);
     SDL_Texture* scoreTexture = SDL_CreateTextureFromSurface(renderer, surfaceScore);
     SDL_Rect score_rect = {150,0,70, 70};
@@ -357,7 +365,7 @@ void renderScore(){
 
 /**
  * Name: renderScore
- * Description: render score texture
+ * Description: render lives texture
  */
 void renderLives(){
     if(Sans == NULL){
@@ -386,7 +394,7 @@ void renderLives(){
 
 /**
  * Name: hasWin
- * Description: Verifies if a player won
+ * Description: checks if the player won
  */
 void hasWin(){
     if(donkeyKongJr->posX >= WINNER_POSITION_X_0 && donkeyKongJr->posX <= WINNER_POSITION_X_1 && donkeyKongJr->posY >= WINNER_POSITION_Y_0 && donkeyKongJr->posY <= WINNER_POSITION_Y_1){
@@ -395,7 +403,7 @@ void hasWin(){
         }
         donkeyKongJr->currentSprite = donkeyKongJr->win;
         renderDonkeyKongJr();
-        //SDL_Delay(DELAY_ANIMATION);
+        SDL_Delay(DELAY_ANIMATION);
         setDefaultValues();
 
         Enemy *temp = enemyList;
@@ -410,11 +418,14 @@ void hasWin(){
 
 
 /**
- *
+ * Name: gameOver
+ * Description: Sets default game values after player lost
+ * @param score_ default score
+ * @param lives_  default lives
  */
-void gameOver(int score_, int lives_){
-    donkeyKongJr->score = score_;
-    donkeyKongJr->lives = lives_;
+void gameOver(int defaultScore, int defaultLives){
+    score = defaultScore;
+    donkeyKongJr->lives = defaultLives;
     setDefaultValues();
 
 }
@@ -444,7 +455,7 @@ SDL_Texture * loadTexture(const char* path){
 
 /**
  * Name: setFruitTexture
- * Description:
+ * Description: loads fruit texture according to its type
  * @param fruit fruits linked list
  * @param type fruit type
  */
@@ -483,7 +494,7 @@ void putFruit(int liana, char* type){
 
 /**
  * Name: setEnemyTextures
- * Description:
+ * Description: loads enemies texture according to its type
  * @param enemy enemy linked list
  * @param type enemy list
  */
@@ -507,7 +518,7 @@ void setEnemyTextures(Enemy* enemy, char* type){
 
 /**
  * Name: putEnemy
- * Description: creates a new enemy and add it to enemy linked list
+ * Description: creates a new enemy and add it to enemy list
  * @param liana
  * @param type
  * @param speed
@@ -519,6 +530,7 @@ void putEnemy(int liana, char* type, int speed){
     enemy->liana = liana;
     enemy->type = type;
     enemy->speed = speed;
+    enemy->state= 1;
     enemy->posX = setPositionX(liana) + DIFF_X_ENEMIES;
     enemy->posY = setPositionY(liana) + DIFF_ENEMY_Y;
     enemy->currentSprite = enemy->down0;
@@ -602,12 +614,11 @@ DKJ* initDonkeyKongJr(){
     DKJ* player = (DKJ*) malloc(sizeof(DKJ));
     player->posX = X_INITIAL;
     player->posY = Y_INITIAL;
-    player->facing = FACING_RIGHT; //Comienza viendo por la derecha
+    player->facing = RIGHT; //Comienza viendo por la derecha
     player->jumping = 0;
     player->falling = 0;
     player->onLiana = 0;
     player->lives = 3;
-    player->score = 0;
     player->prevPositionX = X_INITIAL;
     player->prevPositionY = Y_INITIAL;
     player->currentSpriteNum = 1;
@@ -626,6 +637,39 @@ DKJ* initDonkeyKongJr(){
 
 
     return player;
+}
+
+
+
+/**
+ * Name: loadGameObjects
+ * Description: Receives enemies and fruits list from server to create them in the game.
+ * @param enemies enemies list
+ * @param fruits enemies list
+ */
+void loadGameObjects(cJSON* enemies, cJSON* fruits, int posX_DKJ, int posY_DKJ){
+
+    if(enemies != NULL) {
+        for (int i = 0; i < cJSON_GetArraySize(enemies); i++) {
+            cJSON *enemy = cJSON_GetArrayItem(enemies, i);
+            char *type = cJSON_GetObjectItem(enemy, "type")->valuestring;
+            int liana = cJSON_GetObjectItem(enemy, "liana")->valueint;
+            int speed = cJSON_GetObjectItem(enemy, "speed")->valueint;
+            putEnemy(liana, type, speed);
+        }
+    }
+
+    if(fruits != NULL) {
+        for (int i = 0; i < cJSON_GetArraySize(fruits); i++) {
+            cJSON *fruit = cJSON_GetArrayItem(fruits, i);
+            char *type = cJSON_GetObjectItem(fruit, "type")->valuestring;
+            int liana = cJSON_GetObjectItem(fruit, "liana")->valueint;
+            putFruit(liana, type);
+        }
+    }
+
+    donkeyKongJr->posX = posX_DKJ;
+    donkeyKongJr->posY = posY_DKJ;
 }
 
 

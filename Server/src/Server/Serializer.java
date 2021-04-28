@@ -8,6 +8,10 @@ import org.json.simple.parser.JSONParser;
 
 import java.util.List;
 
+
+/**\
+ * @author Sebastian Mora
+ */
 public class Serializer {
 
     private static JSONParser parser = new JSONParser();
@@ -92,19 +96,6 @@ public class Serializer {
     }
 
 
-    public static String serializerUpdateGame(DonkeyKongJunior donkeyKongJunior, List<GameObject> enemies, List<Fruit> fruits, Integer id){
-        JSONArray arrayEnemies = new JSONArray();
-
-        for(GameObject enemy : enemies){
-            arrayEnemies.add(Serializer.serializerPutEnemies(enemy.getType(), enemy.getLiana(), id, enemy.getSpeed()));
-
-        }
-        JSONObject obj = new JSONObject();
-
-
-        return obj.toJSONString();
-    }
-
 
     /**
      * @author Sebastian Mora
@@ -165,9 +156,11 @@ public class Serializer {
      * @param gameId game id
      * @return JSON string
      */
-    public static String serializerNewGame(Integer gameId){
+    public static String serializerNewGame(Integer score, Integer lives, Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "gameAccepted");
+        obj.put("score",score);
+        obj.put("lives",lives);
         obj.put("gameId", gameId);
         return obj.toJSONString();
 
@@ -187,11 +180,63 @@ public class Serializer {
 
     }
 
+
+    /**
+     * @author Sebastian Mora
+     * @brief Serializes connection refused command information into a JSON
+     * @param gameId game id
+     * @return JSON string
+     */
     public static String serializerConnectionRefused(Integer gameId){
         JSONObject obj = new JSONObject();
         obj.put("command", "connectionRefused");
         obj.put("gameId", gameId);
         return obj.toJSONString();
+
+    }
+
+    /**
+     * @author Sebastian Mora
+     * @brief Serializes game objects information into a JSON
+     * @param fruits fruits list
+     * @param enemies enemies list
+     * @param gameId game id
+     * @return JSON string
+     */
+    public static String serializerGameObjects(List<Fruit> fruits, List<GameObject> enemies, DonkeyKongJunior donkeyKongJunior ,Integer gameId){
+        JSONObject obj = new JSONObject();
+
+        obj.put("command", "gameObjects");
+        obj.put("gameId", 1);
+        obj.put("score", donkeyKongJunior.getScore());
+        obj.put("lives", donkeyKongJunior.getLives());
+        obj.put("posX_DKJ",  donkeyKongJunior.getPosX());
+        obj.put("posY_DKJ",  donkeyKongJunior.getPosY());
+        JSONArray arrayFruits = new JSONArray();
+        for(Fruit fruit : fruits){
+            JSONObject fruitJSON = new JSONObject();
+            fruitJSON.put("liana", fruit.getLiana());
+            fruitJSON.put("type", fruit.getType());
+            arrayFruits.add(fruitJSON);
+        }
+
+        obj.put("fruits",arrayFruits);
+        JSONArray arrayEnemies = new JSONArray();
+        for(GameObject enemy : enemies){
+            JSONObject fruitJSON = new JSONObject();
+            fruitJSON.put("liana", enemy.getLiana());
+            fruitJSON.put("type", enemy.getType());
+            fruitJSON.put("speed", enemy.getSpeed());
+            arrayEnemies.add(fruitJSON);
+        }
+        obj.put("enemies", arrayEnemies);
+        return obj.toJSONString();
+
+
+
+
+
+
 
     }
 

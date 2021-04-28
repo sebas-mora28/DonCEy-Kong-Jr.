@@ -14,7 +14,6 @@ typedef struct DKJ{
     int facing;
     int jumping;
     int falling;
-    int score;
     int lives;
     int currentSpriteNum;
     int onLiana;

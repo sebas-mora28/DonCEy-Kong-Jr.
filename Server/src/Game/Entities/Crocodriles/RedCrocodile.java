@@ -2,7 +2,7 @@ package Game.Entities.Crocodriles;
 
 import Game.Entities.GameObject;
 
-public class RedCrocodile extends GameObject implements Crocodile {
+public class RedCrocodile extends GameObject  {
 
 
     /**
@@ -11,15 +11,9 @@ public class RedCrocodile extends GameObject implements Crocodile {
      * @param liana liana position
      */
     public RedCrocodile(Integer liana){
-        this.setSpeed(1);
         this.updatePosition(0,0);
         this.setType("red");
         this.setLiana(liana);
     }
 
-
-    @Override
-    public void move() {
-
-    }
 }

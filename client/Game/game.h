@@ -15,21 +15,11 @@
 #include "gameObject/enemy.h"
 
 
-typedef struct Score {
-
-    TTF_Font* sans;
-    SDL_Color white;
-    SDL_Surface* surfaceMessage;
-    SDL_Texture* message;
-} Score;
-
-
 TTF_Font* Sans;
 SDL_Window *window;
 SDL_Renderer *renderer;
 SDL_Texture *background;
-Enemy *enemyList;
-Score* score;
+int score;
 int gameId;
 int isObserver;
 void serializeMoveDKJ(int posX, int posY,int facing, int jumping, int falling, int onLiana ,int id);
@@ -60,6 +50,7 @@ void updateScore(int score);
 void updateLives(int lives);
 void gameOver(int score_, int lives_);
 void renderTextures();
+void loadGameObjects(cJSON* enemies, cJSON* fruits, int posX_DKJ, int posY_DKJ);
 
 
 #endif //CLIENT_GAME_CUH

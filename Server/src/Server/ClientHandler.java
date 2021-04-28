@@ -47,10 +47,6 @@ public class ClientHandler implements Runnable {
     @Override
     public void run() {
 
-        //this.send(Serializer.serializerNewGame(1));
-
-
-
 
         try {
 
@@ -239,7 +235,6 @@ public class ClientHandler implements Runnable {
     public synchronized void send(String message) {
         try {
 
-            System.out.println("Enviando");
             this.out.println(message);;
             this.out  = new PrintWriter(client.getOutputStream(), true);
 

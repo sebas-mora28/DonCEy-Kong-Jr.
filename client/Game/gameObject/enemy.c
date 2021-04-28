@@ -46,11 +46,60 @@ Enemy* addEnemy(Enemy* list, Enemy* enemy) {
 
 
 /**
+ * Name: getEnemy
+ * Description: Searches for a specific enemy given liana number and type
+ * @param list enemy list
+ * @param liana liana number
+ * @param type enemy type
+ * @return enemy
+ */
+Enemy* getEnemy(Enemy* list, int liana, char* type){
+    Enemy * temp = list;
+    while(temp != NULL){
+        if(temp->liana == liana && strcmp(temp->type, type) == 0){
+            return temp;
+        }
+        temp = temp->next;
+    }
+    return NULL;
+}
+
+
+
+/**
+ * Name: updateEnemiesPosition
+ * Description: parse JSON received from server and updates enemies position
+ * @param enemiesInfo enemies info
+ */
+void updateEnemiesPosition(cJSON* enemiesInfo){
+
+    for(int i=0; i< cJSON_GetArraySize(enemiesInfo); i++){
+        cJSON * enemy = cJSON_GetArrayItem(enemiesInfo, i);
+        int posX = cJSON_GetObjectItem(enemy, "posX")->valueint;
+        int posY = cJSON_GetObjectItem(enemy, "posY")->valueint;
+        int liana = cJSON_GetObjectItem(enemy, "liana")->valueint;
+        int goingDown = cJSON_GetObjectItem(enemy, "goingDown")->valueint;
+        char* type = cJSON_GetObjectItem(enemy, "type")->valuestring;
+        Enemy * enemy1 = getEnemy(enemyList, liana, type);
+        if(enemy1 != NULL) {
+            enemy1->posX = posX;
+            enemy1->posY = posY;
+            enemy1->goingDown = goingDown;
+            if (goingDown) {
+                down(enemy1);
+            } else {
+                up(enemy1);
+            }
+        }
+    }
+}
+
+/**
  * Name: moveEnemy
  * Description: Handles enemy movement according to its color
  * @param enemyList enemy list
  */
-void moveEnemy(Enemy* enemyList) {
+void moveEnemy(Enemy* enemyList, int gameId) {
     Enemy *current = enemyList;
     while (current != NULL) {
 
@@ -62,8 +111,10 @@ void moveEnemy(Enemy* enemyList) {
 
         }
 
-        //moveEntity(current->posX, current->posX, current->liana, current->goingDown);
         current = current->next;
+    }
+    if(enemyList != NULL){
+        serializeMoveEnemy(enemyList, gameId);
     }
 
 }
@@ -87,6 +138,8 @@ void down(Enemy* enemy){
     }
 
 }
+
+
 
 
 /**
@@ -209,6 +262,7 @@ void moveEnemyBlue(Enemy* enemy){
         }
         down(enemy);
     }else {
+        enemy->state = 0;
         enemy->speed = 0;
     }
 

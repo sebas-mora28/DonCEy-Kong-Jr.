@@ -9,15 +9,15 @@
 
 
 /**
- *  Nombre: menu
- *  Descripcion: Inicializa el menu del juego
+ *  Name: menu
+ *  Description: Initialize game menu
  */
 void menu(){
 
     connectionState = 1;
     printf("Bienvenido a DonCEy Kong Jr \n");
     int userReply;
-    printf("Ingrese:   1 : Partida nueva  2 : Observar partida \n");
+    printf("1 : Partida nueva  2 : Observar partida \n");
     scanf("%d", &userReply);
 
 

@@ -56,43 +56,47 @@ _Noreturn void *listen_socket(){
     while(1){
 
         if (read(client, server_reply, 2000) > 0) {
-            //printf("Server %s \n", server_reply);
             cJSON *serverReplyCommand = cJSON_Parse(server_reply);
             char* command = cJSON_GetObjectItem(serverReplyCommand, "command")->valuestring;
-
 
             if(strcmp(command,"putFruit") == 0){
                 int liana = cJSON_GetObjectItem(serverReplyCommand, "liana")->valueint;
                 char* type = cJSON_GetObjectItem(serverReplyCommand, "type")->valuestring;
                 putFruit(liana, type);
             }
-            if(strcmp(command,"lives") == 0){
+            else if(strcmp(command,"lives") == 0){
                 int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
                 printf("vidas %d", newLives);
                 updateLives(newLives);
             }
-            if(strcmp(command,"score") == 0){
+            else if(strcmp(command,"score") == 0){
                 int newScore = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
                 updateScore(newScore);
             }
-            if(strcmp(command,"putEnemy") == 0){
+            else if(strcmp(command,"putEnemy") == 0){
                 int liana = cJSON_GetObjectItem(serverReplyCommand, "liana")->valueint;
                 char* type = cJSON_GetObjectItem(serverReplyCommand, "type")->valuestring;
                 int speed =  cJSON_GetObjectItem(serverReplyCommand, "speed")->valueint;
                 putEnemy(liana, type, speed);
             }
 
-            if(strcmp(command,"deleteFruit") == 0){
+            else if(strcmp(command,"deleteFruit") == 0){
                 int liana = cJSON_GetObjectItem(serverReplyCommand, "liana")->valueint;
                 char* type = cJSON_GetObjectItem(serverReplyCommand, "type")->valuestring;
                 deleteFruit(liana, type);
             }
-
-            if(strcmp(command,"connectionRefused") == 0){
+            else if(strcmp(command,"connectionRefused") == 0){
                 connectionRefused();
             }
+            else if(strcmp(command,"gameAccepted") == 0){
+                int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
+                int newScore = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
+                updateScore(newScore);
+                updateLives(newLives);
 
-            if(strcmp(command,"moveDKJ") == 0){
+            }
+
+            else if(strcmp(command,"moveDKJ") == 0){
                 int posX = cJSON_GetObjectItem(serverReplyCommand, "posX")->valueint;
                 int posY = cJSON_GetObjectItem(serverReplyCommand, "posY")->valueint;
                 int facing = cJSON_GetObjectItem(serverReplyCommand, "facing")->valueint;
@@ -101,11 +105,31 @@ _Noreturn void *listen_socket(){
                 int onLiana = cJSON_GetObjectItem(serverReplyCommand, "onLiana")->valueint;
                 updateDKJPosition(posX, posY, facing, jumping, falling, onLiana);
             }
+
             if(strcmp(command, "gameOver") == 0){
                 int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
                 int newScore = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
                 gameOver(newScore, newLives);
             }
+
+            if(strcmp(command, "moveEntity") == 0){
+                cJSON *arr = cJSON_GetObjectItem(serverReplyCommand, "enemies");
+                updateEnemiesPosition(arr);
+            }
+
+            if(strcmp(command, "gameObjects") == 0){
+                cJSON *enemies = cJSON_GetObjectItem(serverReplyCommand, "enemies");
+                cJSON *fruits = cJSON_GetObjectItem(serverReplyCommand, "fruits");
+                int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
+                int newScore = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
+                int posX_DKJ = cJSON_GetObjectItem(serverReplyCommand, "posX_DKJ")->valueint;
+                int posY_DKJ = cJSON_GetObjectItem(serverReplyCommand, "posY_DKJ")->valueint;
+                loadGameObjects(enemies, fruits, posX_DKJ, posY_DKJ);
+                updateScore(newScore);
+                updateLives(newLives);
+
+            }
+
 
 
 

@@ -94,16 +94,16 @@ public class DonkeyKongJunior extends GameObject {
 
     /**
      * @author Sebastia Mora
-     * @brief Returns player lifes
-     * @return players lifes
+     * @brief Returns player lives
+     * @return players lives
      */
-    public Integer getLifes() {
+    public Integer getLives() {
         return lives;
     }
 
     /**
      * @author Sebastian Mora
-     * @brief Increment player lifes
+     * @brief Increment player lives
      */
     public void incrementLives() {
         this.lives++;
@@ -111,7 +111,7 @@ public class DonkeyKongJunior extends GameObject {
 
     /**
      * @author Sebastian Mora
-     * @brief Increment player lifes
+     * @brief Increment player lives
      */
     public void decrementLives() {
         this.lives--;

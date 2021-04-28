@@ -9,9 +9,24 @@
 #define Y_INITIAL  600
 
 
+
+#define RECT_WIDTH_DKJ 80
+#define RECT_HEIGHT_DKJ 40
+
+#define RECT_WIDTH 40
+#define RECT_HEIGHT 40
+
+
+#define MOVE_DOWN 3
+#define MOVE_LEFT 35
+#define MOVE_RIGHT 35
+#define MOVE_FALLING 3
+#define MOVE_LEFT_DIFF 5
+#define MOVE_RIGHT_DIFF 5
+
 #define DIFF_X_FRUIT 15
 #define DIFF_X_ENEMIES 20
-#define DIFF_FRUIT_Y 80
+#define DIFF_FRUIT_Y 90
 #define DIFF_ENEMY_Y 10
 
 #define BACKGROUND_IMAGE_PATH  "../resources/background.png"
@@ -46,8 +61,6 @@
 #define IP "127.0.0.1"
 
 
-#define FACING_RIGHT 1;
-#define FACING_LEFT -1;
 
 #define NOT_JUMPING 0
 #define NO_FALLING 0
@@ -56,9 +69,9 @@
 #define COLLISION_RANGE 30
 #define LIANA_RANGE 20
 
-#define JUMP_LENGTH 50
+#define JUMP_MAX 60
 
-#define MOVEMENT_DIFF 8;
+#define MOVEMENT_DIFF 35;
 
 #define NEUTRAL  0
 #define RIGHT  1

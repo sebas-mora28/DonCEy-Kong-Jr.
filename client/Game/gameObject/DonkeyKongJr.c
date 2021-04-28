@@ -231,34 +231,34 @@ void moveUp(){
  */
 void moveDown(){
     if(donkeyKongJr->posX >= LIANA1_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA1_X_1 +  LIANA_RANGE && donkeyKongJr->posY >= LIANA1_Y_0  && donkeyKongJr->posY <= LIANA1_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA2_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA2_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA2_Y_0  && donkeyKongJr->posY <= LIANA2_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA3_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA3_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA3_Y_0  && donkeyKongJr->posY <= LIANA3_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA4_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA4_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA4_Y_0  && donkeyKongJr->posY <= LIANA4_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA5_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA5_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA5_Y_0  && donkeyKongJr->posY <= LIANA5_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA6_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA6_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA6_Y_0  && donkeyKongJr->posY <= LIANA6_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA7_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA7_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA7_Y_0  && donkeyKongJr->posY <= LIANA7_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA8_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA8_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA8_Y_0  && donkeyKongJr->posY <= LIANA8_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA9_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA9_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA9_Y_0  && donkeyKongJr->posY <= LIANA9_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else if(donkeyKongJr->posX >= LIANA10_X_0 - LIANA_RANGE && donkeyKongJr->posX <= LIANA10_X_1 + LIANA_RANGE && donkeyKongJr->posY >= LIANA10_Y_0  && donkeyKongJr->posY <= LIANA10_Y_1){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_DOWN;
         DonkeyKongJrAnimation();
     }else {
         donkeyKongJr->falling = 1;
@@ -277,7 +277,7 @@ void moveRight(){
     if(donkeyKongJr->onLiana){
         if(donkeyKongJr->facing == RIGHT){
             donkeyKongJr->currentSprite = donkeyKongJr->left1;
-            donkeyKongJr->posX += 35;
+            donkeyKongJr->posX += MOVE_RIGHT;
             donkeyKongJr->facing = -1;;
         }
         if(is_on_platform()){
@@ -287,14 +287,14 @@ void moveRight(){
     }
 
     if(donkeyKongJr->falling){
-        donkeyKongJr->posY += 5;
+        donkeyKongJr->posY += MOVE_RIGHT_DIFF;
     }
     if(donkeyKongJr->jumping){
-        donkeyKongJr->posY -= 5;
+        donkeyKongJr->posY -= MOVE_RIGHT_DIFF;
     }
 
     donkeyKongJr->facing = 1;
-    donkeyKongJr->posX += 5;
+    donkeyKongJr->posX += MOVE_RIGHT_DIFF;
     DonkeyKongJrAnimation();
 
 }
@@ -309,7 +309,7 @@ void moveLeft(){
     if(donkeyKongJr->onLiana){
         if(donkeyKongJr->facing == LEFT){
             donkeyKongJr->currentSprite = donkeyKongJr->right1;
-            donkeyKongJr->posX -= 35;
+            donkeyKongJr->posX -= MOVE_LEFT;
             donkeyKongJr->facing = 1;
         }
         if(is_on_platform()){
@@ -319,13 +319,13 @@ void moveLeft(){
     }
 
     if(donkeyKongJr->falling){
-        donkeyKongJr->posY += 5;
+        donkeyKongJr->posY += MOVE_LEFT_DIFF;
     }
     if(donkeyKongJr->jumping){
-        donkeyKongJr->posY -= 5;
+        donkeyKongJr->posY -= MOVE_LEFT_DIFF;
     }
     donkeyKongJr->facing = -1;
-    donkeyKongJr->posX -= 5;
+    donkeyKongJr->posX -= MOVE_LEFT_DIFF;
     DonkeyKongJrAnimation();
 
 }
@@ -410,13 +410,13 @@ void initJump(){
 void falling(){
 
     if(!onLiana()){
-        donkeyKongJr->posY += 3;
+        donkeyKongJr->posY += MOVE_FALLING;
         if(donkeyKongJr->facing == RIGHT){
-            donkeyKongJr->posX += 3;
+            donkeyKongJr->posX += MOVE_FALLING;
             donkeyKongJr->currentSprite = donkeyKongJr->right2;
         }
         if(donkeyKongJr->facing == LEFT){
-            donkeyKongJr->posX -= 3;
+            donkeyKongJr->posX -= MOVE_FALLING;
             donkeyKongJr->currentSprite = donkeyKongJr->left2;
         }
         if (is_on_platform()) {
@@ -449,14 +449,14 @@ void falling(){
 void jumping(){
 
     int diff = donkeyKongJr->positionStartJumping - donkeyKongJr->posY;
-    if(diff > 60){
+    if(diff > JUMP_MAX){
         donkeyKongJr->jumping = 0;
         donkeyKongJr->falling = 1;
     }else {
-        if(donkeyKongJr->facing == 1){
+        if(donkeyKongJr->facing == RIGHT){
                 donkeyKongJr->posX += 1;
 
-        }else if(donkeyKongJr->facing == -1){
+        }else if(donkeyKongJr->facing == LEFT){
                 donkeyKongJr->posX -= 1;
             }
         donkeyKongJr->posY -= 4;

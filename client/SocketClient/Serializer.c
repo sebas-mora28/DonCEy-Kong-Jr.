@@ -105,14 +105,34 @@ void serializeWin(int id){
     write_socket(msj);
 }
 
-void moveEntity(int posX, int posY, int liana, int id){
-    cJSON *root;
-    root = cJSON_CreateObject();
-    cJSON_AddStringToObject(root, "command", "moveEntity");
-    cJSON_AddNumberToObject(root, "gameId", id );
-    cJSON_AddNumberToObject(root, "liana", liana );
-    cJSON_AddNumberToObject(root, "posX", posX );
-    cJSON_AddNumberToObject(root, "posY", posY );
-    char* msj = cJSON_PrintUnformatted(root);
+
+/**
+ * Name: serializeMoveEnemy
+ * Description: serializes enemy move into a JSON object command and send it to server
+ * @param list enemy list
+ * @param id game id
+ */
+void serializeMoveEnemy(Enemy* list, int id){
+    Enemy * current = list;
+    cJSON* arr = cJSON_CreateArray();
+    while(current != NULL){
+        if(current->state) {
+            cJSON *root = cJSON_CreateObject();
+            cJSON_AddNumberToObject(root, "liana", current->liana);
+            cJSON_AddNumberToObject(root, "posX", current->posX);
+            cJSON_AddNumberToObject(root, "posY", current->posY);
+            cJSON_AddNumberToObject(root, "goingDown", current->goingDown);
+            cJSON_AddStringToObject(root, "type", current->type);
+            cJSON_AddItemToArray(arr, root);
+        }
+        current = current->next;
+    }
+    cJSON * command = cJSON_CreateObject();
+    cJSON_AddStringToObject(command, "command", "moveEntity");
+    cJSON_AddNumberToObject(command, "gameId", id);
+    cJSON_AddItemToObject(command,"enemies", arr);
+    char* msj = cJSON_PrintUnformatted(command);
     write_socket(msj);
+
 }
+
