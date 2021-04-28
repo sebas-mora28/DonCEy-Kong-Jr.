@@ -156,13 +156,6 @@ public class Game {
 
 
 
-    private void updateEnemiesSpeed(){
-        if(crocodiles.size()!= 0){
-            sendPlayers(Serializer.serializerUpdateSpeedEnemies(crocodiles.get(0).getSpeed(), this.id));
-        }
-
-    }
-
 
     /**
      * @author Sebastian Mora
@@ -173,8 +166,8 @@ public class Game {
         Integer id = Integer.parseInt(info.get("gameId").toString());
         sendObservers(Serializer.serializerMoveDKJ(donkeyKongJunior.getPosX_inital(), donkeyKongJunior.getPosY_inital(), 1, 0 ,0, 0,id));
 
-        if(crocodiles.size() > 0){
-            crocodiles.get(0).setSpeed(crocodiles.get(0).getSpeed() + 1);
+        for(GameObject crocodile : crocodiles){
+            crocodile.setSpeed(crocodile.getSpeed() + 1);
         }
 
 
@@ -288,11 +281,11 @@ public class Game {
      */
     private void newGame(){
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        this.sendPlayers(Serializer.serializerNewGame(this.donkeyKongJunior.getScore(), this.donkeyKongJunior.getLives(), this.id));
+        this.sendPlayers(Serializer.serializerNewGame(this.donkeyKongJunior.getScore(), this.donkeyKongJunior.getLives(), this.id, this.donkeyKongJunior));
 
     }
 
@@ -315,7 +308,7 @@ public class Game {
     public void sendObservers(String command){
 
         if(player != null) {
-            observers.stream().forEach((player)-> player.send(command));
+            observers.stream().forEach((observer)-> observer.send(command));
         }
     }
 
@@ -348,4 +341,12 @@ public class Game {
     public Integer numObservers(){
         return observers.size();
     }
+
+
+    public void updateEnemyPosition(int posX, int posY){
+
+    }
+
+
+
 }

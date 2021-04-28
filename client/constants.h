@@ -52,7 +52,7 @@
 
 
 #define DELAY 30
-#define DELAY_ANIMATION 500
+#define DELAY_ANIMATION 2000
 #define WIDTH 700
 #define HEIGHT 700
 

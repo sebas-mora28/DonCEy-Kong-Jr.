@@ -15,7 +15,7 @@ public class DonkeyKongJunior extends GameObject {
      * @brief Class constructor
      */
     public DonkeyKongJunior(){
-            this.posX_inital  = 120;
+            this.posX_inital  = 70;
             this.posY_inital = 600;
             this.score = 0;
             this.lives = 3;

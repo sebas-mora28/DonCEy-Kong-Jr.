@@ -5,7 +5,7 @@ public class GameObject {
 
     private Integer posX;
     private Integer posY;
-    private static Integer speed = 1;
+    private Integer speed = 1;
     private Integer liana;
     private Integer id;
     private String type;

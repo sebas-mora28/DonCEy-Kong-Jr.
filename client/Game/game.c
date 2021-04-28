@@ -403,6 +403,7 @@ void hasWin(){
         }
         donkeyKongJr->currentSprite = donkeyKongJr->win;
         renderDonkeyKongJr();
+        SDL_RenderPresent(renderer);
         SDL_Delay(DELAY_ANIMATION);
         setDefaultValues();
 

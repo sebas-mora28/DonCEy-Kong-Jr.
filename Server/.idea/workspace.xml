@@ -9,30 +9,14 @@
     <list default="true" id="b4edd750-195a-487c-96ba-ee057a3b3df3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/Client.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/BlueCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/BlueCrocodile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/Crocodile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/RedCrocodile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/Crocodriles/RedCrocodile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Client.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Serializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/Game/game.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/game.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/Game/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/Game/gameObject/DonkeyKongJr.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/gameObject/DonkeyKongJr.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/Game/gameObject/DonkeyKongJr.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/gameObject/DonkeyKongJr.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/Game/gameObject/enemy.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/gameObject/enemy.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/Game/gameObject/enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/gameObject/enemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/SocketClient/Serializer.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/SocketClient/Serializer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/SocketClient/Serializer.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/SocketClient/Serializer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/SocketClient/Socket.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/SocketClient/Socket.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/constants.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/menu.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +148,13 @@
       <workItem from="1619573161097" duration="186000" />
       <workItem from="1619573681512" duration="438000" />
       <workItem from="1619578930086" duration="1721000" />
-      <workItem from="1619583618584" duration="803000" />
+      <workItem from="1619583618584" duration="2505000" />
+      <workItem from="1619611663094" duration="832000" />
+      <workItem from="1619612753499" duration="12000" />
+      <workItem from="1619614656024" duration="415000" />
+      <workItem from="1619615137451" duration="234000" />
+      <workItem from="1619615673283" duration="434000" />
+      <workItem from="1619617137245" duration="1860000" />
     </task>
     <servers />
   </component>

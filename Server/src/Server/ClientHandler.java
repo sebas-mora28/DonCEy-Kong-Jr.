@@ -87,12 +87,10 @@ public class ClientHandler implements Runnable {
                 }
                 else{
                     Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
-                    for(Game game : Server.games){
-                        if(game.getId() == game_id){
-                            game.filterCommand(response);
+                    game.filterCommand(response);
 
-                        }
-                    }
+
+
                     continue;
                 }
 
@@ -110,17 +108,23 @@ public class ClientHandler implements Runnable {
     }
 
 
+
+
+
     /**
      * @author Sebastian Mora
      * @brief Finish all the resources involved in game. It's call when the player disconnects
      * @throws IOException
      */
     public void finishResources() {
-        game.gameOver();
-        freeGame(game.getId());
-        Window.updateConsole("Game  " + game.getId() + " end: player disconnected");
-        Server.games.remove(this.game);
-        this.isActive = false;
+
+        if(game.getPlayer() == this){
+            game.gameOver();
+            freeGame(game.getId());
+            Window.updateConsole("Game  " + game.getId() + " end: player disconnected");
+            Server.games.remove(this.game);
+            this.isActive = false;
+        }
         try {
             this.client.close();
             this.in.close();

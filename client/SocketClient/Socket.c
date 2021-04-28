@@ -91,8 +91,11 @@ _Noreturn void *listen_socket(){
             else if(strcmp(command,"gameAccepted") == 0){
                 int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
                 int newScore = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
+                int posX = cJSON_GetObjectItem(serverReplyCommand, "posX")->valueint;
+                int posY = cJSON_GetObjectItem(serverReplyCommand, "posY")->valueint;
                 updateScore(newScore);
                 updateLives(newLives);
+                updateDKJPosition(posX, posY, 1,0,0,0);
 
             }
 

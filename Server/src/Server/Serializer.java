@@ -86,14 +86,6 @@ public class Serializer {
         return obj.toJSONString();
     }
 
-    public static String serializerUpdateSpeedEnemies(Integer speed, Integer gameId){
-        JSONObject obj = new JSONObject();
-        obj.put("command","updateSpeed");
-        obj.put("speed",speed);
-        obj.put("gameId", gameId);
-        return obj.toJSONString();
-
-    }
 
 
 
@@ -156,11 +148,13 @@ public class Serializer {
      * @param gameId game id
      * @return JSON string
      */
-    public static String serializerNewGame(Integer score, Integer lives, Integer gameId){
+    public static String serializerNewGame(Integer score, Integer lives, Integer gameId, DonkeyKongJunior donkeyKongJunior){
         JSONObject obj = new JSONObject();
         obj.put("command", "gameAccepted");
         obj.put("score",score);
         obj.put("lives",lives);
+        obj.put("posX",donkeyKongJunior.getPosX());
+        obj.put("posY",donkeyKongJunior.getPosY());
         obj.put("gameId", gameId);
         return obj.toJSONString();
 
