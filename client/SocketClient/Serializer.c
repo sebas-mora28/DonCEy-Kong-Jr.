@@ -116,15 +116,12 @@ void serializeMoveEnemy(Enemy* list, int id){
     Enemy * current = list;
     cJSON* arr = cJSON_CreateArray();
     while(current != NULL){
-        if(current->state) {
-            cJSON *root = cJSON_CreateObject();
-            cJSON_AddNumberToObject(root, "liana", current->liana);
-            cJSON_AddNumberToObject(root, "posX", current->posX);
-            cJSON_AddNumberToObject(root, "posY", current->posY);
-            cJSON_AddNumberToObject(root, "goingDown", current->goingDown);
-            cJSON_AddStringToObject(root, "type", current->type);
-            cJSON_AddItemToArray(arr, root);
-        }
+        cJSON *root = cJSON_CreateObject();
+        cJSON_AddNumberToObject(root, "liana", current->liana);
+        cJSON_AddNumberToObject(root, "posX", current->posX);
+        cJSON_AddNumberToObject(root, "posY", current->posY);
+        cJSON_AddNumberToObject(root, "goingDown", current->goingDown);cJSON_AddStringToObject(root, "type", current->type);
+        cJSON_AddItemToArray(arr, root);
         current = current->next;
     }
     cJSON * command = cJSON_CreateObject();

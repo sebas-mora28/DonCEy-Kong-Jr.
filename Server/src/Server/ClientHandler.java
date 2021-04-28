@@ -184,7 +184,7 @@ public class ClientHandler implements Runnable {
 
         for(Game game : Server.games){
             if(game.getId() == game_id){
-                if(game.numObservers() <= MAX_NUM_OF_OBSERVERS){
+                if(game.numObservers() < MAX_NUM_OF_OBSERVERS){
                     this.game = game;
                     game.addObserver(this);
                     Window.updateConsole("New observer added to game " + game_id);

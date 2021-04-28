@@ -423,7 +423,7 @@ void falling(){
             donkeyKongJr->falling = 0;
             donkeyKongJr->onLiana = 0;
         }
-        if(donkeyKongJr->posY > HEIGHT){
+        if(donkeyKongJr->posY > HEIGHT || donkeyKongJr->posX > WIDTH){
             setDefaultValues();
         }
 

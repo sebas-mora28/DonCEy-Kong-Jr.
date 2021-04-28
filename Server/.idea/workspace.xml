@@ -9,14 +9,11 @@
     <list default="true" id="b4edd750-195a-487c-96ba-ee057a3b3df3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Server/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/DonkeyKongJunior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entities/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Serializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/SocketClient/Socket.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/SocketClient/Socket.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../client/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/Game/gameObject/DonkeyKongJr.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Game/gameObject/DonkeyKongJr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/SocketClient/Serializer.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/SocketClient/Serializer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/../client/menu.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +152,15 @@
       <workItem from="1619615137451" duration="234000" />
       <workItem from="1619615673283" duration="434000" />
       <workItem from="1619617137245" duration="1860000" />
+      <workItem from="1619625558919" duration="14000" />
+      <workItem from="1619626217458" duration="9000" />
+      <workItem from="1619632499519" duration="291000" />
+      <workItem from="1619632814342" duration="663000" />
+      <workItem from="1619634004959" duration="1251000" />
+      <workItem from="1619635615100" duration="16000" />
+      <workItem from="1619635696717" duration="111000" />
+      <workItem from="1619635859553" duration="636000" />
+      <workItem from="1619637826899" duration="322000" />
     </task>
     <servers />
   </component>

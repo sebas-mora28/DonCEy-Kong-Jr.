@@ -186,7 +186,12 @@ public class Game {
     public void putEnemy(String type, Integer liana){
         GameObject crocodile = CrocodileFactory.createCrocodile(type, liana);
         crocodiles.add(crocodile);
-        this.sendPlayers(Serializer.serializerPutEnemies(type, liana, this.id, crocodile.getSpeed()));
+        if(this.crocodiles.size() == 0) {
+            this.sendPlayers(Serializer.serializerPutEnemies(type, liana, this.id, crocodile.getSpeed()));
+        }else {
+            this.sendPlayers(Serializer.serializerPutEnemies(type, liana, this.id, crocodiles.get(0).getSpeed()));
+
+        }
 
     }
 
